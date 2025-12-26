@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Harbour & Home | Yacht & Home Cleaning Services (Jersey)</title>
-  <meta name="description" content="Harbour & Home provides Yacht & Home Cleaning Services across Jersey. Professional, reliable, discreet. Request a quote today." />
-  <meta name="theme-color" content="#0b1630" />
+  <meta name="description" content="Premium yacht, boat and home cleaning services across Jersey. Discreet, reliable and detail-focused. Request a quote via WhatsApp or phone." />
+  <meta name="theme-color" content="#081427" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,189 +13,341 @@
 
   <style>
     :root{
-      --navy:#0b1630;
-      --navy2:#102a55;
-      --gold:#caa24a;
-      --gold2:#e2c26a;
-      --bg:#f6f7fb;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#556070;
-      --line:rgba(15,23,42,.12);
-      --shadow: 0 14px 38px rgba(2,6,23,.12);
-      --r:18px;
-      --r2:26px;
-      --max:1120px;
+      --bg0:#050b16;
+      --bg1:#071427;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --line: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.56);
+      --gold:#d8b25a;
+      --gold2:#f0d58b;
+      --shadow: 0 22px 60px rgba(0,0,0,.35);
+      --r: 18px;
+      --r2: 26px;
+      --max: 1140px;
     }
+
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1100px 700px at 10% -10%, rgba(202,162,74,.22), transparent 55%),
-        radial-gradient(900px 600px at 90% 0%, rgba(17,97,230,.14), transparent 55%),
-        linear-gradient(#fff, var(--bg));
+        radial-gradient(1200px 700px at 15% 0%, rgba(216,178,90,.16), transparent 58%),
+        radial-gradient(1200px 700px at 85% 10%, rgba(56,189,248,.12), transparent 60%),
+        radial-gradient(1200px 700px at 50% 120%, rgba(34,197,94,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
     }
+
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
-    .topbar{
-      background:linear-gradient(180deg, rgba(11,22,48,.98), rgba(11,22,48,.92));
-      color:#fff;border-bottom:1px solid rgba(255,255,255,.08)
+
+    /* Top strip */
+    .topstrip{
+      border-bottom:1px solid var(--line);
+      background: rgba(7,20,39,.65);
+      backdrop-filter: blur(12px);
     }
-    .topbar .row{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:10px 0;flex-wrap:wrap
+    .topstrip .row{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:10px 0;flex-wrap:wrap;
+      color:rgba(255,255,255,.86);
+      font-size:13px;
     }
-    .pill{
+    .mini{
+      display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    }
+    .tag{
       display:inline-flex;align-items:center;gap:8px;
       padding:8px 10px;border-radius:999px;
       border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-      white-space:nowrap
+      background: rgba(255,255,255,.06);
+      white-space:nowrap;
     }
+
+    /* Header */
     header{
       position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.72);
-      backdrop-filter:blur(14px);
+      background: rgba(7,20,39,.70);
+      backdrop-filter: blur(14px);
       border-bottom:1px solid var(--line);
     }
     .nav{
       display:flex;align-items:center;justify-content:space-between;gap:14px;
       padding:14px 0;
     }
-    .brand{display:flex;align-items:center;gap:12px;min-width:240px}
-    .brand img{width:44px;height:44px;border-radius:14px;background:#fff;box-shadow:0 8px 18px rgba(2,6,23,.10);object-fit:cover}
-    .brand .t1{font-weight:800;letter-spacing:.3px;line-height:1}
-    .brand .t2{font-size:12px;color:var(--muted);margin-top:3px}
+    .brand{
+      display:flex;align-items:center;gap:12px;min-width:250px;
+    }
+    .brand img{
+      width:44px;height:44px;border-radius:14px;
+      object-fit:cover;background:#fff;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 14px 34px rgba(0,0,0,.30);
+    }
+    .brand .t1{font-weight:800;letter-spacing:.2px;line-height:1}
+    .brand .t2{font-size:12px;color:var(--muted2);margin-top:3px}
+
     nav.links{display:flex;gap:18px;align-items:center}
-    nav.links a{font-weight:700;color:#0b1630;opacity:.88}
-    nav.links a:hover{opacity:1}
+    nav.links a{
+      font-weight:700;
+      color:rgba(255,255,255,.86);
+      padding:8px 10px;border-radius:999px;
+    }
+    nav.links a:hover{background:rgba(255,255,255,.06);color:#fff}
+
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:12px 16px;border-radius:999px;
-      border:1px solid rgba(11,22,48,.14);
-      background:#fff;color:var(--navy);font-weight:800;
-      box-shadow:0 10px 24px rgba(2,6,23,.08);
-      transition:.12s transform ease;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      font-weight:800;
+      box-shadow: 0 14px 34px rgba(0,0,0,.25);
+      transition: transform .12s ease, background .12s ease;
+      cursor:pointer;
     }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.09)}
     .btn.primary{
-      border:1px solid rgba(202,162,74,.42);
-      background:linear-gradient(180deg, var(--gold2), var(--gold));
-      color:var(--navy);
+      background: linear-gradient(180deg, var(--gold2), var(--gold));
+      border:1px solid rgba(216,178,90,.46);
+      color:#081427;
     }
-    .btn:hover{transform:translateY(-1px)}
-    .btn:active{transform:translateY(0)}
-    .hero{padding:54px 0 22px}
-    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:stretch}
-    .card{
-      background:rgba(255,255,255,.90);
+    .btn.primary:hover{background: linear-gradient(180deg, #ffe6a9, #d8b25a)}
+    .btn.ghost{
+      background: transparent;
+      border:1px solid rgba(255,255,255,.14);
+    }
+
+    /* Hero */
+    .hero{padding:44px 0 22px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .panel{
+      background: var(--card);
       border:1px solid var(--line);
-      border-radius:var(--r2);
-      box-shadow:var(--shadow);
-      padding:26px;
+      border-radius: var(--r2);
+      box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
     }
-    .card.soft{border-radius:var(--r);box-shadow:0 10px 22px rgba(2,6,23,.07);padding:16px}
+    .panel.pad{padding:28px}
     h1{
       margin:0 0 10px;
-      font-size:44px;line-height:1.06;letter-spacing:-.7px;color:#07122a
+      font-size:46px;
+      line-height:1.04;
+      letter-spacing:-.9px;
     }
-    .sub{margin:0 0 16px;color:rgba(9,16,34,.78);line-height:1.65;max-width:64ch}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 18px}
-    .badge{
+    .lead{
+      margin:0 0 16px;
+      color: var(--muted);
+      line-height:1.65;
+      font-size:15px;
+      max-width: 70ch;
+    }
+    .krow{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 18px}
+    .k{
       display:inline-flex;align-items:center;gap:8px;
       padding:10px 12px;border-radius:999px;
-      border:1px solid rgba(11,22,48,.12);
-      background:rgba(255,255,255,.72);
-      font-weight:700;color:#1a2540;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.88);
+      font-weight:700;font-size:13px;
     }
-    .side{
-      background:rgba(11,22,48,.96);
-      border:1px solid rgba(255,255,255,.10);
-      color:#fff;
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Hero image */
+    .heroImg{
+      min-height: 380px;
+      background:
+        linear-gradient(180deg, rgba(7,20,39,.10), rgba(7,20,39,.85)),
+        url("https://images.unsplash.com/photo-1540946485063-2d83aaf4e9b9?auto=format&fit=crop&w=2200&q=70");
+      background-size: cover;
+      background-position: center;
+      display:flex;
+      align-items:flex-end;
     }
-    .side p{color:rgba(255,255,255,.82);line-height:1.6;margin:0 0 12px}
-    .kpi{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-    .kpi .box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:12px}
-    .kpi .n{font-weight:900;font-size:16px}
-    .kpi .l{font-size:12px;opacity:.85;margin-top:3px}
+    .cap{
+      width:100%;
+      padding:18px;
+      border-top:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(7,20,39,.00), rgba(7,20,39,.78));
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    }
+    .cap b{font-size:14px}
+    .cap span{color:var(--muted2);font-size:12px}
+
+    /* Sections */
     section{padding:22px 0}
-    .sec-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-end;margin-bottom:12px}
-    .sec-head h2{margin:0;font-size:28px;letter-spacing:-.4px;color:#07122a}
-    .sec-head p{margin:0;color:var(--muted);line-height:1.55;max-width:64ch}
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .head{
+      display:flex;justify-content:space-between;align-items:flex-end;gap:12px;
+      margin-bottom:12px;
+    }
+    .head h2{margin:0;font-size:26px;letter-spacing:-.4px}
+    .head p{margin:0;color:var(--muted);line-height:1.55;max-width:68ch}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+    .card{
+      background: var(--card2);
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      padding:16px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.22);
+    }
     .icon{
       width:42px;height:42px;border-radius:14px;
       display:inline-flex;align-items:center;justify-content:center;
-      background:linear-gradient(180deg, rgba(226,194,106,.28), rgba(202,162,74,.18));
-      border:1px solid rgba(202,162,74,.22);
-      margin-bottom:10px;font-weight:900;color:var(--navy);
+      background: rgba(216,178,90,.12);
+      border: 1px solid rgba(216,178,90,.22);
+      margin-bottom:10px;
+      font-weight:900;
     }
-    details{
-      background:rgba(255,255,255,.92);
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);line-height:1.6}
+
+    /* Process */
+    .step{
+      display:flex;gap:12px;align-items:flex-start;
+    }
+    .num{
+      width:38px;height:38px;border-radius:14px;
+      display:inline-flex;align-items:center;justify-content:center;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      font-weight:900;color:#fff;
+      flex: 0 0 auto;
+    }
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
+    .g{
+      border-radius: var(--r);
+      overflow:hidden;
       border:1px solid var(--line);
-      border-radius:16px;padding:14px;
-      box-shadow:0 10px 20px rgba(2,6,23,.06);
+      background:#0b152a;
+      position:relative;
+      min-height: 200px;
     }
-    summary{cursor:pointer;font-weight:900;list-style:none}
+    .g img{
+      width:100%;height:100%;object-fit:cover;display:block;
+      filter: saturate(1.06) contrast(1.03);
+      transform: scale(1.02);
+    }
+    .g::after{
+      content:"";position:absolute;inset:0;
+      background: linear-gradient(180deg, rgba(7,20,39,.04), rgba(7,20,39,.60));
+      pointer-events:none;
+    }
+    .g1{grid-column:span 7}
+    .g2{grid-column:span 5}
+    .g3,.g4,.g5{grid-column:span 4}
+
+    /* FAQ */
+    details{
+      background: var(--card2);
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:14px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.22);
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      list-style:none;
+    }
     summary::-webkit-details-marker{display:none}
     details p{margin:10px 0 0;color:var(--muted);line-height:1.6}
-    .contact{display:grid;grid-template-columns:1fr .95fr;gap:14px}
-    footer{
-      padding:24px 0 34px;border-top:1px solid var(--line);
-      background:rgba(255,255,255,.62);
-      color:rgba(9,16,34,.70);font-size:13px
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch}
+    .bigline{
+      display:flex;flex-direction:column;gap:10px;
+      padding:18px;border-radius: var(--r);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
     }
-    .foot{display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap;align-items:center}
-    .float{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;flex-direction:column;gap:10px}
+    .bigline a{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 14px;border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      font-weight:900;
+    }
+    .bigline a:hover{background: rgba(255,255,255,.09)}
+    .small{color:var(--muted2);font-size:12px;line-height:1.55}
+
+    footer{
+      padding:24px 0 34px;
+      border-top:1px solid var(--line);
+      color: var(--muted2);
+      font-size:13px;
+    }
+    .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+
+    /* Floating buttons */
+    .float{
+      position:fixed;right:16px;bottom:16px;z-index:60;
+      display:flex;flex-direction:column;gap:10px;
+    }
     .fab{
       width:56px;height:56px;border-radius:18px;
       display:inline-flex;align-items:center;justify-content:center;
-      background:rgba(255,255,255,.92);
-      border:1px solid rgba(11,22,48,.14);
-      box-shadow:0 18px 40px rgba(2,6,23,.18);
-      font-weight:900;color:var(--navy);
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 22px 60px rgba(0,0,0,.35);
+      font-weight:900;
     }
-    .fab.primary{background:linear-gradient(180deg, var(--gold2), var(--gold));border:1px solid rgba(202,162,74,.42)}
+    .fab.whatsapp{
+      background: linear-gradient(180deg, rgba(34,197,94,.96), rgba(34,197,94,.70));
+      border:1px solid rgba(34,197,94,.42);
+      color:#071427;
+    }
+
+    /* Responsive */
     @media (max-width: 920px){
-      .hero-grid{grid-template-columns:1fr}
       nav.links{display:none}
-      h1{font-size:38px}
+      h1{font-size:40px}
+      .hero-grid{grid-template-columns:1fr}
       .grid3,.grid2,.contact{grid-template-columns:1fr}
+      .g1,.g2,.g3,.g4,.g5{grid-column:span 12}
+      .heroImg{min-height:320px}
     }
   </style>
 </head>
 
 <body>
-  <!-- TOP BAR -->
-  <div class="topbar">
+  <!-- Top strip -->
+  <div class="topstrip">
     <div class="wrap">
       <div class="row">
-        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-          <span class="pill">📍 <b>Jersey</b> <span style="opacity:.9">Channel Islands</span></span>
-          <span class="pill">🛥️ Yacht &amp; Boat Cleaning</span>
-          <span class="pill">🏠 Home Cleaning</span>
+        <div class="mini">
+          <span class="tag">Jersey, Channel Islands</span>
+          <span class="tag">Yacht &amp; Boat Cleaning</span>
+          <span class="tag">Home Cleaning</span>
         </div>
-
-        <!-- DIRECT LINKS (PHONE + EMAIL) -->
-        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-          <a class="pill" href="tel:+447797799997">📞 <b>Call</b> <span style="opacity:.9">07797 799997</span></a>
-          <a class="pill" href="mailto:glynn@harbourandhome.com">✉️ <b>Email</b> <span style="opacity:.9">glynn@harbourandhome.com</span></a>
+        <div class="mini">
+          <a class="tag" href="tel:+447797799997">Call: 07797 799997</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- NAV -->
+  <!-- Header -->
   <header>
     <div class="wrap">
       <div class="nav">
         <a class="brand" href="#top">
-          <!-- Put logo.png in the same folder as index.html -->
-          <img src="logo.png" alt="Harbour & Home logo" />
+          <!-- IMPORTANT: your repo has logo.jpg -->
+          <img src="logo.jpg" alt="Harbour & Home logo">
           <div>
             <div class="t1">Harbour &amp; Home</div>
             <div class="t2">Yacht &amp; Home Cleaning Services</div>
@@ -204,230 +356,266 @@
 
         <nav class="links" aria-label="Main navigation">
           <a href="#services">Services</a>
-          <a href="#why">Why Us</a>
+          <a href="#process">How it works</a>
+          <a href="#gallery">Gallery</a>
           <a href="#faqs">FAQs</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn" href="tel:+447797799997">Call</a>
+          <a class="btn ghost" href="tel:+447797799997">Call</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20quote%20for%20cleaning%20in%20Jersey.%20Service%3A%20%5Byacht%2Fhome%5D%20Location%3A%20%5B%5D%20Details%3A%20%5B%5D">
+            WhatsApp
+          </a>
           <a class="btn primary" href="#contact">Request a Quote</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <main id="top" class="hero">
     <div class="wrap">
       <div class="hero-grid">
-        <div class="card">
-          <h1>Premium cleaning for <span style="color:var(--navy2)">yachts</span> and <span style="color:var(--navy2)">homes</span> in Jersey.</h1>
-          <p class="sub">
-            Harbour &amp; Home provides reliable, discreet and professional Yacht &amp; Home Cleaning Services across Jersey.
-            One-off deep cleans, regular maintenance, and seasonal prep — always with care and attention to detail.
+        <div class="panel pad">
+          <h1>Premium cleaning for yachts &amp; homes in Jersey.</h1>
+          <p class="lead">
+            Discreet, reliable and detail-focused cleaning for yachts, boats and residential properties across Jersey.
+            No public pricing — every job is quoted based on your requirements.
           </p>
 
-          <div class="badges">
-            <span class="badge">✅ Professional service</span>
-            <span class="badge">🧼 Marine-safe approach</span>
-            <span class="badge">🕒 Flexible scheduling</span>
-            <span class="badge">📍 Jersey-based</span>
+          <div class="krow">
+            <span class="k">Island-wide coverage</span>
+            <span class="k">Detail-driven finishes</span>
+            <span class="k">Flexible scheduling</span>
+            <span class="k">Trusted local service</span>
           </div>
 
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn primary" href="#contact">Get a Quote</a>
-            <a class="btn" href="mailto:glynn@harbourandhome.com">Email</a>
-            <a class="btn" href="tel:+447797799997">Call Now</a>
+          <div class="actions">
+            <a class="btn primary" href="#contact">Request a Quote</a>
+            <a class="btn ghost" href="tel:+447797799997">Call: 07797 799997</a>
+            <a class="btn" target="_blank" rel="noopener"
+               href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20quote%20for%20cleaning%20in%20Jersey.%20Service%3A%20%5Byacht%2Fhome%5D%20Location%3A%20%5B%5D%20Details%3A%20%5B%5D">
+              WhatsApp Quote
+            </a>
           </div>
 
-          <p style="margin-top:14px;color:var(--muted);line-height:1.6;font-size:13px">
-            Note: The email shown in the chat image uses “&” in the domain (not valid). Use <b>glynn@harbourandhome.com</b> once the domain is registered.
+          <p class="small" style="margin-top:14px">
+            Email hidden for now. Add it later once the domain email is ready.
           </p>
         </div>
 
-        <aside class="card side">
-          <h3 style="margin:0 0 10px;font-size:18px">Quick response. High standards.</h3>
-          <p>
-            Tell us what you need (yacht/home, size, location, preferred timing). We’ll reply with availability and a tailored quote.
-          </p>
-
-          <div class="kpi">
-            <div class="box"><div class="n">Yacht</div><div class="l">Exterior &amp; interior cleaning</div></div>
-            <div class="box"><div class="n">Home</div><div class="l">Regular &amp; deep cleaning</div></div>
-            <div class="box"><div class="n">Discreet</div><div class="l">Respect &amp; privacy</div></div>
-            <div class="box"><div class="n">Jersey</div><div class="l">Island-wide coverage</div></div>
+        <div class="panel heroImg" role="img" aria-label="Yacht cleaning service">
+          <div class="cap">
+            <div>
+              <b>Marine Cleaning</b><br>
+              <span>Wash-downs • Salt removal • Detailing</span>
+            </div>
+            <div>
+              <b style="color:var(--gold)">Professional &amp; Discreet</b><br>
+              <span>Flexible scheduling in Jersey</span>
+            </div>
           </div>
-
-          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn primary" href="#contact">Request a Quote</a>
-            <a class="btn" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);color:#fff"
-               href="tel:+447797799997">Call</a>
-          </div>
-        </aside>
+        </div>
       </div>
     </div>
   </main>
 
-  <!-- SERVICES -->
+  <!-- Services -->
   <section id="services">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="head">
         <div>
           <h2>Services</h2>
-          <p>We provide tailored cleaning solutions for yachts, boats and homes across Jersey. Quotes only — no prices shown online.</p>
+          <p>Clear, premium services — designed to convert visitors into bookings.</p>
         </div>
       </div>
 
       <div class="grid3">
-        <div class="card soft">
+        <div class="card">
           <div class="icon">🛥️</div>
-          <h4 style="margin:0 0 8px">Yacht &amp; Boat Cleaning</h4>
-          <p style="margin:0;color:var(--muted);line-height:1.55">Wash-downs, salt removal, deck cleaning, glass and stainless detailing, finishing touches.</p>
+          <h3>Yacht &amp; Boat Exterior</h3>
+          <p>Wash-downs, salt removal, deck cleaning, stainless and glass detailing.</p>
         </div>
 
-        <div class="card soft">
+        <div class="card">
           <div class="icon">🧽</div>
-          <h4 style="margin:0 0 8px">Interior Yacht Cleaning</h4>
-          <p style="margin:0;color:var(--muted);line-height:1.55">Cabins, heads, galley surfaces, vacuuming, wipe-downs and careful handling of marine materials.</p>
+          <h3>Yacht Interior</h3>
+          <p>Cabins, heads, galley surfaces, vacuuming and careful surface care.</p>
         </div>
 
-        <div class="card soft">
+        <div class="card">
           <div class="icon">🏠</div>
-          <h4 style="margin:0 0 8px">Home Cleaning</h4>
-          <p style="margin:0;color:var(--muted);line-height:1.55">Regular cleaning, one-off deep cleans, kitchen &amp; bathroom focus, tidy finishes.</p>
+          <h3>Home Cleaning</h3>
+          <p>Regular cleaning, one-off deep cleans, move-in/move-out services.</p>
         </div>
       </div>
 
-      <div style="height:14px"></div>
+      <div style="height:12px"></div>
 
       <div class="grid2">
-        <div class="card soft">
+        <div class="card">
           <div class="icon">🧴</div>
-          <h4 style="margin:0 0 8px">Deep Cleaning &amp; Seasonal Prep</h4>
-          <p style="margin:0;color:var(--muted);line-height:1.55">Ideal for pre-season yacht prep, post-charter refresh, or home move-in/move-out cleans.</p>
+          <h3>Deep Clean &amp; Seasonal Prep</h3>
+          <p>Ideal for pre-season yacht prep, post-charter refresh, or a full property reset.</p>
         </div>
 
-        <div class="card soft">
+        <div class="card">
           <div class="icon">📅</div>
-          <h4 style="margin:0 0 8px">Maintenance Plans</h4>
-          <p style="margin:0;color:var(--muted);line-height:1.55">Weekly, fortnightly or monthly schedules available depending on your needs.</p>
+          <h3>Maintenance Plans</h3>
+          <p>Weekly, fortnightly or monthly schedules available depending on requirements.</p>
         </div>
-      </div>
-
-      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn primary" href="#contact">Request a Quote</a>
-        <a class="btn" href="mailto:glynn@harbourandhome.com">Email Us</a>
       </div>
     </div>
   </section>
 
-  <!-- WHY -->
-  <section id="why">
+  <!-- Process -->
+  <section id="process">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="head">
         <div>
-          <h2>Why Choose Us</h2>
-          <p>Professional presentation, easy contact, and a clean premium feel — perfect for yacht clients and residential customers.</p>
+          <h2>How it works</h2>
+          <p>Simple, fast and professional — the way premium services book work.</p>
         </div>
       </div>
 
       <div class="grid3">
-        <div class="card soft">
-          <div class="icon">⭐</div>
-          <h4 style="margin:0 0 8px">Detail-driven</h4>
-          <p style="margin:0;color:var(--muted);line-height:1.55">We focus on finishes: salt marks, glass clarity, tidy edges and consistent standards.</p>
+        <div class="card">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <h3 style="margin:0 0 6px">Message or call</h3>
+              <p>Tell us yacht/home, size, location in Jersey and preferred date/time.</p>
+            </div>
+          </div>
         </div>
-        <div class="card soft">
-          <div class="icon">🛡️</div>
-          <h4 style="margin:0 0 8px">Trusted &amp; discreet</h4>
-          <p style="margin:0;color:var(--muted);line-height:1.55">Respectful service for private homes and premium vessels. Discretion comes first.</p>
+
+        <div class="card">
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <h3 style="margin:0 0 6px">Quote &amp; schedule</h3>
+              <p>We confirm availability and provide a tailored quote — no public pricing.</p>
+            </div>
+          </div>
         </div>
-        <div class="card soft">
-          <div class="icon">📍</div>
-          <h4 style="margin:0 0 8px">Local to Jersey</h4>
-          <p style="margin:0;color:var(--muted);line-height:1.55">Island-wide coverage. Tell us your location and access details and we’ll advise.</p>
+
+        <div class="card">
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <h3 style="margin:0 0 6px">Clean &amp; finish</h3>
+              <p>Detail-focused service with a clean, premium finish — every time.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2>Gallery</h2>
+          <p>High-end visuals (placeholder images). Replace with real photos later for best results.</p>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="g g1">
+          <img alt="Yacht cleaning" src="https://images.unsplash.com/photo-1540946485063-2d83aaf4e9b9?auto=format&fit=crop&w=2200&q=70">
+        </div>
+        <div class="g g2">
+          <img alt="Boat at marina" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2200&q=70">
+        </div>
+        <div class="g g3">
+          <img alt="Deck detail" src="https://images.unsplash.com/photo-1528150177508-7cc0c36cda5f?auto=format&fit=crop&w=1600&q=70">
+        </div>
+        <div class="g g4">
+          <img alt="Interior clean" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=70">
+        </div>
+        <div class="g g5">
+          <img alt="Home cleaning" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6f8?auto=format&fit=crop&w=1600&q=70">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
   <section id="faqs">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="head">
         <div>
           <h2>FAQs</h2>
-          <p>Quick answers to help customers book faster.</p>
+          <p>Answers that reduce messages and increase bookings.</p>
         </div>
       </div>
 
       <div class="grid2">
         <details>
           <summary>Do you cover all of Jersey?</summary>
-          <p>Yes. Share your location and preferred times when requesting a quote.</p>
+          <p>Yes — island-wide. Share your location and access details when requesting a quote.</p>
         </details>
+
         <details>
-          <summary>Do you bring your own equipment?</summary>
-          <p>Yes. We bring professional supplies. For yachts, we use a marine-safe approach suited to your surfaces.</p>
+          <summary>Do you offer regular maintenance cleaning?</summary>
+          <p>Yes — weekly, fortnightly or monthly options depending on availability and requirements.</p>
         </details>
+
         <details>
-          <summary>Can I book regular maintenance?</summary>
-          <p>Absolutely. Weekly/fortnightly/monthly schedules are available depending on availability.</p>
+          <summary>Do you list prices online?</summary>
+          <p>No. Every job is quoted based on size, condition, access and service type.</p>
         </details>
+
         <details>
-          <summary>How do I get a quote?</summary>
-          <p>Use the contact section below, or call/email us directly. No pricing is listed online.</p>
+          <summary>How do I request a quote fastest?</summary>
+          <p>WhatsApp is the quickest — include service type (yacht/home), size/length, location, and preferred date/time.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- Contact -->
   <section id="contact">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="head">
         <div>
           <h2>Contact</h2>
-          <p>Call or email directly — fastest way to get a quote.</p>
+          <p>Direct and professional — call or WhatsApp to request a quote.</p>
         </div>
       </div>
 
       <div class="contact">
-        <div class="card soft">
-          <h3 style="margin:0 0 10px">Direct links</h3>
-          <p style="margin:0;color:var(--muted);line-height:1.7">
-            <b>Phone:</b> <a href="tel:+447797799997" style="text-decoration:underline">07797 799997</a><br/>
-            <b>Email:</b> <a href="mailto:glynn@harbourandhome.com" style="text-decoration:underline">glynn@harbourandhome.com</a><br/>
-            <b>Location:</b> Jersey, Channel Islands<br/>
+        <div class="card">
+          <h3 style="margin:0 0 10px">Request a quote</h3>
+          <p class="small" style="margin:0 0 12px">
+            Include: (1) Yacht/Home (2) Size/length or bedrooms (3) Location in Jersey (4) Preferred date/time.
           </p>
 
-          <div style="height:12px"></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn primary" href="tel:+447797799997">Call Now</a>
-            <a class="btn" href="mailto:glynn@harbourandhome.com">Email</a>
+          <div class="bigline">
+            <a href="tel:+447797799997">
+              <span>Call</span>
+              <span>07797 799997</span>
+            </a>
+
+            <a target="_blank" rel="noopener"
+               href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20quote%20for%20cleaning%20in%20Jersey.%0A%0AService%3A%20(Yacht%2FHome)%0ASize%2FDetails%3A%20%0ALocation%3A%20%0APreferred%20date%2Ftime%3A%20%0A">
+              <span>WhatsApp</span>
+              <span>Message now</span>
+            </a>
           </div>
-
-          <p style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.6">
-            If you want a “proper business email” like <b>glynn@harbourandhome.com</b>, you’ll need to register the domain <b>harbourandhome.com</b>
-            and then create the mailbox (Google Workspace / Microsoft 365 / Zoho etc.).
-          </p>
         </div>
 
-        <div class="card soft">
-          <h3 style="margin:0 0 10px">Request a quote (quick)</h3>
-          <p style="margin:0;color:var(--muted);line-height:1.7">
-            Send a short message with:
-            <br/>• Yacht/Boat or Home
-            <br/>• Size / bedrooms (or yacht length)
-            <br/>• Location in Jersey
-            <br/>• Preferred day/time
+        <div class="card">
+          <h3 style="margin:0 0 10px">Based in Jersey</h3>
+          <p class="small" style="margin:0">
+            Harbour &amp; Home operates across the island. If marina access or security details are required, include them in your message.
+            <br><br>
+            <b style="color:var(--gold)">Email hidden for now</b> (as requested).
           </p>
-          <div style="height:12px"></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn primary" href="mailto:glynn@harbourandhome.com?subject=Quote%20Request%20(Jersey)&body=Hi%20Harbour%20%26%20Home%2C%0A%0AI%27d%20like%20a%20quote%20for%3A%0A-%20Service%20type%3A%20(Yacht%2FBoat%20or%20Home)%0A-%20Size%2FDetails%3A%0A-%20Location%20in%20Jersey%3A%0A-%20Preferred%20date%2Ftime%3A%0A%0AThanks!">Email Quote Request</a>
-            <a class="btn" href="tel:+447797799997">Call</a>
-          </div>
         </div>
       </div>
     </div>
@@ -439,7 +627,7 @@
         <div>© <span id="year"></span> Harbour &amp; Home — Yacht &amp; Home Cleaning Services (Jersey)</div>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
           <a href="#services">Services</a>
-          <a href="#faqs">FAQs</a>
+          <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
@@ -448,12 +636,15 @@
 
   <!-- Floating quick buttons -->
   <div class="float" aria-label="Quick actions">
-    <a class="fab primary" href="mailto:glynn@harbourandhome.com" title="Email">✉️</a>
-    <a class="fab" href="tel:+447797799997" title="Call">📞</a>
+    <a class="fab whatsapp" target="_blank" rel="noopener"
+       href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20quote%20for%20cleaning%20in%20Jersey.">
+      💬
+    </a>
+    <a class="fab" href="tel:+447797799997">📞</a>
   </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
-    </html>
+</html>
