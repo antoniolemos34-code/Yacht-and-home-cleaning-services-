@@ -13,20 +13,15 @@
 
   <style>
     :root{
-      /* Ocean luxury palette */
-      --bg:#050A14;          /* deep navy */
-      --bg2:#070F22;         /* ocean shadow */
-      --ice:#7DE3FF;         /* ice blue highlight */
-      --ice2:#2BB6FF;        /* stronger ocean */
+      --bg:#050A14;
+      --ice:#7DE3FF;
+      --ice2:#2BB6FF;
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.74);
       --muted2:rgba(255,255,255,.54);
       --glass: rgba(255,255,255,.06);
-      --glass2: rgba(255,255,255,.08);
-      --stroke: rgba(255,255,255,.12);
       --shadow: 0 26px 80px rgba(0,0,0,.66);
       --shadowSoft: 0 18px 55px rgba(0,0,0,.52);
-      --radius: 18px;
       --radius2: 28px;
       --max: 1120px;
     }
@@ -44,12 +39,9 @@
         linear-gradient(180deg, var(--bg), #04070f 60%, #04060c);
       overflow-x:hidden;
     }
+
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
-
-    /* Reveal animation */
     .reveal{opacity:0; transform: translateY(10px); transition: .7s ease;}
     .reveal.show{opacity:1; transform: translateY(0);}
 
@@ -60,150 +52,97 @@
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:12px 0;
-    }
-    .brand{display:flex; align-items:center; gap:12px;}
-    .brand img{
-      width:54px; height:54px; border-radius:14px;
-      object-fit:cover;
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 0;}
+
+    /* Brand */
+    .brand{display:flex; align-items:center; gap:12px; min-width: 250px;}
+    .brandLogo{
+      width:64px; height:64px;
+      display:grid; place-items:center;
+      border-radius:16px;
       border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 10px 30px rgba(0,0,0,.35);
       background: rgba(255,255,255,.06);
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      overflow:hidden;
+      flex: 0 0 auto;
     }
+    .brandLogo img{
+      width:100%;
+      height:100%;
+      object-fit: contain; /* IMPORTANT for your logo */
+      padding: 6px;
+      display:block;
+    }
+
     .brand .title{display:flex; flex-direction:column; line-height:1.08}
     .brand .title b{font-size:15px; letter-spacing:.2px}
     .brand .title span{font-size:12px; color:var(--muted2)}
 
     .navlinks{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
     .navlinks a{
-      padding:10px 12px;
-      border-radius:999px;
-      color:var(--muted);
-      border:1px solid transparent;
-      transition:.2s ease;
-      font-size:13px;
-      font-weight:800;
+      padding:10px 12px; border-radius:999px;
+      color:var(--muted); border:1px solid transparent;
+      transition:.2s ease; font-size:13px; font-weight:800;
     }
-    .navlinks a:hover{
-      color:var(--text);
-      border-color:rgba(255,255,255,.10);
-      background:rgba(255,255,255,.05);
-    }
-    .navlinks a:focus, .btn:focus, .fab:focus, .mobileCta a:focus{
-      outline:2px solid var(--ice);
-      outline-offset:3px;
+    .navlinks a:hover{color:var(--text); border-color:rgba(255,255,255,.10); background:rgba(255,255,255,.05);}
+    .navlinks a:focus,.btn:focus,.fab:focus,.mobileCta a:focus, input:focus, select:focus, textarea:focus{
+      outline:2px solid var(--ice); outline-offset:3px;
     }
 
     /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:999px;
+      gap:10px; padding:12px 16px; border-radius:999px;
       border:1px solid rgba(255,255,255,.12);
-      background: var(--glass);
-      color: var(--text);
-      font-weight: 900;
-      font-size:14px;
-      letter-spacing:.2px;
-      transition:.2s ease;
-      white-space:nowrap;
+      background: var(--glass); color: var(--text);
+      font-weight: 900; font-size:14px; letter-spacing:.2px;
+      transition:.2s ease; white-space:nowrap;
     }
-    .btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(255,255,255,.20);
-      background: rgba(255,255,255,.08);
-    }
+    .btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.20); background:rgba(255,255,255,.08);}
     .btn.primary{
       border-color: rgba(125,227,255,.35);
       background: linear-gradient(180deg, rgba(125,227,255,.18), rgba(255,255,255,.06));
       box-shadow: 0 14px 40px rgba(43,182,255,.16);
     }
     .btn.primary:hover{border-color: rgba(125,227,255,.55);}
-    .btn.ghost{
-      border-color: rgba(125,227,255,.22);
-      background: rgba(125,227,255,.08);
-    }
+    .btn.ghost{border-color: rgba(125,227,255,.22); background: rgba(125,227,255,.08);}
 
     /* Hero */
     .hero{padding:26px 0 12px;}
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.06fr .94fr;
-      gap: 18px;
-      align-items: stretch;
-    }
+    .heroGrid{display:grid; grid-template-columns: 1.06fr .94fr; gap: 18px; align-items: stretch;}
     .card{
       background: var(--glass);
       border:1px solid rgba(255,255,255,.10);
       border-radius: var(--radius2);
       box-shadow: var(--shadowSoft);
-      overflow:hidden;
-      position:relative;
+      overflow:hidden; position:relative;
     }
     .heroLeft{padding:26px;}
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
-      padding:10px 12px;
-      border-radius:999px;
+      padding:10px 12px; border-radius:999px;
       border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
-      color: var(--muted);
-      font-weight: 900;
-      font-size:13px;
+      color: var(--muted); font-weight: 900; font-size:13px;
     }
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background: rgba(125,227,255,.95);
-      box-shadow:0 0 0 4px rgba(125,227,255,.16);
-    }
-
-    h1{
-      margin:14px 0 12px;
-      font-size: clamp(34px, 4.3vw, 58px);
-      line-height:1.02;
-      letter-spacing:-1px;
-    }
-    .lead{
-      margin:0 0 18px;
-      font-size:16px;
-      line-height:1.65;
-      color: var(--muted);
-      max-width: 64ch;
-    }
+    .dot{width:10px;height:10px;border-radius:999px;background:rgba(125,227,255,.95); box-shadow:0 0 0 4px rgba(125,227,255,.16);}
+    h1{margin:14px 0 12px; font-size: clamp(34px, 4.3vw, 58px); line-height:1.02; letter-spacing:-1px;}
+    .lead{margin:0 0 18px; font-size:16px; line-height:1.65; color: var(--muted); max-width: 64ch;}
     .lead strong{color: rgba(125,227,255,.92); font-weight:900;}
     .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:16px;}
-
-    .stats{
-      margin-top: 16px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-    .stat{
-      padding: 12px;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-    }
+    .stats{margin-top: 16px; display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px;}
+    .stat{padding: 12px; border-radius: 18px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.05);}
     .stat b{display:block; font-size:14px;}
     .stat span{display:block; margin-top:6px; color:var(--muted2); font-size:12px; line-height:1.4;}
 
-    .heroRight{
-      min-height: 460px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(125,227,255,.12);
-    }
+    .heroRight{min-height: 460px; box-shadow: var(--shadow); border: 1px solid rgba(125,227,255,.12);}
     .heroImg{
       position:absolute; inset:0;
       background:
         radial-gradient(700px 420px at 75% 20%, rgba(125,227,255,.10), transparent 60%),
         linear-gradient(180deg, rgba(5,10,20,.12), rgba(5,10,20,.92)),
         url("./assets/hero.jpg");
-      background-size: cover;
-      background-position: center;
+      background-size: cover; background-position: center;
       filter: saturate(1.08) contrast(1.03);
     }
     .heroBadges{
@@ -211,8 +150,7 @@
       display:grid; grid-template-columns:1fr 1fr; gap:12px;
     }
     .mini{
-      padding:14px;
-      border-radius:18px;
+      padding:14px; border-radius:18px;
       background: rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.12);
       backdrop-filter: blur(12px);
@@ -220,18 +158,9 @@
     .mini b{display:block; font-size:14px;}
     .mini span{display:block; margin-top:6px; color:var(--muted); font-size:12px; line-height:1.4;}
 
-    /* Sections */
     section{padding: 26px 0;}
-    .sectionTitle{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap:14px; flex-wrap:wrap;
-      margin-bottom: 14px;
-    }
-    .sectionTitle h2{
-      margin:0;
-      font-size: clamp(22px, 2.4vw, 32px);
-      letter-spacing: -.5px;
-    }
+    .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom: 14px;}
+    .sectionTitle h2{margin:0; font-size: clamp(22px, 2.4vw, 32px); letter-spacing: -.5px;}
     .sectionTitle p{margin:0; color: var(--muted); max-width: 72ch; line-height:1.6;}
 
     /* Services */
@@ -245,28 +174,13 @@
       position:relative;
       min-height: 320px;
       isolation:isolate;
-      transform: translateZ(0);
     }
-    .svc::before{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(5,10,20,.06), rgba(5,10,20,.92));
-      z-index:1;
-    }
-    .svc .bg{
-      position:absolute; inset:0;
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.06) contrast(1.02);
-      z-index:0;
-      transform: scale(1.04);
-      transition: .35s ease;
-    }
+    .svc::before{content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(5,10,20,.06), rgba(5,10,20,.92)); z-index:1;}
+    .svc .bg{position:absolute; inset:0; background-size: cover; background-position: center; z-index:0; transform: scale(1.04); transition:.35s ease; filter:saturate(1.06) contrast(1.02);}
     .svc:hover .bg{transform: scale(1.08);}
     .svc .content{
       position:absolute; left:16px; right:16px; bottom:16px;
-      padding:14px;
-      border-radius: 18px;
+      padding:14px; border-radius: 18px;
       background: rgba(0,0,0,.26);
       border:1px solid rgba(255,255,255,.12);
       backdrop-filter: blur(12px);
@@ -274,18 +188,10 @@
     }
     .svc h3{margin:0 0 6px; font-size:16px;}
     .svc p{margin:0; color: rgba(255,255,255,.80); font-size:13px; line-height:1.45;}
-    .svc .meta{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;}
-    .chip{
-      padding:7px 9px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color: rgba(255,255,255,.86);
-      font-size:12px;
-      font-weight:900;
-    }
+    .meta{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;}
+    .chip{padding:7px 9px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06); color: rgba(255,255,255,.86); font-size:12px; font-weight:900;}
 
-    /* Featured yacht (middle) = ocean aura */
+    /* Featured yacht (middle) */
     .svc.featured{
       border-color: rgba(125,227,255,.28);
       box-shadow: var(--shadow);
@@ -301,207 +207,126 @@
     }
     .svc.featured .badge{
       position:absolute; top:14px; left:14px;
-      padding:8px 10px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:.2px;
+      padding:8px 10px; border-radius:999px;
+      font-size:12px; font-weight:900; letter-spacing:.2px;
       color: rgba(255,255,255,.92);
       border:1px solid rgba(125,227,255,.34);
       background: linear-gradient(180deg, rgba(125,227,255,.16), rgba(0,0,0,.18));
       z-index:2;
     }
 
-    /* Reviews */
-    .reviews{display:grid; gap:14px; grid-template-columns: repeat(3, 1fr);}
-    .review{
-      padding:16px;
-      border-radius: var(--radius2);
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadowSoft);
+    /* Quote Form */
+    .formWrap{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items: stretch;
     }
-    .stars{letter-spacing:2px; color: rgba(125,227,255,.92); font-weight:900;}
-    .review p{margin:10px 0 0; color: var(--muted); line-height:1.65; font-size:13px;}
-    .review b{display:block; margin-top:12px; font-size:13px;}
-    .review span{display:block; color: var(--muted2); font-size:12px; margin-top:4px;}
-
-    /* Before/After */
-    .baGrid{display:grid; grid-template-columns: 1fr 1fr; gap:14px;}
-    .baCard{
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      box-shadow: var(--shadowSoft);
-      overflow:hidden;
-    }
-    .baTop{
-      padding:14px 16px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      color: rgba(255,255,255,.86);
-      font-weight:900;
-      font-size:13px;
-    }
-    .bar{
-      height: 180px;
-      position:relative;
-      background:
-        radial-gradient(600px 360px at 20% 30%, rgba(125,227,255,.10), transparent 62%),
-        linear-gradient(180deg, rgba(5,10,20,.10), rgba(5,10,20,.90)),
-        url("./assets/yacht-cleaning.jpg");
-      background-size: cover;
-      background-position:center;
-    }
-    .bar.home{
-      background:
-        radial-gradient(600px 360px at 20% 30%, rgba(125,227,255,.10), transparent 62%),
-        linear-gradient(180deg, rgba(5,10,20,.10), rgba(5,10,20,.90)),
-        url("./assets/home-windows.jpg");
-      background-size: cover;
-      background-position:center;
-    }
-    .bar::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.00) 55%);
-    }
-    .labels{
-      position:absolute;
-      left:14px; right:14px; bottom:14px;
-      display:flex; gap:10px; flex-wrap:wrap;
-      z-index:2;
-    }
-    .label{
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.25);
-      backdrop-filter: blur(10px);
-      color: rgba(255,255,255,.86);
-      font-size:12px;
-      font-weight:900;
-    }
-
-    /* FAQ */
-    details{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      border-radius: 18px;
-      padding: 12px 14px;
-    }
-    details + details{margin-top:10px;}
-    summary{
-      cursor:pointer;
-      font-weight:900;
-      color: rgba(255,255,255,.90);
-      list-style:none;
-    }
-    summary::-webkit-details-marker{display:none;}
-    details p{margin:10px 0 0; color:var(--muted); line-height:1.65; font-size:13px;}
-
-    /* CTA block */
-    .ctaBlock{
+    .formCard{
       padding: 18px;
       border-radius: var(--radius2);
       background: rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
       box-shadow: var(--shadowSoft);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 14px;
-      flex-wrap:wrap;
     }
-    .ctaBlock b{display:block; font-size:16px;}
-    .ctaBlock span{display:block; margin-top:6px; color:var(--muted); font-size:13px; line-height:1.55}
-    .ctaBlock .right{display:flex; gap:10px; flex-wrap:wrap}
+    .formCard h3{margin:0 0 8px; font-size:18px;}
+    .formCard p{margin:0 0 14px; color:var(--muted); line-height:1.6; font-size:13px;}
+    .fields{display:grid; grid-template-columns: 1fr 1fr; gap:12px;}
+    .field{display:flex; flex-direction:column; gap:8px;}
+    label{font-size:12px; font-weight:900; color: rgba(255,255,255,.80); letter-spacing:.2px;}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      color: rgba(255,255,255,.92);
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+    }
+    textarea{min-height: 110px; resize: vertical; grid-column: 1 / -1;}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px;}
+    .note{margin-top:10px; font-size:12px; color: var(--muted2); line-height:1.5;}
+
+    .sideCard{
+      position:relative;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadowSoft);
+      min-height: 340px;
+    }
+    .sideCard .bg{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(600px 360px at 25% 30%, rgba(125,227,255,.12), transparent 62%),
+        linear-gradient(180deg, rgba(5,10,20,.10), rgba(5,10,20,.92)),
+        url("./assets/yacht-cleaning.jpg");
+      background-size: cover;
+      background-position:center;
+      filter:saturate(1.06) contrast(1.02);
+    }
+    .sideCard .overlay{
+      position:absolute; left:16px; right:16px; bottom:16px;
+      padding:14px;
+      border-radius: 18px;
+      background: rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+    }
+    .overlay b{display:block; font-size:14px;}
+    .overlay span{display:block; margin-top:6px; color: rgba(255,255,255,.72); font-size:12px; line-height:1.45;}
+
+    /* Reviews */
+    .reviews{display:grid; gap:14px; grid-template-columns: repeat(3, 1fr);}
+    .review{padding:16px; border-radius: var(--radius2); background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); box-shadow: var(--shadowSoft);}
+    .stars{letter-spacing:2px; color: rgba(125,227,255,.92); font-weight:900;}
+    .review p{margin:10px 0 0; color: var(--muted); line-height:1.65; font-size:13px;}
+    .review b{display:block; margin-top:12px; font-size:13px;}
+    .review span{display:block; color: var(--muted2); font-size:12px; margin-top:4px;}
+
+    /* FAQ */
+    details{border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.05); border-radius: 18px; padding: 12px 14px;}
+    details + details{margin-top:10px;}
+    summary{cursor:pointer; font-weight:900; color: rgba(255,255,255,.90); list-style:none;}
+    summary::-webkit-details-marker{display:none;}
+    details p{margin:10px 0 0; color:var(--muted); line-height:1.65; font-size:13px;}
 
     /* Footer */
-    .footer{
-      padding: 22px 0 34px;
-      color: var(--muted2);
-      font-size: 12px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      margin-top: 10px;
-    }
+    .footer{padding: 22px 0 34px; color: var(--muted2); font-size: 12px; border-top: 1px solid rgba(255,255,255,.08); margin-top: 10px;}
     .footer .fgrid{display:flex; gap:12px; justify-content:space-between; align-items:center; flex-wrap:wrap}
 
     /* Floating buttons */
-    .float{
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-      z-index: 100;
-    }
-    .fab{
-      width: 56px; height: 56px;
-      border-radius: 18px;
-      display:grid; place-items:center;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.08);
-      backdrop-filter: blur(14px);
-      box-shadow: var(--shadowSoft);
-      transition: .2s ease;
-    }
+    .float{position: fixed; right: 16px; bottom: 16px; display:flex; flex-direction:column; gap: 10px; z-index: 100;}
+    .fab{width: 56px; height: 56px; border-radius: 18px; display:grid; place-items:center; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.08); backdrop-filter: blur(14px); box-shadow: var(--shadowSoft); transition: .2s ease;}
     .fab:hover{transform: translateY(-2px); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.10);}
-    .fab.primary{
-      border-color: rgba(125,227,255,.30);
-      background: linear-gradient(180deg, rgba(125,227,255,.18), rgba(255,255,255,.06));
-    }
+    .fab.primary{border-color: rgba(125,227,255,.30); background: linear-gradient(180deg, rgba(125,227,255,.18), rgba(255,255,255,.06));}
     .icon{width: 22px; height: 22px; opacity: .95; fill: currentColor;}
 
     /* Mobile sticky CTA */
-    .mobileCta{
-      position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      z-index: 120;
-      display:none;
-    }
+    .mobileCta{position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 120; display:none;}
     .mobileCta .bar{
-      padding:10px;
-      border-radius: 18px;
+      padding:10px; border-radius: 18px;
       background: rgba(5,10,20,.66);
       border: 1px solid rgba(255,255,255,.10);
       backdrop-filter: blur(16px);
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
       box-shadow: var(--shadowSoft);
     }
-    .mobileCta .bar span{
-      color: rgba(255,255,255,.78);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .2px;
-    }
-    .mobileCta .bar a{
-      padding: 12px 14px;
-      border-radius: 14px;
-      font-weight: 900;
-      font-size: 13px;
-      border: 1px solid rgba(125,227,255,.32);
-      background: rgba(125,227,255,.12);
-      white-space: nowrap;
-    }
+    .mobileCta .bar span{color: rgba(255,255,255,.78); font-size: 12px; font-weight: 900; letter-spacing: .2px;}
+    .mobileCta .bar a{padding: 12px 14px; border-radius: 14px; font-weight: 900; font-size: 13px; border: 1px solid rgba(125,227,255,.32); background: rgba(125,227,255,.12); white-space: nowrap;}
 
-    /* Responsive */
     @media (max-width: 980px){
       .heroGrid{grid-template-columns: 1fr;}
       .heroRight{min-height: 360px;}
       .grid3{grid-template-columns: 1fr;}
       .reviews{grid-template-columns: 1fr;}
-      .baGrid{grid-template-columns: 1fr;}
       .heroBadges{grid-template-columns:1fr;}
       .stats{grid-template-columns:1fr;}
+      .formWrap{grid-template-columns: 1fr;}
+      .fields{grid-template-columns: 1fr;}
       .mobileCta{display:block;}
       body{padding-bottom: 86px;}
     }
@@ -512,8 +337,11 @@
   <header class="topbar" role="banner">
     <div class="wrap">
       <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="#top" aria-label="Home - Glynn Yacht & Home Cleaning Services Jersey">
-          <img src="./assets/logo.jpg" alt="Glynn Yacht & Home Cleaning Services Jersey logo" width="54" height="54" />
+        <a class="brand" href="#top" aria-label="Home">
+          <div class="brandLogo">
+            <!-- Use your preferred logo -->
+            <img src="./assets/logo.png" alt="Glynn Yacht & Home Cleaning Services Jersey logo" />
+          </div>
           <div class="title">
             <b>Glynn Yacht &amp; Home Cleaning</b>
             <span>Cleaning Services • Jersey</span>
@@ -522,11 +350,9 @@
 
         <div class="navlinks">
           <a href="#services">Services</a>
+          <a href="#quote">Quote</a>
           <a href="#reviews">Reviews</a>
-          <a href="#faq">FAQ</a>
-          <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer">
-            Get Quote
-          </a>
+          <a class="btn primary" href="#quote">Get Quote</a>
         </div>
       </nav>
     </div>
@@ -537,52 +363,32 @@
       <div class="heroGrid">
         <div class="card heroLeft reveal">
           <div class="kicker"><span class="dot" aria-hidden="true"></span> Jersey • Yacht, Boat &amp; Home Cleaning</div>
-
           <h1>Ocean-luxury cleaning for yachts and homes.</h1>
-
           <p class="lead">
             Discreet, detail-driven cleaning — from yacht wash-downs and deck detailing to deep home cleans.
             <strong>Premium finish, every time.</strong>
           </p>
 
           <div class="ctaRow">
-            <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer">
-              WhatsApp for a Quote
-            </a>
+            <a class="btn primary" href="#quote">Request a Quote</a>
             <a class="btn" href="tel:+447797799997">Call 07797 799997</a>
             <a class="btn ghost" href="#services">View Services</a>
           </div>
 
           <div class="stats">
-            <div class="stat">
-              <b>Discreet service</b>
-              <span>Trusted for quality spaces and yachts.</span>
-            </div>
-            <div class="stat">
-              <b>Fast response</b>
-              <span>Quick quotes via WhatsApp.</span>
-            </div>
-            <div class="stat">
-              <b>Premium finish</b>
-              <span>Detailing that shows.</span>
-            </div>
+            <div class="stat"><b>Discreet service</b><span>Trusted for quality spaces and yachts.</span></div>
+            <div class="stat"><b>Fast response</b><span>Quick quotes via WhatsApp.</span></div>
+            <div class="stat"><b>Premium finish</b><span>Detailing that shows.</span></div>
           </div>
         </div>
 
-        <div class="card heroRight reveal" aria-label="Hero image showing cleaning service">
+        <div class="card heroRight reveal" aria-label="Hero image">
           <div class="heroImg"></div>
           <div class="heroBadges">
-            <article class="mini">
-              <b>Fast quoting</b>
-              <span>Send location + what you need cleaned.</span>
-            </article>
-            <article class="mini">
-              <b>High standards</b>
-              <span>Careful cleaning for premium surfaces.</span>
-            </article>
+            <article class="mini"><b>Fast quoting</b><span>Send location + what you need cleaned.</span></article>
+            <article class="mini"><b>High standards</b><span>Careful cleaning for premium surfaces.</span></article>
           </div>
         </div>
-
       </div>
     </div>
   </main>
@@ -602,9 +408,7 @@
           <div class="content">
             <h3>Home Cleaning</h3>
             <p>Deep cleans, regular maintenance and end-of-tenancy support across Jersey.</p>
-            <div class="meta">
-              <span class="chip">Deep clean</span><span class="chip">Regular</span><span class="chip">Tenancy</span>
-            </div>
+            <div class="meta"><span class="chip">Deep clean</span><span class="chip">Regular</span><span class="chip">Tenancy</span></div>
           </div>
         </article>
 
@@ -614,9 +418,7 @@
           <div class="content">
             <h3>Yacht &amp; Boat Cleaning</h3>
             <p>Wash-downs, salt removal, decks and detailing — ideal for upkeep or pre-event prep.</p>
-            <div class="meta">
-              <span class="chip">Wash-down</span><span class="chip">Salt removal</span><span class="chip">Deck detailing</span>
-            </div>
+            <div class="meta"><span class="chip">Wash-down</span><span class="chip">Salt removal</span><span class="chip">Deck detailing</span></div>
           </div>
         </article>
 
@@ -625,11 +427,86 @@
           <div class="content">
             <h3>Detail &amp; Finish</h3>
             <p>Premium finishing touches for top standards and returning clients.</p>
-            <div class="meta">
-              <span class="chip">Detailing</span><span class="chip">High standards</span><span class="chip">Careful</span>
-            </div>
+            <div class="meta"><span class="chip">Detailing</span><span class="chip">High standards</span><span class="chip">Careful</span></div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote" aria-labelledby="quote-heading">
+    <div class="wrap">
+      <div class="sectionTitle reveal">
+        <div>
+          <h2 id="quote-heading">Request a Quote</h2>
+          <p>Fill in the form and we’ll open WhatsApp with a ready-to-send message.</p>
+        </div>
+      </div>
+
+      <div class="formWrap">
+        <div class="formCard reveal">
+          <h3>Fast WhatsApp Quote</h3>
+          <p>Tell us what you need. We’ll reply with availability and a tailored quote.</p>
+
+          <form id="quoteForm" autocomplete="on">
+            <div class="fields">
+              <div class="field">
+                <label for="name">Your name *</label>
+                <input id="name" type="text" placeholder="e.g., John" required />
+              </div>
+
+              <div class="field">
+                <label for="area">Area in Jersey *</label>
+                <input id="area" type="text" placeholder="e.g., St. Helier" required />
+              </div>
+
+              <div class="field">
+                <label for="service">Service *</label>
+                <select id="service" required>
+                  <option value="" selected disabled>Select a service</option>
+                  <option>Yacht & Boat Cleaning</option>
+                  <option>Home Cleaning</option>
+                  <option>Detail & Finish</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="frequency">One-off or regular?</label>
+                <select id="frequency">
+                  <option>One-off</option>
+                  <option>Regular</option>
+                </select>
+              </div>
+
+              <div class="field" style="grid-column:1 / -1;">
+                <label for="date">Preferred date/time</label>
+                <input id="date" type="text" placeholder="e.g., Tomorrow afternoon / Saturday 10am" />
+              </div>
+
+              <div class="field" style="grid-column:1 / -1;">
+                <label for="details">Details</label>
+                <textarea id="details" placeholder="e.g., Yacht wash-down + deck detail / 3-bed home deep clean / special requests"></textarea>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="btn primary" type="submit">Send via WhatsApp</button>
+              <a class="btn" href="tel:+447797799997">Call 07797 799997</a>
+            </div>
+
+            <div class="note">
+              * This form doesn’t store data. It only prepares your message and opens WhatsApp.
+            </div>
+          </form>
+        </div>
+
+        <div class="sideCard reveal" aria-hidden="true">
+          <div class="bg"></div>
+          <div class="overlay">
+            <b>Premium ocean finish</b>
+            <span>Discreet service • Detail-driven • Trusted across Jersey</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -666,58 +543,6 @@
     </div>
   </section>
 
-  <section id="beforeafter" aria-labelledby="ba-heading">
-    <div class="wrap">
-      <div class="sectionTitle reveal">
-        <div>
-          <h2 id="ba-heading">Before / After (example)</h2>
-          <p>Visual trust booster. Swap later with real before/after photos.</p>
-        </div>
-      </div>
-
-      <div class="baGrid">
-        <div class="baCard reveal">
-          <div class="baTop">
-            <span>Yacht &amp; Boat</span>
-            <span style="color:rgba(125,227,255,.92); font-weight:900;">Ocean finish</span>
-          </div>
-          <div class="bar">
-            <div class="labels">
-              <span class="label">Before: salt marks</span>
-              <span class="label">After: polished finish</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="baCard reveal">
-          <div class="baTop">
-            <span>Home Cleaning</span>
-            <span style="color:rgba(125,227,255,.92); font-weight:900;">Fresh &amp; spotless</span>
-          </div>
-          <div class="bar home">
-            <div class="labels">
-              <span class="label">Before: dusty areas</span>
-              <span class="label">After: clean &amp; bright</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div style="height:14px"></div>
-
-      <div class="ctaBlock reveal">
-        <div class="left">
-          <b>Want a premium ocean-finish clean?</b>
-          <span>Tap WhatsApp and request your quote — fast response.</span>
-        </div>
-        <div class="right">
-          <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer">WhatsApp Quote</a>
-          <a class="btn" href="tel:+447797799997">Call 07797 799997</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="faq" aria-labelledby="faq-heading">
     <div class="wrap">
       <div class="sectionTitle reveal">
@@ -729,7 +554,7 @@
 
       <details class="reveal">
         <summary>How do I get a quote?</summary>
-        <p>Send a WhatsApp message with location, what needs cleaning, and preferred date/time. We’ll reply with availability and a tailored quote.</p>
+        <p>Fill the form and it opens WhatsApp with a ready message. Or message directly and we’ll reply ASAP.</p>
       </details>
 
       <details class="reveal">
@@ -771,13 +596,14 @@
   <div class="mobileCta" aria-label="Mobile quick quote bar">
     <div class="bar">
       <span>Fast quote on WhatsApp</span>
-      <a href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer">Get Quote</a>
+      <a href="#quote">Get Quote</a>
     </div>
   </div>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
+    // reveal animation
     const els = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
@@ -785,6 +611,44 @@
       });
     }, {threshold: 0.12});
     els.forEach(el=> io.observe(el));
+
+    // WhatsApp Quote Form -> opens message
+    const WA_NUMBER = "447797799997";
+    const form = document.getElementById("quoteForm");
+    const clean = v => (v || "").toString().trim();
+
+    form.addEventListener("submit", (e)=>{
+      e.preventDefault();
+
+      const name = clean(document.getElementById("name").value);
+      const area = clean(document.getElementById("area").value);
+      const service = clean(document.getElementById("service").value);
+      const frequency = clean(document.getElementById("frequency").value);
+      const date = clean(document.getElementById("date").value);
+      const details = clean(document.getElementById("details").value);
+
+      if(!name || !area || !service){
+        alert("Please fill in: Name, Area, and Service.");
+        return;
+      }
+
+      const lines = [
+        "Hi Glynn, I'd like to request a quote:",
+        "",
+        `Name: ${name}`,
+        `Area: ${area}`,
+        `Service: ${service}`,
+        `Booking: ${frequency || "One-off"}`,
+        date ? `Preferred date/time: ${date}` : null,
+        details ? `Details: ${details}` : null,
+        "",
+        "Thank you!"
+      ].filter(Boolean);
+
+      const text = encodeURIComponent(lines.join("\n"));
+      const url = `https://wa.me/${WA_NUMBER}?text=${text}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
   </script>
 </body>
   </html>
