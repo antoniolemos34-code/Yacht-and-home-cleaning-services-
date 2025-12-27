@@ -6,11 +6,11 @@
   <title>Glynn Yacht & Home Cleaning Services Jersey</title>
   <meta name="description" content="Premium yacht, boat and home cleaning services across Jersey. Reliable, discreet, detail-driven cleaning. Request a quote via WhatsApp." />
   <meta name="theme-color" content="#070A12" />
-  <!-- Preconnect for Google Fonts for performance -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- In production, move this CSS to an external file (e.g., style.css) for better caching -->
+
   <style>
     :root{
       --bg:#070A12;
@@ -18,10 +18,10 @@
       --panel2:rgba(255,255,255,.08);
       --stroke:rgba(255,255,255,.12);
       --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.78); /* Increased opacity for better contrast (WCAG) */
+      --muted:rgba(255,255,255,.78);
       --muted2:rgba(255,255,255,.52);
-      --accent:#B89B55;      /* premium gold */
-      --accent2:#6EE7FF;     /* ocean highlight */
+      --accent:#B89B55;
+      --accent2:#6EE7FF;
       --shadow: 0 20px 60px rgba(0,0,0,.55);
       --radius: 18px;
       --radius2: 28px;
@@ -84,12 +84,11 @@
       border-color: rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
     }
-    /* Accessibility: Clear focus indicator for keyboard navigation */
     .navlinks a:focus,
     .btn:focus,
     .fab:focus {
-        outline: 2px solid var(--accent2);
-        outline-offset: 3px;
+      outline: 2px solid var(--accent2);
+      outline-offset: 3px;
     }
 
     .btn{
@@ -183,9 +182,9 @@
     }
     .heroImg{
       position:absolute; inset:0;
-      background: #0a0e1a /* Solid fallback color */ 
+      background: #0a0e1a
         linear-gradient(180deg, rgba(7,10,18,.45), rgba(7,10,18,.85)),
-        url("assets/hero.jpg");
+        url("./assets/hero.jpg");
       background-size: cover;
       background-position: center;
       filter: saturate(1.05);
@@ -288,7 +287,7 @@
       grid-template-columns: 1.2fr .8fr;
       gap: 14px;
     }
-    .gallery .big, .gallery .small{
+    .gallery .big, .tile{
       border-radius: var(--radius2);
       overflow:hidden;
       border: 1px solid rgba(255,255,255,.10);
@@ -298,9 +297,9 @@
       min-height: 240px;
     }
     .gallery .big{
-      background: #0a0e1a /* Fallback */
+      background: #0a0e1a
         linear-gradient(180deg, rgba(7,10,18,.25), rgba(7,10,18,.75)),
-        url("assets/yacht-cleaning.jpg");
+        url("./assets/yacht-cleaning.jpg");
       background-size:cover;
       background-position:center;
     }
@@ -308,31 +307,19 @@
       display:grid;
       grid-template-rows: 1fr 1fr;
       gap: 14px;
-      padding: 0;
-      background: transparent;
-      border: 0;
-      box-shadow:none;
     }
-    .tile{
-      border-radius: var(--radius2);
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      box-shadow: var(--shadow);
-      min-height: 190px;
-      position:relative;
-    }
+    .tile{min-height: 190px;}
     .tile.t1{
-      background: #0a0e1a /* Fallback */
+      background: #0a0e1a
         linear-gradient(180deg, rgba(7,10,18,.20), rgba(7,10,18,.75)),
-        url("assets/home-windows.jpg");
+        url("./assets/home-windows.jpg");
       background-size:cover;
       background-position:center;
     }
     .tile.t2{
-      background: #0a0e1a /* Fallback */
+      background: #0a0e1a
         linear-gradient(180deg, rgba(7,10,18,.20), rgba(7,10,18,.75)),
-        url("assets/carpet-cleaning.jpg");
+        url("./assets/carpet-cleaning.jpg");
       background-size:cover;
       background-position:center;
     }
@@ -373,7 +360,6 @@
     .footer .fgrid{display:flex; gap:12px; justify-content:space-between; align-items:center; flex-wrap:wrap}
     .smallprint{opacity:.85}
 
-    /* Floating WhatsApp */
     .float{
       position: fixed;
       right: 16px;
@@ -398,12 +384,8 @@
       border-color: rgba(110,231,255,.32);
       background: linear-gradient(180deg, rgba(110,231,255,.18), rgba(255,255,255,.06));
     }
-    .icon{
-      width: 22px; height: 22px; opacity: .95;
-      fill: currentColor;
-    }
+    .icon{width: 22px; height: 22px; opacity: .95; fill: currentColor;}
 
-    /* Responsive */
     @media (max-width: 980px){
       .heroGrid{grid-template-columns: 1fr;}
       .heroRight{min-height: 360px;}
@@ -418,12 +400,11 @@
 </head>
 
 <body>
-  <!-- Header (Semantic) -->
   <header class="topbar" role="banner">
     <div class="wrap">
       <nav class="nav" aria-label="Main navigation">
         <a class="brand" href="#top" aria-label="Home - Glynn Yacht & Home Cleaning Services Jersey">
-          <img src="assets/logo.jpg" alt="Glynn Yacht & Home Cleaning Services Jersey logo" width="54" height="54" />
+          <img src="./assets/logo.jpg" alt="Glynn Yacht & Home Cleaning Services Jersey logo" width="54" height="54" />
           <div class="title">
             <b>Glynn Yacht &amp; Home Cleaning</b>
             <span>Cleaning Services • Jersey</span>
@@ -442,7 +423,6 @@
     </div>
   </header>
 
-  <!-- Main Content (Semantic) -->
   <main id="top" class="hero" role="main">
     <div class="wrap">
       <div class="heroGrid">
@@ -503,7 +483,6 @@
     </div>
   </main>
 
-  <!-- Services Section (Semantic) -->
   <section id="services" aria-labelledby="services-heading">
     <div class="wrap">
       <div class="sectionTitle">
@@ -513,18 +492,11 @@
         </div>
       </div>
 
+      <!-- BOAT IN THE MIDDLE -->
       <div class="grid3">
         <article class="svc">
           <div class="img">
-            <img src="assets/yacht-cleaning.jpg" alt="Yacht cleaning and detailing" loading="lazy" width="400" height="300">
-          </div>
-          <h3>Yacht &amp; Boat Cleaning</h3>
-          <p>Exterior wash-downs, salt removal, deck cleaning and detailing. Ideal for regular maintenance or pre-event preparation.</p>
-        </article>
-
-        <article class="svc">
-          <div class="img">
-            <img src="assets/home-windows.jpg" alt="Home cleaning and window cleaning" loading="lazy" width="400" height="300">
+            <img src="./assets/home-windows.jpg" alt="Home cleaning and window cleaning" loading="lazy" width="400" height="300">
           </div>
           <h3>Home Cleaning</h3>
           <p>Reliable home cleaning across Jersey — deep cleans, regular upkeep, end-of-tenancy support and tailored requests.</p>
@@ -532,7 +504,15 @@
 
         <article class="svc">
           <div class="img">
-            <img src="assets/carpet-cleaning.jpg" alt="Carpet and upholstery cleaning" loading="lazy" width="400" height="300">
+            <img src="./assets/yacht-cleaning.jpg" alt="Yacht cleaning and detailing" loading="lazy" width="400" height="300">
+          </div>
+          <h3>Yacht &amp; Boat Cleaning</h3>
+          <p>Exterior wash-downs, salt removal, deck cleaning and detailing. Ideal for regular maintenance or pre-event preparation.</p>
+        </article>
+
+        <article class="svc">
+          <div class="img">
+            <img src="./assets/carpet-cleaning.jpg" alt="Carpet and upholstery cleaning" loading="lazy" width="400" height="300">
           </div>
           <h3>Detail &amp; Finish</h3>
           <p>Detail-focused service for a premium finish — perfect for high standards, sensitive environments and returning clients.</p>
@@ -541,7 +521,6 @@
     </div>
   </section>
 
-  <!-- About Section (Semantic) -->
   <section id="about" aria-labelledby="about-heading">
     <div class="wrap">
       <div class="sectionTitle">
@@ -595,7 +574,6 @@
     </div>
   </section>
 
-  <!-- Gallery Section (Semantic) -->
   <section id="gallery" aria-labelledby="gallery-heading">
     <div class="wrap">
       <div class="sectionTitle">
@@ -628,11 +606,9 @@
           </figure>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Footer (Semantic) -->
   <footer class="footer" role="contentinfo">
     <div class="wrap">
       <div class="fgrid">
@@ -642,7 +618,6 @@
     </div>
   </footer>
 
-  <!-- Floating buttons -->
   <aside class="float" aria-label="Quick contact buttons">
     <a class="fab primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
       <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -659,8 +634,7 @@
   </aside>
 
   <script>
-    // Set current year in footer
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
-  </html>
+</html>
