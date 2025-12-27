@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Harbour & Home | Yacht & Home Cleaning Services in Jersey</title>
+  <title>Glynn Yacht & Home Cleaning Services | Jersey</title>
   <meta name="description" content="Premium yacht, boat and home cleaning services in Jersey. Reliable, discreet and detail-focused cleaning with a professional finish." />
   <meta name="theme-color" content="#071329" />
 
@@ -16,13 +16,11 @@
       --bg:#050a12;
       --bg2:#071329;
       --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.08);
       --line:rgba(255,255,255,.10);
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.70);
       --muted2:rgba(255,255,255,.55);
-      --accent:#c8a85a;          /* modern gold */
-      --accent2:#7c5cff;         /* subtle purple highlight */
+      --accent:#c8a85a;
       --shadow: 0 18px 60px rgba(0,0,0,.45);
       --radius:22px;
       --radius2:28px;
@@ -43,15 +41,18 @@
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
+
     .container{max-width:var(--max);margin:0 auto;padding:0 18px}
     .pill{
       display:inline-flex;gap:10px;align-items:center;
       padding:10px 14px;border:1px solid var(--line);
       background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       border-radius:999px;color:var(--muted);backdrop-filter: blur(10px);
-      font-weight:600;font-size:13px;
+      font-weight:800;font-size:13px;
     }
     .dot{width:8px;height:8px;border-radius:99px;background:var(--accent);box-shadow:0 0 0 6px rgba(200,168,90,.12)}
+
+    /* NAV */
     .nav{
       position:sticky;top:0;z-index:50;
       backdrop-filter: blur(14px);
@@ -59,35 +60,41 @@
       border-bottom:1px solid rgba(255,255,255,.08);
     }
     .nav-inner{
-      height:74px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+      height:84px;display:flex;align-items:center;justify-content:space-between;gap:14px;
     }
+
     .brand{
-      display:flex;align-items:center;gap:12px;min-width:220px;
+      display:flex;align-items:center;gap:12px;min-width:280px;
     }
+
+    /* LOGO (maior e mais nítido) */
     .brand img{
-      width:48px;height:48px;border-radius:14px;object-fit:cover;
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      width:68px;height:68px;
+      border-radius:18px;
+      object-fit:contain;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 12px 35px rgba(0,0,0,.28);
+      padding:6px;
     }
-    .brand .title{
-      display:flex;flex-direction:column;line-height:1.05;
-    }
+    .brand .title{display:flex;flex-direction:column;line-height:1.05}
     .brand .title strong{font-size:14px;letter-spacing:.2px}
-    .brand .title span{font-size:12px;color:var(--muted2);margin-top:2px}
+    .brand .title span{font-size:12px;color:var(--muted2);margin-top:3px}
 
     .links{display:flex;gap:18px;align-items:center}
     .links a{
-      color:var(--muted);font-weight:600;font-size:14px;
+      color:var(--muted);font-weight:800;font-size:14px;
       padding:10px 10px;border-radius:12px;transition:.15s;
     }
     .links a:hover{background:rgba(255,255,255,.06);color:var(--text)}
     .actions{display:flex;gap:10px;align-items:center}
+
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:12px 16px;border-radius:999px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.06);
-      color:var(--text);font-weight:800;font-size:14px;
+      color:var(--text);font-weight:900;font-size:14px;
       box-shadow:0 10px 30px rgba(0,0,0,.25);
       transition:.15s ease;
       white-space:nowrap;
@@ -98,6 +105,7 @@
       background:linear-gradient(180deg, rgba(200,168,90,.22), rgba(200,168,90,.10));
     }
     .btn.ghost{background:transparent}
+
     .menu-btn{
       display:none;
       width:44px;height:44px;border-radius:14px;
@@ -105,29 +113,21 @@
       background:rgba(255,255,255,.06);
       color:var(--text);
     }
-    .menu{
-      display:none;
-      padding:14px 0 18px;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-    .menu a{display:block;padding:12px 18px;color:var(--muted);font-weight:700}
+    .menu{display:none;padding:14px 0 18px;border-top:1px solid rgba(255,255,255,.08)}
+    .menu a{display:block;padding:12px 18px;color:var(--muted);font-weight:900}
     .menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
     .menu .menu-actions{display:flex;gap:10px;padding:12px 18px;flex-wrap:wrap}
+    .menu.open{display:block}
 
     /* HERO */
     .hero{
-      position:relative;
-      min-height:86vh;
-      display:flex;align-items:center;
-      overflow:hidden;
+      position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden;
     }
     .hero::before{
-      content:"";
-      position:absolute;inset:0;
+      content:"";position:absolute;inset:0;z-index:1;
       background:
         linear-gradient(90deg, rgba(5,10,18,.92) 0%, rgba(5,10,18,.62) 45%, rgba(5,10,18,.20) 100%),
         linear-gradient(180deg, rgba(7,19,41,.35), rgba(5,10,18,.70));
-      z-index:1;
     }
     .hero-bg{
       position:absolute;inset:0;
@@ -137,82 +137,71 @@
       filter:saturate(1.05) contrast(1.04);
     }
     .hero-inner{
-      position:relative;z-index:2;
-      padding:56px 0;
-      display:grid;grid-template-columns: 1.25fr .75fr;
+      position:relative;z-index:2;padding:56px 0;
+      display:grid;grid-template-columns: 1.2fr .8fr;
       gap:28px;align-items:center;
     }
+
+    /* Logo grande no HERO */
+    .hero-logo{
+      display:flex;align-items:center;gap:14px;margin-top:10px;
+    }
+    .hero-logo img{
+      width:86px;height:86px;border-radius:22px;object-fit:contain;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 55px rgba(0,0,0,.40);
+      padding:8px;
+    }
+
     .hero h1{
       margin:14px 0 10px;
       font-size:56px;line-height:1.02;letter-spacing:-1.2px;
     }
     .hero p{
-      margin:0;
-      color:var(--muted);
-      font-size:17px;line-height:1.6;
-      max-width:58ch;
+      margin:0;color:var(--muted);
+      font-size:17px;line-height:1.6;max-width:60ch;
     }
-    .hero .cta{
-      margin-top:22px;
-      display:flex;gap:12px;flex-wrap:wrap;align-items:center;
-    }
-    .stats{
-      display:grid;gap:12px;
-    }
+    .cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+    .stats{display:grid;gap:12px}
     .stat{
       border:1px solid rgba(255,255,255,.10);
       border-radius:var(--radius2);
       background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      padding:16px 16px;
-      box-shadow:var(--shadow);
+      padding:16px;box-shadow:var(--shadow);
       backdrop-filter: blur(12px);
     }
     .stat strong{display:block;font-size:14px}
     .stat span{display:block;color:var(--muted2);font-size:13px;margin-top:6px;line-height:1.5}
 
-    /* SECTIONS */
     section{padding:74px 0}
     .section-title{
       display:flex;justify-content:space-between;gap:18px;align-items:flex-end;flex-wrap:wrap;
       margin-bottom:22px;
     }
-    .section-title h2{
-      margin:0;font-size:34px;letter-spacing:-.8px
-    }
+    .section-title h2{margin:0;font-size:34px;letter-spacing:-.8px}
     .section-title p{margin:0;color:var(--muted);max-width:62ch;line-height:1.6}
 
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:18px;
-    }
+    .grid-2{display:grid;grid-template-columns: 1fr 1fr;gap:18px}
     .card{
       border:1px solid rgba(255,255,255,.10);
       background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius:var(--radius2);
-      overflow:hidden;
-      box-shadow:var(--shadow);
+      border-radius:var(--radius2);overflow:hidden;box-shadow:var(--shadow);
     }
-    .card .media{
-      aspect-ratio: 16/10;
-      background:#0b1225;
-      overflow:hidden;
-    }
-    .card .media img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
-    .card .body{padding:18px}
+    .media{aspect-ratio:16/10;background:#0b1225;overflow:hidden}
+    .media img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+    .body{padding:18px}
     .card h3{margin:0 0 8px;font-size:18px;letter-spacing:-.2px}
     .card p{margin:0;color:var(--muted);line-height:1.6;font-size:14px}
     .tagrow{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
     .tag{
-      font-size:12px;font-weight:700;color:rgba(255,255,255,.78);
+      font-size:12px;font-weight:900;color:rgba(255,255,255,.78);
       padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.05);
     }
 
-    .features{
-      display:grid;grid-template-columns: repeat(3, 1fr);
-      gap:14px;margin-top:18px;
-    }
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
     .feature{
       padding:16px;border-radius:var(--radius);
       border:1px solid rgba(255,255,255,.10);
@@ -221,84 +210,58 @@
     .feature strong{display:block;font-size:14px}
     .feature span{display:block;margin-top:8px;color:var(--muted2);font-size:13px;line-height:1.55}
 
-    .gallery{
-      display:grid;grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-    }
-    .gallery .big{aspect-ratio: 16/10}
+    .gallery{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .gallery .big{aspect-ratio:16/10}
     .gallery .stack{display:grid;gap:18px}
-    .gallery .small{aspect-ratio: 16/10}
+    .gallery .small{aspect-ratio:16/10}
     .gallery .big,.gallery .small{
-      border-radius:var(--radius2);
-      overflow:hidden;border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.05);
-      box-shadow:var(--shadow);
+      border-radius:var(--radius2);overflow:hidden;border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.05);box-shadow:var(--shadow);
     }
     .gallery img{width:100%;height:100%;object-fit:cover}
 
-    .contact{
-      display:grid;grid-template-columns: 1.1fr .9fr;
-      gap:18px;align-items:stretch;
-    }
-    .contact .panel{
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}
+    .panel{
       border-radius:var(--radius2);
       border:1px solid rgba(255,255,255,.10);
       background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       box-shadow:var(--shadow);
       padding:20px;
     }
-    .contact h3{margin:0 0 10px;font-size:18px}
-    .contact p{margin:0;color:var(--muted);line-height:1.6}
-    .contact .list{margin-top:14px;display:grid;gap:10px}
-    .contact .item{
+    .panel h3{margin:0 0 10px;font-size:18px}
+    .panel p{margin:0;color:var(--muted);line-height:1.6}
+    .list{margin-top:14px;display:grid;gap:10px}
+    .item{
       display:flex;justify-content:space-between;gap:10px;align-items:center;
-      padding:12px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
-      color:var(--muted);
-      font-weight:700;
+      padding:12px;border-radius:16px;border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);color:var(--muted);font-weight:900;
     }
-    .contact .item small{color:var(--muted2);font-weight:700}
-    .contact .item a{color:var(--text)}
-    .contact .form{
-      display:grid;gap:10px;margin-top:14px;
-    }
+    .item small{color:var(--muted2);font-weight:900}
+    .item a{color:var(--text)}
+    .form{display:grid;gap:10px;margin-top:14px}
     .input{
-      width:100%;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.25);
-      padding:12px 12px;
-      color:var(--text);
-      outline:none;
-      font-family:inherit;
+      width:100%;border-radius:16px;border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.25);padding:12px;color:var(--text);outline:none;font-family:inherit;
     }
     .input::placeholder{color:rgba(255,255,255,.45)}
     textarea.input{min-height:110px;resize:vertical}
     .fineprint{margin-top:10px;color:var(--muted2);font-size:12px;line-height:1.5}
 
     footer{
-      padding:28px 0 90px;
-      border-top:1px solid rgba(255,255,255,.08);
-      color:var(--muted2);
-      font-size:13px;
+      padding:28px 0 90px;border-top:1px solid rgba(255,255,255,.08);
+      color:var(--muted2);font-size:13px;
     }
     footer .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    footer a{color:rgba(255,255,255,.75);font-weight:700}
+    footer a{color:rgba(255,255,255,.75);font-weight:900}
 
-    /* Floating WhatsApp + Call */
     .float{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      display:grid;
-      gap:10px;
-      z-index:80;
+      position:fixed;right:16px;bottom:16px;display:grid;gap:10px;z-index:80;
     }
     .fab{
       width:54px;height:54px;border-radius:18px;
       display:flex;align-items:center;justify-content:center;
       border:1px solid rgba(255,255,255,.10);
-      box-shadow: 0 16px 50px rgba(0,0,0,.45);
+      box-shadow:0 16px 50px rgba(0,0,0,.45);
       backdrop-filter: blur(10px);
       background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
     }
@@ -306,9 +269,7 @@
       border-color: rgba(200,168,90,.35);
       background:linear-gradient(180deg, rgba(200,168,90,.24), rgba(200,168,90,.10));
     }
-    .fab svg{opacity:.92}
 
-    /* Responsive */
     @media (max-width: 940px){
       .hero-inner{grid-template-columns:1fr}
       .stats{grid-template-columns:1fr;max-width:560px}
@@ -318,22 +279,20 @@
       .contact{grid-template-columns:1fr}
       .links,.actions{display:none}
       .menu-btn{display:inline-flex;align-items:center;justify-content:center}
-      .menu.open{display:block}
-      .hero h1{font-size:42px}
+      .hero h1{font-size:40px}
     }
   </style>
 </head>
 
 <body>
-  <!-- NAV -->
   <header class="nav">
     <div class="container">
       <div class="nav-inner">
-        <a class="brand" href="#top" aria-label="Harbour & Home">
-          <img src="logo.jpg" alt="Harbour & Home logo">
+        <a class="brand" href="#top" aria-label="Glynn Yacht & Home Cleaning Services Jersey">
+          <img src="assets/logo.png" alt="Glynn Yacht & Home Cleaning Services Jersey logo">
           <div class="title">
-            <strong>Harbour &amp; Home</strong>
-            <span>Yacht &amp; Home Cleaning • Jersey</span>
+            <strong>Glynn Yacht &amp; Home Cleaning</strong>
+            <span>Cleaning Services • Jersey</span>
           </div>
         </a>
 
@@ -367,7 +326,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main id="top" class="hero">
     <div class="hero-bg" role="img" aria-label="Luxury yacht on Jersey waters"></div>
 
@@ -376,15 +334,19 @@
         <div>
           <div class="pill"><span class="dot"></span> Jersey • Yacht, Boat & Home Cleaning</div>
 
+          <div class="hero-logo">
+            <img src="assets/logo.png" alt="Glynn Yacht & Home Cleaning Services Jersey logo">
+          </div>
+
           <h1>Premium cleaning for yachts and homes in Jersey.</h1>
           <p>
-            Harbour &amp; Home provides reliable, discreet and detail-focused cleaning across Jersey.
+            Glynn Yacht &amp; Home Cleaning Services provides reliable, discreet and detail-focused cleaning across Jersey.
             From yacht wash-downs and deck detailing to home deep cleans — we deliver a clean, premium finish every time.
           </p>
 
           <div class="cta">
             <a class="btn primary" href="#contact">Request a Quote</a>
-            <a class="btn" href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn" href="https://wa.me/447797799997?text=Hi%20Glynn%20Yacht%20%26%20Home%20Cleaning%2C%20I%27d%20like%20a%20quote%20in%20Jersey." target="_blank" rel="noopener">WhatsApp</a>
             <a class="btn ghost" href="#services">View Services</a>
           </div>
         </div>
@@ -407,7 +369,6 @@
     </div>
   </main>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="container">
       <div class="section-title">
@@ -467,13 +428,12 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section id="gallery">
     <div class="container">
       <div class="section-title">
         <div>
           <h2>Gallery</h2>
-          <p>High-quality visuals. Replace with your own photos later for maximum impact.</p>
+          <p>High-quality visuals. Replace with real photos later for even stronger results.</p>
         </div>
       </div>
 
@@ -493,7 +453,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="section-title">
@@ -512,7 +471,7 @@
             <div class="item">
               <div>
                 <small>WhatsApp</small><br>
-                <a href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener">Message on WhatsApp</a>
+                <a href="https://wa.me/447797799997?text=Hi%20Glynn%20Yacht%20%26%20Home%20Cleaning%2C%20I%27d%20like%20a%20quote%20in%20Jersey." target="_blank" rel="noopener">Message on WhatsApp</a>
               </div>
               <span>💬</span>
             </div>
@@ -535,7 +494,7 @@
           </div>
 
           <p class="fineprint">
-            Note: This page avoids public pricing. Quotes depend on vessel/property size and required work.
+            Quotes depend on vessel/property size and required work.
           </p>
         </div>
 
@@ -543,14 +502,15 @@
           <h3>Quick message (copy/paste)</h3>
           <p>Use this template on WhatsApp:</p>
           <div class="form">
-            <textarea class="input" readonly>Hi Harbour & Home, I’d like a quote.
+            <textarea class="input" readonly>Hi Glynn Yacht & Home Cleaning, I’d like a quote.
 
 Type: Yacht / Home
 Location (Jersey): 
 Size / details:
 What needs cleaning:
 Preferred day/time:</textarea>
-            <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20quote.%0A%0AType%3A%20Yacht%20%2F%20Home%0ALocation%20(Jersey)%3A%20%0ASize%20%2F%20details%3A%20%0AWhat%20needs%20cleaning%3A%20%0APreferred%20day%2Ftime%3A%20" target="_blank" rel="noopener">Open WhatsApp with template</a>
+
+            <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%20Yacht%20%26%20Home%20Cleaning%2C%20I%27d%20like%20a%20quote.%0A%0AType%3A%20Yacht%20%2F%20Home%0ALocation%20(Jersey)%3A%20%0ASize%20%2F%20details%3A%20%0AWhat%20needs%20cleaning%3A%20%0APreferred%20day%2Ftime%3A%20" target="_blank" rel="noopener">Open WhatsApp with template</a>
             <a class="btn" href="#top">Back to top</a>
           </div>
         </div>
@@ -560,8 +520,8 @@ Preferred day/time:</textarea>
 
   <footer>
     <div class="container">
-      <div class="row">
-        <div>© <span id="year"></span> Harbour &amp; Home • Jersey</div>
+      <div class="row" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>© <span id="year"></span> Glynn Yacht &amp; Home Cleaning Services | Jersey</div>
         <div>
           <a href="#services">Services</a> ·
           <a href="#gallery">Gallery</a> ·
@@ -571,34 +531,23 @@ Preferred day/time:</textarea>
     </div>
   </footer>
 
-  <!-- Floating buttons -->
   <div class="float" aria-label="Quick contact">
-    <a class="fab primary" href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener" aria-label="WhatsApp">
-      <!-- WhatsApp icon -->
-      <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.6.9 5.1 2.5 7.1L5 29l7.4-1.9c1.1.3 2.3.5 3.6.5 6.6 0 12-5.2 12-11.7C28 8.2 22.6 3 16 3Z" stroke="currentColor" stroke-width="1.6" opacity=".9"/>
-        <path d="M12.6 11.3c-.2-.5-.4-.5-.8-.5h-.7c-.2 0-.5.1-.8.5-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.2 3.2c.2.2 2.2 3.5 5.4 4.8 2.7 1.1 3.2.9 3.8.8.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.7-.4l-1.6-.8c-.4-.2-.7-.2-1 .2-.3.4-.6.8-.8 1-.2.2-.4.2-.8.1-.4-.2-1.5-.6-2.8-1.8-1-.9-1.7-2-1.9-2.3-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.6.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-.8-1.8Z" fill="currentColor" opacity=".95"/>
-      </svg>
+    <a class="fab primary" href="https://wa.me/447797799997?text=Hi%20Glynn%20Yacht%20%26%20Home%20Cleaning%2C%20I%27d%20like%20a%20quote%20in%20Jersey." target="_blank" rel="noopener" aria-label="WhatsApp">
+      <span style="font-size:20px">💬</span>
     </a>
-
     <a class="fab" href="tel:07797799997" aria-label="Call">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M6.6 10.8c1.3 2.6 3.4 4.8 6 6l2-.9c.7-.3 1.6-.1 2.2.4l1.6 1.4c.7.6.7 1.6.1 2.2l-1.1 1.1c-.9.9-2.3 1.2-3.5.8-3.2-1.1-6.3-3.6-8.5-5.9S2.7 12 1.6 8.8c-.4-1.2-.1-2.6.8-3.5L3.5 4.2c.6-.6 1.6-.6 2.2.1l1.4 1.6c.5.6.7 1.5.4 2.2l-.9 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-      </svg>
+      <span style="font-size:20px">📞</span>
     </a>
   </div>
 
   <script>
-    // Mobile menu
     const btn = document.getElementById('menuBtn');
     const menu = document.getElementById('menu');
     btn?.addEventListener('click', () => menu.classList.toggle('open'));
     document.querySelectorAll('#menu a').forEach(a => {
       a.addEventListener('click', () => menu.classList.remove('open'));
     });
-
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
-</html>
+        </html>
