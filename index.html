@@ -18,7 +18,7 @@
       --panel2:rgba(255,255,255,.08);
       --stroke:rgba(255,255,255,.12);
       --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.78);
+      --muted:rgba(255,255,255,.76);
       --muted2:rgba(255,255,255,.52);
       --accent:#B89B55;
       --accent2:#6EE7FF;
@@ -36,16 +36,15 @@
       color:var(--text);
       background:
         radial-gradient(900px 500px at 15% 10%, rgba(110,231,255,.12), transparent 55%),
-        radial-gradient(900px 600px at 85% 0%, rgba(184,155,85,.14), transparent 55%),
+        radial-gradient(900px 600px at 85% 0%, rgba(184,155,85,.16), transparent 55%),
         radial-gradient(900px 600px at 50% 90%, rgba(110,231,255,.08), transparent 55%),
         var(--bg);
       overflow-x:hidden;
     }
-
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    .wrap{max-width:var(--max); margin:0 auto; padding: 0 18px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
     .topbar{
       position:sticky; top:0; z-index:50;
       background: rgba(7,10,18,.62);
@@ -54,81 +53,67 @@
     }
     .nav{
       display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding: 12px 0;
+      gap:14px; padding:12px 0;
     }
-
-    .brand{display:flex; align-items:center; gap:12px; min-width: 240px;}
+    .brand{display:flex; align-items:center; gap:12px;}
     .brand img{
-      width:54px; height:54px; border-radius: 14px;
+      width:54px; height:54px; border-radius:14px;
       object-fit:cover;
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
       background: rgba(255,255,255,.05);
     }
     .brand .title{display:flex; flex-direction:column; line-height:1.1}
-    .brand .title b{font-size: 15px; letter-spacing:.2px}
-    .brand .title span{font-size: 12px; color: var(--muted2)}
+    .brand .title b{font-size:15px; letter-spacing:.2px}
+    .brand .title span{font-size:12px; color:var(--muted2)}
 
     .navlinks{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
     .navlinks a{
       padding:10px 12px;
-      border-radius: 999px;
-      color: var(--muted);
-      border: 1px solid transparent;
-      transition: .2s ease;
-      font-size: 13px;
-      font-weight: 600;
+      border-radius:999px;
+      color:var(--muted);
+      border:1px solid transparent;
+      transition:.2s ease;
+      font-size:13px;
+      font-weight:700;
     }
     .navlinks a:hover{
-      color: var(--text);
-      border-color: rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
+      color:var(--text);
+      border-color:rgba(255,255,255,.10);
+      background:rgba(255,255,255,.05);
     }
-    .navlinks a:focus,
-    .btn:focus,
-    .fab:focus {
-      outline: 2px solid var(--accent2);
-      outline-offset: 3px;
+    .navlinks a:focus, .btn:focus, .fab:focus{
+      outline:2px solid var(--accent2);
+      outline-offset:3px;
     }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap:10px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.06);
       color: var(--text);
       font-weight: 800;
-      font-size: 14px;
-      letter-spacing: .2px;
-      transition: .2s ease;
+      font-size:14px;
+      letter-spacing:.2px;
+      transition:.2s ease;
       white-space:nowrap;
     }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.20); background: rgba(255,255,255,.08); }
+    .btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.20); background:rgba(255,255,255,.08);}
     .btn.primary{
-      border-color: rgba(184,155,85,.45);
-      background: linear-gradient(180deg, rgba(184,155,85,.22), rgba(184,155,85,.10));
+      border-color: rgba(184,155,85,.50);
+      background: linear-gradient(180deg, rgba(184,155,85,.26), rgba(184,155,85,.10));
     }
-    .btn.primary:hover{ border-color: rgba(184,155,85,.65); }
+    .btn.primary:hover{border-color: rgba(184,155,85,.72);}
+    .btn.ghost{
+      border-color: rgba(110,231,255,.22);
+      background: rgba(110,231,255,.08);
+    }
 
-    .tagrow{display:flex; gap:10px; flex-wrap:wrap; margin: 18px 0 10px;}
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      color: var(--muted);
-      font-weight: 700;
-      font-size: 13px;
-    }
-    .dot{width:10px;height:10px;border-radius:999px;background: rgba(110,231,255,.9); box-shadow: 0 0 0 4px rgba(110,231,255,.14);}
-
-    .hero{
-      position:relative;
-      padding: 26px 0 18px;
-    }
+    /* HERO */
+    .hero{padding:26px 0 16px;}
     .heroGrid{
       display:grid;
       grid-template-columns: 1.05fr .95fr;
@@ -137,208 +122,190 @@
     }
     .card{
       background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.10);
       border-radius: var(--radius2);
       box-shadow: var(--shadow);
       overflow:hidden;
+      position:relative;
     }
-    .heroLeft{padding: 26px;}
+    .heroLeft{padding:26px;}
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
       color: var(--muted);
       font-weight: 800;
-      font-size: 13px;
+      font-size:13px;
     }
+    .dot{width:10px;height:10px;border-radius:999px;background:rgba(110,231,255,.95); box-shadow:0 0 0 4px rgba(110,231,255,.14);}
     h1{
-      margin: 14px 0 12px;
-      font-size: clamp(34px, 4.3vw, 54px);
-      line-height: 1.02;
-      letter-spacing: -1px;
+      margin:14px 0 12px;
+      font-size: clamp(34px, 4.3vw, 56px);
+      line-height:1.02;
+      letter-spacing:-1px;
     }
     .lead{
-      margin: 0 0 18px;
-      font-size: 16px;
-      line-height: 1.6;
+      margin:0 0 18px;
+      font-size:16px;
+      line-height:1.65;
       color: var(--muted);
-      max-width: 60ch;
+      max-width: 62ch;
     }
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top: 16px;}
-    .subRow{margin-top: 14px; color: var(--muted2); font-size: 13px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;}
-    .subRow span{display:inline-flex; gap:8px; align-items:center}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:16px;}
+    .trustRow{
+      margin-top: 16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      color: var(--muted2);
+      font-size: 13px;
+    }
     .pill{
       padding: 8px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
     }
 
-    .heroRight{
-      position:relative;
-      min-height: 420px;
-    }
+    .heroRight{min-height: 440px;}
     .heroImg{
       position:absolute; inset:0;
-      background: #0a0e1a
-        linear-gradient(180deg, rgba(7,10,18,.45), rgba(7,10,18,.85)),
+      background:
+        linear-gradient(180deg, rgba(7,10,18,.25), rgba(7,10,18,.88)),
         url("./assets/hero.jpg");
       background-size: cover;
       background-position: center;
-      filter: saturate(1.05);
+      filter: saturate(1.07) contrast(1.02);
     }
-    .heroBadge{
-      position:absolute;
-      left:16px; right:16px; bottom:16px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
+    .heroBadges{
+      position:absolute; left:16px; right:16px; bottom:16px;
+      display:grid; grid-template-columns:1fr 1fr; gap:12px;
     }
     .mini{
-      padding: 14px;
-      border-radius: 18px;
+      padding:14px;
+      border-radius:18px;
       background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.12);
       backdrop-filter: blur(10px);
     }
-    .mini b{display:block; font-size: 14px;}
-    .mini span{display:block; color: var(--muted); font-size: 12px; margin-top: 6px; line-height:1.4;}
+    .mini b{display:block; font-size:14px;}
+    .mini span{display:block; margin-top:6px; color:var(--muted); font-size:12px; line-height:1.4;}
 
     section{padding: 26px 0;}
     .sectionTitle{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap;
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:14px; flex-wrap:wrap;
       margin-bottom: 14px;
     }
     .sectionTitle h2{
       margin:0;
-      font-size: clamp(22px, 2.4vw, 30px);
+      font-size: clamp(22px, 2.4vw, 32px);
       letter-spacing: -.5px;
     }
-    .sectionTitle p{margin:0; color: var(--muted); max-width: 68ch; line-height:1.55;}
+    .sectionTitle p{margin:0; color: var(--muted); max-width: 72ch; line-height:1.6;}
 
-    .grid3{
-      display:grid; gap:14px;
-      grid-template-columns: repeat(3, 1fr);
-    }
+    /* SERVICES (PRO) */
+    .grid3{display:grid; gap:14px; grid-template-columns: repeat(3, 1fr);}
     .svc{
-      padding: 16px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      overflow:hidden;
-    }
-    .svc .img{
-      height: 160px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.10);
-      overflow:hidden;
-      background: rgba(0,0,0,.25);
-      margin-bottom: 12px;
-    }
-    .svc .img img{width:100%;height:100%;object-fit:cover}
-    .svc h3{margin: 8px 0 8px; font-size: 16px;}
-    .svc p{margin:0;color: var(--muted); font-size: 13px; line-height:1.55}
-
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items:stretch;
-    }
-    .about{
-      padding: 18px;
-      border-radius: var(--radius2);
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
-    }
-    .about h3{margin:0 0 10px; font-size: 16px;}
-    .about p{margin:0; color: var(--muted); line-height:1.65; font-size: 14px;}
-    .list{
-      margin: 12px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:10px;
-    }
-    .list li{
-      display:flex; gap:10px; align-items:flex-start;
-      padding: 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .check{
-      width:20px;height:20px;border-radius:999px;
-      display:inline-grid; place-items:center;
-      background: rgba(110,231,255,.16);
-      border: 1px solid rgba(110,231,255,.22);
-      color: rgba(255,255,255,.92);
-      flex:0 0 auto;
-      margin-top: 1px;
-    }
-
-    .gallery{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 14px;
-    }
-    .gallery .big, .tile{
       border-radius: var(--radius2);
       overflow:hidden;
-      border: 1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
       box-shadow: var(--shadow);
       position:relative;
-      min-height: 240px;
+      min-height: 320px;
+      isolation:isolate;
     }
-    .gallery .big{
-      background: #0a0e1a
-        linear-gradient(180deg, rgba(7,10,18,.25), rgba(7,10,18,.75)),
-        url("./assets/yacht-cleaning.jpg");
-      background-size:cover;
-      background-position:center;
+    .svc::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(7,10,18,.10), rgba(7,10,18,.90));
+      z-index:1;
     }
-    .gallery .small{
-      display:grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 14px;
+    .svc .bg{
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.06) contrast(1.02);
+      z-index:0;
+      transform: scale(1.03);
     }
-    .tile{min-height: 190px;}
-    .tile.t1{
-      background: #0a0e1a
-        linear-gradient(180deg, rgba(7,10,18,.20), rgba(7,10,18,.75)),
-        url("./assets/home-windows.jpg");
-      background-size:cover;
-      background-position:center;
-    }
-    .tile.t2{
-      background: #0a0e1a
-        linear-gradient(180deg, rgba(7,10,18,.20), rgba(7,10,18,.75)),
-        url("./assets/carpet-cleaning.jpg");
-      background-size:cover;
-      background-position:center;
-    }
-    .overlay{
-      position:absolute; inset:auto 16px 16px 16px;
-      padding: 14px 14px;
+    .svc .content{
+      position:absolute; left:16px; right:16px; bottom:16px;
+      padding:14px;
       border-radius: 18px;
-      background: rgba(0,0,0,.35);
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.12);
       backdrop-filter: blur(10px);
+      z-index:2;
     }
-    .overlay b{display:block; font-size: 14px;}
-    .overlay span{display:block; margin-top:6px; color: rgba(255,255,255,.72); font-size: 12px; line-height:1.35}
+    .svc h3{margin:0 0 6px; font-size:16px;}
+    .svc p{margin:0; color: rgba(255,255,255,.78); font-size:13px; line-height:1.45;}
+    .svc .meta{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;}
+    .chip{
+      padding:7px 9px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.82);
+      font-size:12px;
+      font-weight:700;
+    }
+    .svc.featured{
+      border-color: rgba(184,155,85,.35);
+      box-shadow: 0 22px 70px rgba(0,0,0,.62);
+      min-height: 360px;
+    }
+    .svc.featured .badge{
+      position:absolute; top:14px; left:14px;
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+      color: rgba(255,255,255,.92);
+      border:1px solid rgba(184,155,85,.45);
+      background: linear-gradient(180deg, rgba(184,155,85,.26), rgba(0,0,0,.20));
+      z-index:2;
+    }
 
-    .contactCard{
+    /* WHY */
+    .whyGrid{display:grid; gap:14px; grid-template-columns: repeat(3, 1fr);}
+    .why{
+      padding:16px;
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .why b{display:block; font-size:15px;}
+    .why span{display:block; margin-top:8px; color:var(--muted); font-size:13px; line-height:1.6;}
+
+    /* FAQ */
+    details{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      border-radius: 18px;
+      padding: 12px 14px;
+    }
+    details + details{margin-top:10px;}
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      color: rgba(255,255,255,.90);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none;}
+    details p{margin:10px 0 0; color:var(--muted); line-height:1.65; font-size:13px;}
+
+    /* FINAL CTA */
+    .ctaBlock{
       padding: 18px;
       border-radius: var(--radius2);
       background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.10);
       box-shadow: var(--shadow);
       display:flex;
       align-items:center;
@@ -346,9 +313,9 @@
       gap: 14px;
       flex-wrap:wrap;
     }
-    .contactCard .left b{display:block; font-size: 16px;}
-    .contactCard .left span{display:block; color: var(--muted); font-size: 13px; margin-top: 6px; line-height:1.5}
-    .contactCard .right{display:flex; gap: 10px; flex-wrap:wrap}
+    .ctaBlock b{display:block; font-size:16px;}
+    .ctaBlock span{display:block; margin-top:6px; color:var(--muted); font-size:13px; line-height:1.55}
+    .ctaBlock .right{display:flex; gap:10px; flex-wrap:wrap}
 
     .footer{
       padding: 22px 0 34px;
@@ -358,8 +325,8 @@
       margin-top: 10px;
     }
     .footer .fgrid{display:flex; gap:12px; justify-content:space-between; align-items:center; flex-wrap:wrap}
-    .smallprint{opacity:.85}
 
+    /* Floating buttons */
     .float{
       position: fixed;
       right: 16px;
@@ -386,15 +353,13 @@
     }
     .icon{width: 22px; height: 22px; opacity: .95; fill: currentColor;}
 
+    /* Responsive */
     @media (max-width: 980px){
       .heroGrid{grid-template-columns: 1fr;}
       .heroRight{min-height: 360px;}
       .grid3{grid-template-columns: 1fr;}
-      .split{grid-template-columns: 1fr;}
-      .gallery{grid-template-columns: 1fr;}
-      .gallery .small{grid-template-columns: 1fr; grid-template-rows:auto; gap:14px;}
-      .tile{min-height: 220px;}
-      .brand{min-width: unset;}
+      .whyGrid{grid-template-columns: 1fr;}
+      .heroBadges{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -413,8 +378,8 @@
 
         <div class="navlinks">
           <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#gallery">Gallery</a>
+          <a href="#why">Why us</a>
+          <a href="#faq">FAQ</a>
           <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer">
             Get Your Free Quote
           </a>
@@ -427,54 +392,40 @@
     <div class="wrap">
       <div class="heroGrid">
         <div class="card heroLeft">
-          <div class="kicker">
-            <span class="dot" aria-hidden="true"></span>
-            Jersey • Yacht, Boat &amp; Home Cleaning
-          </div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span> Jersey • Yacht, Boat &amp; Home Cleaning</div>
 
           <h1>Premium cleaning for yachts and homes in Jersey.</h1>
 
           <p class="lead">
-            Glynn Yacht &amp; Home Cleaning Services Jersey delivers reliable, discreet and detail-driven cleaning.
-            From yacht wash-downs and deck detailing to home deep cleans — we bring a premium finish every time.
-            <strong style="color: var(--accent); font-weight: 600;">Trusted by yacht owners &amp; homeowners across Jersey.</strong>
+            Reliable, discreet and detail-driven cleaning — from yacht wash-downs and deck detailing to home deep cleans.
+            <strong style="color: var(--accent); font-weight: 700;">Premium finish, every time.</strong>
           </p>
 
           <div class="ctaRow">
             <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer">
-              Get Your Free Instant Quote
+              WhatsApp for a Quote
             </a>
-            <a class="btn" href="tel:+447797799997">
-              Call 07797 799997
-            </a>
-            <a class="btn" href="#services">
-              View Services
-            </a>
+            <a class="btn" href="tel:+447797799997">Call 07797 799997</a>
+            <a class="btn ghost" href="#services">View Services</a>
           </div>
 
-          <div class="subRow">
-            <span class="pill">✔ One-off &amp; regular cleaning</span>
+          <div class="trustRow">
+            <span class="pill">✔ One-off &amp; regular</span>
             <span class="pill">✔ Interior &amp; exterior</span>
-            <span class="pill">✔ Professional, discreet service</span>
-          </div>
-
-          <div class="tagrow" aria-label="Service highlights">
-            <span class="tag">🛥️ Yacht &amp; Boat Cleaning</span>
-            <span class="tag">🏠 Home Cleaning</span>
-            <span class="tag">✨ Detail-focused finish</span>
+            <span class="pill">✔ Discreet &amp; professional</span>
           </div>
         </div>
 
         <div class="card heroRight" aria-label="Hero image showing cleaning service">
           <div class="heroImg"></div>
-          <div class="heroBadge">
+          <div class="heroBadges">
             <article class="mini">
-              <b>Message or Call</b>
-              <span>Fast response via WhatsApp or phone.</span>
+              <b>Fast response</b>
+              <span>Message on WhatsApp — we reply ASAP.</span>
             </article>
             <article class="mini">
-              <b>Clean &amp; Finish</b>
-              <span>Premium result — every time.</span>
+              <b>Premium finish</b>
+              <span>Detail-focused results for high standards.</span>
             </article>
           </div>
         </div>
@@ -487,84 +438,106 @@
     <div class="wrap">
       <div class="sectionTitle">
         <div>
-          <h2 id="services-heading">Our Services</h2>
-          <p>Clear, premium service presentation. Request a quote and we tailor the job to your needs.</p>
+          <h2 id="services-heading">Services</h2>
+          <p>Choose a service and request a tailored quote. Yacht &amp; boat cleaning is featured (in the middle) as requested.</p>
         </div>
       </div>
 
-      <!-- BOAT IN THE MIDDLE -->
+      <!-- BOAT = MIDDLE + FEATURED -->
       <div class="grid3">
         <article class="svc">
-          <div class="img">
-            <img src="./assets/home-windows.jpg" alt="Home cleaning and window cleaning" loading="lazy" width="400" height="300">
+          <div class="bg" style='background-image:url("./assets/home-windows.jpg");'></div>
+          <div class="content">
+            <h3>Home Cleaning</h3>
+            <p>Deep cleans, regular maintenance and end-of-tenancy support across Jersey.</p>
+            <div class="meta">
+              <span class="chip">Deep clean</span><span class="chip">Regular</span><span class="chip">Tenancy</span>
+            </div>
           </div>
-          <h3>Home Cleaning</h3>
-          <p>Reliable home cleaning across Jersey — deep cleans, regular upkeep, end-of-tenancy support and tailored requests.</p>
+        </article>
+
+        <article class="svc featured">
+          <span class="badge">Featured</span>
+          <div class="bg" style='background-image:url("./assets/yacht-cleaning.jpg");'></div>
+          <div class="content">
+            <h3>Yacht &amp; Boat Cleaning</h3>
+            <p>Exterior wash-downs, salt removal, decks and detailing — ideal for regular upkeep or pre-event prep.</p>
+            <div class="meta">
+              <span class="chip">Wash-down</span><span class="chip">Salt removal</span><span class="chip">Deck detailing</span>
+            </div>
+          </div>
         </article>
 
         <article class="svc">
-          <div class="img">
-            <img src="./assets/yacht-cleaning.jpg" alt="Yacht cleaning and detailing" loading="lazy" width="400" height="300">
+          <div class="bg" style='background-image:url("./assets/carpet-cleaning.jpg");'></div>
+          <div class="content">
+            <h3>Detail &amp; Finish</h3>
+            <p>Premium finishing touches for top standards and repeat clients.</p>
+            <div class="meta">
+              <span class="chip">Detailing</span><span class="chip">High standards</span><span class="chip">Careful</span>
+            </div>
           </div>
-          <h3>Yacht &amp; Boat Cleaning</h3>
-          <p>Exterior wash-downs, salt removal, deck cleaning and detailing. Ideal for regular maintenance or pre-event preparation.</p>
-        </article>
-
-        <article class="svc">
-          <div class="img">
-            <img src="./assets/carpet-cleaning.jpg" alt="Carpet and upholstery cleaning" loading="lazy" width="400" height="300">
-          </div>
-          <h3>Detail &amp; Finish</h3>
-          <p>Detail-focused service for a premium finish — perfect for high standards, sensitive environments and returning clients.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="about" aria-labelledby="about-heading">
+  <section id="why" aria-labelledby="why-heading">
     <div class="wrap">
       <div class="sectionTitle">
         <div>
-          <h2 id="about-heading">How it works</h2>
-          <p>Simple process: send details, confirm availability, then we clean and deliver a premium finish.</p>
+          <h2 id="why-heading">Why choose us</h2>
+          <p>We keep it simple: professional service, discreet approach, and a premium finish.</p>
         </div>
       </div>
 
-      <div class="split">
-        <article class="about">
-          <h3>What we focus on</h3>
-          <p>
-            We take pride in careful, consistent results — whether it’s a yacht deck, an interior cabin, or a home deep clean.
-            Every job is handled with respect, discretion and attention to detail.
-          </p>
-
-          <ul class="list">
-            <li><span class="check">✓</span> Fast quote via WhatsApp — send location + what you need cleaned.</li>
-            <li><span class="check">✓</span> Flexible scheduling for one-off or regular maintenance.</li>
-            <li><span class="check">✓</span> Premium finish with careful handling of surfaces and materials.</li>
-          </ul>
-        </article>
-
-        <article class="about">
-          <h3>Service area</h3>
-          <p>
-            Based in Jersey (Channel Islands). We cover yacht/boat cleaning and home cleaning across the island.
-          </p>
-
-          <ul class="list">
-            <li><span class="check">✓</span> Yacht &amp; boat cleaning (wash-downs, decks, detailing).</li>
-            <li><span class="check">✓</span> Home cleaning (deep clean, regular, end-of-tenancy).</li>
-            <li><span class="check">✓</span> Request a tailored quote — no fixed pricing on the website.</li>
-          </ul>
-        </article>
+      <div class="whyGrid">
+        <div class="why">
+          <b>Discreet &amp; reliable</b>
+          <span>Respectful service for high-value spaces, homes and yachts.</span>
+        </div>
+        <div class="why">
+          <b>Detail-driven results</b>
+          <span>We focus on the finishing touches that make the difference.</span>
+        </div>
+        <div class="why">
+          <b>Fast quoting</b>
+          <span>Send details on WhatsApp and get a quick response.</span>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-heading">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h2 id="faq-heading">FAQ</h2>
+          <p>Quick answers. If you’re ready, message on WhatsApp for a quote.</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>How do I get a quote?</summary>
+        <p>Message on WhatsApp with the location, what needs cleaning, and preferred date/time. We’ll reply with availability and a tailored quote.</p>
+      </details>
+
+      <details>
+        <summary>Do you offer regular cleaning?</summary>
+        <p>Yes — one-off and regular bookings are available for both homes and yachts/boats.</p>
+      </details>
+
+      <details>
+        <summary>What areas do you cover?</summary>
+        <p>We cover Jersey (Channel Islands). For yachts/boats, we arrange based on your marina/berth location.</p>
+      </details>
 
       <div style="height:14px"></div>
 
-      <div class="contactCard">
+      <div class="ctaBlock">
         <div class="left">
-          <b>Ready for a spotless finish?</b>
-          <span>Tap WhatsApp to message instantly or call directly. We’ll reply as soon as possible.</span>
+          <b>Ready for a premium clean?</b>
+          <span>Tap WhatsApp and request your quote now — fast response.</span>
         </div>
         <div class="right">
           <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer">WhatsApp Quote</a>
@@ -574,46 +547,11 @@
     </div>
   </section>
 
-  <section id="gallery" aria-labelledby="gallery-heading">
-    <div class="wrap">
-      <div class="sectionTitle">
-        <div>
-          <h2 id="gallery-heading">Gallery</h2>
-          <p>Visual examples for yacht and home cleaning. (You can replace these images later with real client photos.)</p>
-        </div>
-      </div>
-
-      <div class="gallery">
-        <figure class="big" role="group" aria-labelledby="fig1-label">
-          <div class="overlay">
-            <b id="fig1-label">Yacht &amp; Boat Cleaning</b>
-            <span>Wash-downs • Salt removal • Deck clean &amp; detail</span>
-          </div>
-        </figure>
-
-        <div class="small">
-          <figure class="tile t1" role="group" aria-labelledby="fig2-label">
-            <div class="overlay">
-              <b id="fig2-label">Home Cleaning</b>
-              <span>Deep cleans • Regular • End-of-tenancy</span>
-            </div>
-          </figure>
-          <figure class="tile t2" role="group" aria-labelledby="fig3-label">
-            <div class="overlay">
-              <b id="fig3-label">Detail &amp; Finish</b>
-              <span>Premium finishing touches for top standards</span>
-            </div>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <footer class="footer" role="contentinfo">
     <div class="wrap">
       <div class="fgrid">
-        <div class="smallprint">© <span id="y"></span> Glynn Yacht &amp; Home Cleaning Services Jersey</div>
-        <div class="smallprint">WhatsApp: 07797 799997 | Call: 07797 799997 | Serving Jersey, Channel Islands</div>
+        <div>© <span id="y"></span> Glynn Yacht &amp; Home Cleaning Services Jersey</div>
+        <div>WhatsApp: 07797 799997 • Serving Jersey, Channel Islands</div>
       </div>
     </div>
   </footer>
