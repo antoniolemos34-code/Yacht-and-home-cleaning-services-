@@ -3,30 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Harbour & Home | Yacht & Home Cleaning Services (Jersey)</title>
-  <meta name="description" content="Premium yacht, boat and home cleaning services across Jersey. Discreet, reliable and detail-focused. Free quote via WhatsApp." />
-  <meta name="theme-color" content="#0b1230" />
+  <meta name="description" content="Premium yacht, boat and home cleaning services across Jersey. Free quote via WhatsApp." />
+  <meta name="theme-color" content="#172b7a" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --nav:#132a78;
-      --nav2:#0b1c57;
-      --accent:#b14cff;
-      --accent2:#f29bff;
-      --bg:#070b1b;
-      --card:rgba(255,255,255,.08);
-      --line:rgba(255,255,255,.12);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.70);
-      --muted2:rgba(255,255,255,.55);
-      --shadow:0 22px 60px rgba(0,0,0,.45);
-      --r:18px;
-      --r2:26px;
+      --nav1:#223a9b;
+      --nav2:#1a2f84;
+      --pink:#e94cff;     /* linha rosa */
+      --btn:#c36bff;      /* botão roxo */
+      --btn2:#a855f7;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.78);
       --max:1180px;
     }
 
@@ -36,314 +29,210 @@
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(900px 520px at 12% 0%, rgba(177,76,255,.18), transparent 60%),
-        radial-gradient(900px 520px at 88% 0%, rgba(56,189,248,.14), transparent 60%),
-        linear-gradient(180deg, #050818, var(--bg));
+      background:#06102a;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
 
-    /* HEADER */
+    /* ===== TOP BAR (igual ao exemplo) ===== */
     header{
-      position:sticky; top:0; z-index:100;
-      background: linear-gradient(180deg, rgba(19,42,120,.96), rgba(11,28,87,.88));
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,.10);
-    }
-    .topline{
-      height:3px;
-      background: linear-gradient(90deg, rgba(177,76,255,.0), rgba(177,76,255,1), rgba(242,155,255,.85), rgba(177,76,255,1), rgba(177,76,255,.0));
-      opacity:.95;
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px;
-      padding:14px 0;
+      position:sticky; top:0; z-index:50;
+      background:linear-gradient(180deg,var(--nav1),var(--nav2));
+      border-bottom:3px solid var(--pink);
+      box-shadow:0 10px 40px rgba(0,0,0,.35);
     }
 
+    .bar{
+      height:92px;
+      display:grid;
+      grid-template-columns: 260px 1fr 280px;
+      align-items:center;
+      gap:10px;
+    }
+
+    /* Logo à esquerda */
     .brand{
-      display:flex; align-items:center; gap:12px;
+      display:flex;
+      align-items:center;
+      gap:12px;
       min-width: 240px;
     }
     .brand img{
-      width:78px; height:78px;
-      border-radius:18px;
+      width:76px;
+      height:76px;
+      border-radius:16px;
       object-fit:cover;
       background:#fff;
       padding:6px;
-      border:1px solid rgba(255,255,255,.18);
-      box-shadow: 0 18px 44px rgba(0,0,0,.35);
     }
-    .brand .t1{font-weight:900;letter-spacing:.2px;line-height:1}
-    .brand .t2{font-size:12px;color:rgba(255,255,255,.72);margin-top:4px}
+    .brand .title{
+      font-weight:900;
+      letter-spacing:.2px;
+      line-height:1.05;
+      font-size:16px;
+    }
+    .brand .sub{
+      font-size:12px;
+      color:rgba(255,255,255,.78);
+      margin-top:4px;
+      font-weight:700;
+    }
 
-    nav.links{display:flex;align-items:center;gap:10px}
-    nav.links a{
-      font-weight:800;
-      color:rgba(255,255,255,.90);
+    /* Menu ao centro */
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:22px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    nav a{
       padding:10px 12px;
       border-radius:999px;
+      color:rgba(255,255,255,.92);
     }
-    nav.links a:hover{background:rgba(255,255,255,.08)}
+    nav a:hover{background:rgba(255,255,255,.10)}
 
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
+    /* Botão à direita */
+    .cta{
+      display:flex;
+      justify-content:flex-end;
       gap:10px;
-      padding:12px 16px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 18px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.08);
-      color:#fff;
       font-weight:900;
-      box-shadow: 0 14px 34px rgba(0,0,0,.24);
-      transition: transform .12s ease, background .12s ease;
-      white-space:nowrap;
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(255,255,255,.10);
+      box-shadow:0 10px 26px rgba(0,0,0,.25);
       cursor:pointer;
     }
-    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.11)}
-    .btn.primary{
-      background: linear-gradient(180deg, #ffffff, rgba(255,255,255,.92));
-      color:#0b1c57;
-      border:1px solid rgba(255,255,255,.35);
-    }
-    .btn.purple{
-      background: linear-gradient(180deg, rgba(177,76,255,.98), rgba(177,76,255,.70));
-      border:1px solid rgba(242,155,255,.45);
+    .btn.pink{
+      background:linear-gradient(180deg,var(--btn),var(--btn2));
+      border:1px solid rgba(255,255,255,.24);
     }
 
-    /* HERO */
-    .hero{padding:22px 0 26px}
-    .heroCard{
-      border-radius:var(--r2);
-      overflow:hidden;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:var(--shadow);
-    }
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      min-height: 560px;
-    }
-    .heroLeft{
-      padding:40px 34px;
-      background:
-        radial-gradient(900px 520px at 12% 15%, rgba(242,155,255,.10), transparent 60%),
-        linear-gradient(180deg, rgba(11,28,87,.58), rgba(11,18,48,.30));
-    }
-    h1{
-      margin:0 0 10px;
-      font-size:52px;
-      letter-spacing:-1.1px;
-      line-height:1.03;
-    }
-    .sub{
-      margin:0;
-      color:var(--muted);
-      line-height:1.70;
-      max-width: 64ch;
-      font-size:15px;
-    }
-    .heroActions{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top:18px;
-    }
-    .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.07);
-      font-weight:800;
-      font-size:13px;
-      color:rgba(255,255,255,.88);
-    }
-
-    .heroRight{
+    /* ===== HERO (igual ao exemplo) ===== */
+    .hero{
       position:relative;
+      min-height: calc(100vh - 92px);
+      display:flex;
+      align-items:center;
+      overflow:hidden;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.52)),
+        linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.10) 100%),
         url("assets/hero.jpg");
       background-size:cover;
       background-position:center;
     }
-    .heroRight:after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(820px 520px at 70% 25%, rgba(177,76,255,.28), transparent 58%),
-        radial-gradient(820px 520px at 20% 80%, rgba(56,189,248,.16), transparent 55%);
-      pointer-events:none;
+
+    .heroInner{
+      width:100%;
+      padding:56px 0;
     }
 
-    /* SECTIONS */
-    section{padding:26px 0}
-    .head{
-      display:flex;justify-content:space-between;align-items:flex-end;gap:12px;
-      margin-bottom:14px;
-    }
-    .head h2{margin:0;font-size:28px;letter-spacing:-.6px}
-    .head p{margin:0;color:var(--muted);line-height:1.6;max-width:75ch}
-
-    .panel{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:var(--r2);
-      overflow:hidden;
-      box-shadow: 0 14px 34px rgba(0,0,0,.24);
-    }
-    .pad{padding:22px}
-    .welcome{
+    .heroGrid{
       display:grid;
       grid-template-columns: 1.05fr .95fr;
-      gap:12px;
-      align-items:stretch;
-    }
-    .welcomeImg{
-      min-height: 260px;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.58)),
-        url("assets/welcome.jpg");
-      background-size:cover;
-      background-position:center;
+      gap:18px;
+      align-items:center;
     }
 
-    .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-    .card{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:var(--r);
-      padding:16px;
-    }
-    .icon{
-      width:42px;height:42px;border-radius:14px;
-      display:inline-flex;align-items:center;justify-content:center;
-      background:rgba(177,76,255,.16);
-      border:1px solid rgba(242,155,255,.25);
-      margin-bottom:10px;
+    .heroText h1{
+      margin:0 0 10px;
+      font-size:64px;
+      line-height:1.02;
+      letter-spacing:-1.2px;
       font-weight:900;
+      text-shadow:0 14px 34px rgba(0,0,0,.35);
     }
-    .card h3{margin:0 0 8px;font-size:16px}
-    .card p{margin:0;color:var(--muted);line-height:1.6}
+    .heroText p{
+      margin:0;
+      font-size:15px;
+      color:var(--muted);
+      line-height:1.7;
+      font-weight:700;
+      max-width:62ch;
+      text-shadow:0 14px 34px rgba(0,0,0,.35);
+    }
 
-    /* Services blocks */
-    .feature{
-      display:grid;
-      grid-template-columns:1fr 1fr;
+    .heroBtns{
+      margin-top:18px;
+      display:flex;
       gap:12px;
-      align-items:stretch;
-      margin-top:12px;
+      flex-wrap:wrap;
     }
-    .featImg{
-      min-height: 320px;
-      border-radius:var(--r2);
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: 0 14px 34px rgba(0,0,0,.24);
-      background-size:cover;
-      background-position:center;
-    }
-    .img1{background-image:linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.58)), url("assets/service1.jpg")}
-    .img2{background-image:linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.58)), url("assets/service3.jpg")}
 
-    /* Gallery */
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
+    /* “Boat image” à direita – estilo do exemplo */
+    .boatCard{
+      justify-self:end;
+      width:min(520px, 100%);
+      height:520px;
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.18);
+      background:
+        radial-gradient(600px 400px at 50% 20%, rgba(233,76,255,.22), transparent 60%),
+        rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+      box-shadow:0 30px 80px rgba(0,0,0,.45);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+    }
+    .boatCard img{
+      width:100%;
+      height:100%;
+      border-radius:20px;
+      object-fit:cover;
+      opacity:.95;
+    }
+
+    /* Floating WhatsApp */
+    .float{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:60;
+      display:flex;
+      flex-direction:column;
       gap:10px;
     }
-    .g{
-      border-radius:var(--r);
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
-      min-height:200px;
-      box-shadow: 0 14px 34px rgba(0,0,0,.20);
-    }
-    .g img{width:100%;height:100%;object-fit:cover;display:block}
-    .g1{grid-column:span 7}
-    .g2{grid-column:span 5}
-    .g3,.g4,.g5{grid-column:span 4}
-
-    /* Contact */
-    .contact{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      align-items:stretch;
-    }
-    form{display:grid;gap:10px}
-    label{font-size:12px;color:var(--muted2);font-weight:800}
-    input,select,textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-      color:rgba(255,255,255,.92);
-      outline:none;
-      font-family:inherit;
-    }
-    textarea{min-height:110px;resize:vertical}
-    .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .hint{font-size:12px;color:var(--muted2);margin-top:-4px;line-height:1.5}
-    .bigline{
-      display:flex;flex-direction:column;gap:10px;
-      padding:18px;border-radius:var(--r);
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.05);
-    }
-    .bigline a{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 14px;border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-      font-weight:900;
-    }
-    .bigline a:hover{background:rgba(255,255,255,.09)}
-    .small{color:var(--muted2);font-size:12px;line-height:1.55}
-
-    footer{
-      padding:24px 0 34px;
-      border-top:1px solid rgba(255,255,255,.10);
-      color:var(--muted2);
-      font-size:13px;
-    }
-    .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
-
-    /* Floating actions */
-    .float{
-      position:fixed; right:16px; bottom:16px; z-index:120;
-      display:flex; flex-direction:column; gap:10px;
-    }
     .fab{
-      width:56px;height:56px;border-radius:18px;
-      display:inline-flex;align-items:center;justify-content:center;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: 0 22px 60px rgba(0,0,0,.40);
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       font-weight:900;
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(0,0,0,.25);
+      box-shadow:0 22px 60px rgba(0,0,0,.45);
     }
-    .fab.wa{
-      background: linear-gradient(180deg, rgba(177,76,255,.98), rgba(177,76,255,.70));
-      border:1px solid rgba(242,155,255,.45);
-      color:#fff;
-    }
+    .fab.wa{background:linear-gradient(180deg,var(--btn),var(--btn2))}
 
     /* MOBILE */
     @media (max-width: 980px){
-      nav.links{display:none}
-      .heroGrid{grid-template-columns:1fr;min-height:auto}
-      .heroRight{min-height: 320px}
-      h1{font-size:40px}
-      .welcome,.feature,.contact{grid-template-columns:1fr}
-      .cards3{grid-template-columns:1fr}
-      .row2{grid-template-columns:1fr}
-      .g1,.g2,.g3,.g4,.g5{grid-column:span 12}
-      .brand img{width:58px;height:58px;border-radius:16px;padding:5px}
-      .welcomeImg{min-height:180px}
+      .bar{
+        grid-template-columns: 1fr auto;
+        height:auto;
+        padding:12px 0;
+      }
+      nav{display:none;}
+      .cta{justify-content:flex-end}
+      .hero{min-height: calc(100vh - 86px)}
+      .heroGrid{grid-template-columns:1fr}
+      .boatCard{
+        height:320px;
+        justify-self:stretch;
+      }
+      .heroText h1{font-size:44px}
     }
   </style>
 </head>
@@ -351,313 +240,90 @@
 <body>
 
 <header>
-  <div class="topline"></div>
   <div class="wrap">
-    <div class="nav">
+    <div class="bar">
       <a class="brand" href="#top" aria-label="Harbour & Home">
         <img src="logo.jpg" alt="Harbour & Home logo">
         <div>
-          <div class="t1">Harbour &amp; Home</div>
-          <div class="t2">Yacht &amp; Home Cleaning Services</div>
+          <div class="title">Harbour &amp; Home</div>
+          <div class="sub">Yacht &amp; Home Cleaning Services</div>
         </div>
       </a>
 
-      <nav class="links" aria-label="Main">
+      <nav aria-label="Main navigation">
         <a href="#top">Home</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact Us</a>
         <a href="#gallery">Gallery</a>
       </nav>
 
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div class="cta">
         <a class="btn" href="tel:+447797799997">Call</a>
-        <a class="btn purple" target="_blank" rel="noopener"
-           href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20free%20quote%20for%20cleaning%20in%20Jersey.%0A%0AService%3A%20(Yacht%2FHome)%0ALocation%3A%20%0APreferred%20date%2Ftime%3A%20%0A">
-          WhatsApp
-        </a>
-        <a class="btn primary" href="#contact">Free Quote Here!</a>
+        <a class="btn pink" href="#contact">Free Quote Here!</a>
       </div>
     </div>
   </div>
 </header>
 
 <main id="top" class="hero">
-  <div class="wrap">
-    <div class="heroCard">
-      <div class="heroGrid">
-        <div class="heroLeft">
-          <h1>Set Sail Sparkling</h1>
-          <p class="sub">
-            Premium cleaning for yachts, boats and homes across Jersey.
-            Discreet, reliable and detail-focused — built for owners who want a flawless finish.
-          </p>
+  <div class="wrap heroInner">
+    <div class="heroGrid">
+      <div class="heroText">
+        <h1>Set Sail Sparkling</h1>
+        <p>
+          Premium yacht, boat and home cleaning services across Jersey.
+          Discreet, reliable and detail-focused — finished to a high standard.
+        </p>
 
-          <div class="heroActions">
-            <a class="btn primary" href="#contact">Book a Free Quote Here!</a>
-            <a class="btn" href="tel:+447797799997">Call: 07797 799997</a>
-            <a class="btn purple" target="_blank" rel="noopener"
-               href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20free%20quote%20for%20cleaning%20in%20Jersey.%0A%0AService%3A%20(Yacht%2FHome)%0ALocation%3A%20%0APreferred%20date%2Ftime%3A%20%0A">
-              WhatsApp Quote
-            </a>
-          </div>
-
-          <div class="pills">
-            <span class="pill">📍 Jersey, Channel Islands</span>
-            <span class="pill">🛥️ Yacht &amp; Boat Cleaning</span>
-            <span class="pill">🏠 Home Cleaning</span>
-          </div>
+        <div class="heroBtns">
+          <a class="btn pink" href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20free%20quote%20for%20cleaning%20in%20Jersey.%0A%0AService%3A%20(Yacht%2FHome)%0ALocation%3A%20%0APreferred%20date%2Ftime%3A%20%0A" target="_blank" rel="noopener">
+            Book a Free Quote Here!
+          </a>
+          <a class="btn" href="tel:+447797799997">Call: 07797 799997</a>
         </div>
+      </div>
 
-        <div class="heroRight" aria-label="Yacht on ocean"></div>
+      <!-- “Imagem do barco” no mesmo sítio do exemplo -->
+      <div class="boatCard" aria-label="Boat visual">
+        <!-- usa a mesma hero.jpg ou troca por assets/yacht-1.jpg se preferires -->
+        <img src="assets/yacht-1.jpg" alt="Yacht view">
       </div>
     </div>
   </div>
 </main>
 
-<section style="padding-bottom:0">
+<!-- Secções (opcional, mas deixei âncoras a funcionar) -->
+<section id="services" style="padding:26px 0; background:#071331;">
   <div class="wrap">
-    <div class="welcome">
-      <div class="panel">
-        <div class="pad">
-          <div class="head" style="margin-bottom:10px">
-            <div>
-              <h2>Welcome to Harbour &amp; Home</h2>
-              <p>Professional cleaning in Jersey for yachts, boats and homes — finished to a premium standard.</p>
-            </div>
-          </div>
-
-          <p style="margin:0;color:var(--muted);line-height:1.75">
-            We specialise in clean, polished results with strong attention to detail.
-            From marine wash-downs and exterior detailing to reliable home cleaning, we keep everything presentable,
-            fresh and ready — without the hassle.
-          </p>
-
-          <div class="cards3">
-            <div class="card">
-              <div class="icon">⭐</div>
-              <h3>Premium finish</h3>
-              <p>Spotless, polished and well-presented — every visit.</p>
-            </div>
-            <div class="card">
-              <div class="icon">🕒</div>
-              <h3>Flexible scheduling</h3>
-              <p>We work around marina access and home availability.</p>
-            </div>
-            <div class="card">
-              <div class="icon">🧼</div>
-              <h3>Detail-driven</h3>
-              <p>We focus on the small details that make the difference.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel welcomeImg" aria-label="Welcome image"></div>
-    </div>
+    <h2 style="margin:0 0 10px;font-size:28px;letter-spacing:-.6px">Services</h2>
+    <p style="margin:0;color:rgba(255,255,255,.78);line-height:1.7;max-width:75ch">
+      Yacht &amp; Boat Cleaning • Home Cleaning • Regular maintenance and deep cleans across Jersey.
+    </p>
   </div>
 </section>
 
-<section id="services">
+<section id="gallery" style="padding:26px 0;background:#050d22;">
   <div class="wrap">
-    <div class="head">
-      <div>
-        <h2>Services</h2>
-        <p>Clear, premium service presentation (no pricing shown). Request a quote and we tailor the job to your needs.</p>
-      </div>
-    </div>
-
-    <div class="feature">
-      <div class="panel">
-        <div class="pad">
-          <h3 style="margin:0 0 8px">Yacht &amp; Boat Cleaning</h3>
-          <p style="margin:0;color:var(--muted);line-height:1.70">
-            Exterior wash-downs, salt removal, deck cleaning and detailing.
-            Ideal for regular maintenance or pre-arrival presentation.
-          </p>
-          <div style="height:14px"></div>
-          <a class="btn primary" href="#contact">Request a Free Quote</a>
-        </div>
-      </div>
-      <div class="featImg img1" aria-label="Marine cleaning image"></div>
-    </div>
-
-    <div class="feature" style="margin-top:12px">
-      <div class="featImg img2" aria-label="Home cleaning image"></div>
-      <div class="panel">
-        <div class="pad">
-          <h3 style="margin:0 0 8px">Home Cleaning</h3>
-          <p style="margin:0;color:var(--muted);line-height:1.70">
-            Reliable home cleaning across Jersey: regular cleans, deep cleans and property refreshes.
-            Perfect for busy households and move in / move out support.
-          </p>
-          <div style="height:14px"></div>
-          <a class="btn primary" href="#contact">Request a Free Quote</a>
-        </div>
-      </div>
-    </div>
-
+    <h2 style="margin:0 0 10px;font-size:28px;letter-spacing:-.6px">Gallery</h2>
+    <p style="margin:0;color:rgba(255,255,255,.78);line-height:1.7;max-width:75ch">
+      Images load locally from your GitHub assets folder.
+    </p>
   </div>
 </section>
 
-<section id="gallery">
+<section id="contact" style="padding:26px 0;background:#071331;">
   <div class="wrap">
-    <div class="head">
-      <div>
-        <h2>Gallery</h2>
-        <p>Images are loaded locally from your GitHub folder (stable — no external links).</p>
-      </div>
-    </div>
-
-    <div class="gallery">
-      <div class="g g1"><img src="assets/gallery1.jpg" alt="Yacht deck detailing"></div>
-      <div class="g g2"><img src="assets/gallery2.jpg" alt="Yacht exterior cleaning"></div>
-      <div class="g g3"><img src="assets/gallery3.jpg" alt="Home cleaning"></div>
-      <div class="g g4"><img src="assets/yacht-1.jpg" alt="Yacht maintenance clean"></div>
-      <div class="g g5"><img src="assets/home-1.jpg" alt="Home interior clean"></div>
-    </div>
+    <h2 style="margin:0 0 10px;font-size:28px;letter-spacing:-.6px">Contact Us</h2>
+    <p style="margin:0;color:rgba(255,255,255,.78);line-height:1.7;max-width:75ch">
+      Tap WhatsApp to request a free quote.
+    </p>
   </div>
 </section>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <h2>Contact Us</h2>
-        <p>Fill the form to generate a WhatsApp message, or contact us directly.</p>
-      </div>
-    </div>
-
-    <div class="contact">
-      <div class="panel">
-        <div class="pad">
-          <h3 style="margin:0 0 10px">Free quote request</h3>
-          <p class="small" style="margin:0 0 14px">
-            Fastest option: WhatsApp. Include service type, size/details, location in Jersey and preferred date/time.
-          </p>
-
-          <form id="quoteForm">
-            <div class="row2">
-              <div>
-                <label for="fname">First name</label>
-                <input id="fname" placeholder="First name" required>
-              </div>
-              <div>
-                <label for="lname">Last name</label>
-                <input id="lname" placeholder="Last name" required>
-              </div>
-            </div>
-
-            <div class="row2">
-              <div>
-                <label for="phone">Phone</label>
-                <input id="phone" placeholder="Your phone number">
-              </div>
-              <div>
-                <label for="service">Service</label>
-                <select id="service" required>
-                  <option value="Yacht/Boat Cleaning">Yacht/Boat Cleaning</option>
-                  <option value="Home Cleaning">Home Cleaning</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="row2">
-              <div>
-                <label for="size">Boat size / Home size</label>
-                <input id="size" placeholder="e.g. 32ft / 3-bed house">
-              </div>
-              <div>
-                <label for="date">Preferred date/time</label>
-                <input id="date" placeholder="e.g. Saturday afternoon">
-              </div>
-            </div>
-
-            <div>
-              <label for="location">Location in Jersey</label>
-              <input id="location" placeholder="e.g. St Helier / Gorey / St Brelade" required>
-            </div>
-
-            <div>
-              <label for="details">Details</label>
-              <textarea id="details" placeholder="Tell us what you need cleaned (areas, condition, access, etc.)"></textarea>
-              <div class="hint">When you submit, WhatsApp opens with the message ready to send.</div>
-            </div>
-
-            <button class="btn purple" type="submit">Send via WhatsApp</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="panel">
-        <div class="pad">
-          <h3 style="margin:0 0 10px">Direct contact</h3>
-          <div class="bigline">
-            <a href="tel:+447797799997">
-              <span>📞 Call</span>
-              <span>07797 799997</span>
-            </a>
-
-            <a target="_blank" rel="noopener"
-               href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20free%20quote%20for%20cleaning%20in%20Jersey.%0A%0AService%3A%20(Yacht%2FHome)%0ALocation%3A%20%0APreferred%20date%2Ftime%3A%20%0A">
-              <span>💬 WhatsApp</span>
-              <span>Message now</span>
-            </a>
-          </div>
-
-          <p class="small" style="margin:12px 0 0">
-            Jersey, Channel Islands • Yacht/Boat Cleaning • Home Cleaning
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div>© <span id="year"></span> Harbour &amp; Home — Yacht &amp; Home Cleaning Services (Jersey)</div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<div class="float" aria-label="Quick actions">
-  <a class="fab wa" target="_blank" rel="noopener"
-     href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20free%20quote%20for%20cleaning%20in%20Jersey.">
-    💬
-  </a>
+<div class="float">
+  <a class="fab wa" href="https://wa.me/447797799997?text=Hi%20Harbour%20%26%20Home%2C%20I%27d%20like%20a%20free%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener">💬</a>
   <a class="fab" href="tel:+447797799997">📞</a>
 </div>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  document.getElementById('quoteForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const v = (id) => (document.getElementById(id).value || '').trim();
-
-    const msg =
-`Hi Harbour & Home, I'd like a free quote for cleaning in Jersey.
-
-Name: ${v('fname')} ${v('lname')}
-Phone: ${v('phone')}
-Service: ${v('service')}
-Boat/Home size: ${v('size')}
-Location: ${v('location')}
-Preferred date/time: ${v('date')}
-
-More details:
-${v('details')}`;
-
-    const url = "https://wa.me/447797799997?text=" + encodeURIComponent(msg);
-    window.open(url, "_blank");
-  });
-</script>
 
 </body>
 </html>
