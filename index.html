@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Glynn Yacht & Home Cleaning Services Jersey</title>
   <meta name="description" content="Premium yacht, boat and home cleaning services across Jersey. Reliable, discreet, detail-driven cleaning. Request a quote via WhatsApp." />
   <meta name="theme-color" content="#070A12" />
-
+  <!-- Preconnect for Google Fonts for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <!-- In production, move this CSS to an external file (e.g., style.css) for better caching -->
   <style>
     :root{
       --bg:#070A12;
@@ -18,7 +18,7 @@
       --panel2:rgba(255,255,255,.08);
       --stroke:rgba(255,255,255,.12);
       --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.68);
+      --muted:rgba(255,255,255,.78); /* Increased opacity for better contrast (WCAG) */
       --muted2:rgba(255,255,255,.52);
       --accent:#B89B55;      /* premium gold */
       --accent2:#6EE7FF;     /* ocean highlight */
@@ -83,6 +83,13 @@
       color: var(--text);
       border-color: rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
+    }
+    /* Accessibility: Clear focus indicator for keyboard navigation */
+    .navlinks a:focus,
+    .btn:focus,
+    .fab:focus {
+        outline: 2px solid var(--accent2);
+        outline-offset: 3px;
     }
 
     .btn{
@@ -176,7 +183,7 @@
     }
     .heroImg{
       position:absolute; inset:0;
-      background:
+      background: #0a0e1a /* Solid fallback color */ 
         linear-gradient(180deg, rgba(7,10,18,.45), rgba(7,10,18,.85)),
         url("assets/hero.jpg");
       background-size: cover;
@@ -291,7 +298,7 @@
       min-height: 240px;
     }
     .gallery .big{
-      background:
+      background: #0a0e1a /* Fallback */
         linear-gradient(180deg, rgba(7,10,18,.25), rgba(7,10,18,.75)),
         url("assets/yacht-cleaning.jpg");
       background-size:cover;
@@ -316,14 +323,14 @@
       position:relative;
     }
     .tile.t1{
-      background:
+      background: #0a0e1a /* Fallback */
         linear-gradient(180deg, rgba(7,10,18,.20), rgba(7,10,18,.75)),
         url("assets/home-windows.jpg");
       background-size:cover;
       background-position:center;
     }
     .tile.t2{
-      background:
+      background: #0a0e1a /* Fallback */
         linear-gradient(180deg, rgba(7,10,18,.20), rgba(7,10,18,.75)),
         url("assets/carpet-cleaning.jpg");
       background-size:cover;
@@ -411,32 +418,32 @@
 </head>
 
 <body>
-  <!-- Top bar -->
-  <div class="topbar">
+  <!-- Header (Semantic) -->
+  <header class="topbar" role="banner">
     <div class="wrap">
-      <div class="nav">
-        <a class="brand" href="#top" aria-label="Home">
-          <img src="assets/logo.jpg" alt="Glynn Yacht & Home Cleaning Services Jersey logo" />
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Home - Glynn Yacht & Home Cleaning Services Jersey">
+          <img src="assets/logo.jpg" alt="Glynn Yacht & Home Cleaning Services Jersey logo" width="54" height="54" />
           <div class="title">
             <b>Glynn Yacht &amp; Home Cleaning</b>
             <span>Cleaning Services • Jersey</span>
           </div>
         </a>
 
-        <div class="navlinks" aria-label="Site navigation">
+        <div class="navlinks">
           <a href="#services">Services</a>
           <a href="#about">About</a>
           <a href="#gallery">Gallery</a>
-          <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener">
-            WhatsApp Quote
+          <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer">
+            Get Your Free Quote
           </a>
         </div>
-      </div>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <!-- Hero -->
-  <main id="top" class="hero">
+  <!-- Main Content (Semantic) -->
+  <main id="top" class="hero" role="main">
     <div class="wrap">
       <div class="heroGrid">
         <div class="card heroLeft">
@@ -450,11 +457,12 @@
           <p class="lead">
             Glynn Yacht &amp; Home Cleaning Services Jersey delivers reliable, discreet and detail-driven cleaning.
             From yacht wash-downs and deck detailing to home deep cleans — we bring a premium finish every time.
+            <strong style="color: var(--accent); font-weight: 600;">Trusted by yacht owners &amp; homeowners across Jersey.</strong>
           </p>
 
           <div class="ctaRow">
-            <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener">
-              Request a Quote (WhatsApp)
+            <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer">
+              Get Your Free Instant Quote
             </a>
             <a class="btn" href="tel:+447797799997">
               Call 07797 799997
@@ -470,24 +478,24 @@
             <span class="pill">✔ Professional, discreet service</span>
           </div>
 
-          <div class="tagrow" aria-label="Highlights">
+          <div class="tagrow" aria-label="Service highlights">
             <span class="tag">🛥️ Yacht &amp; Boat Cleaning</span>
             <span class="tag">🏠 Home Cleaning</span>
             <span class="tag">✨ Detail-focused finish</span>
           </div>
         </div>
 
-        <div class="card heroRight" aria-label="Hero image">
+        <div class="card heroRight" aria-label="Hero image showing cleaning service">
           <div class="heroImg"></div>
           <div class="heroBadge">
-            <div class="mini">
+            <article class="mini">
               <b>Message or Call</b>
               <span>Fast response via WhatsApp or phone.</span>
-            </div>
-            <div class="mini">
+            </article>
+            <article class="mini">
               <b>Clean &amp; Finish</b>
               <span>Premium result — every time.</span>
-            </div>
+            </article>
           </div>
         </div>
 
@@ -495,56 +503,56 @@
     </div>
   </main>
 
-  <!-- Services -->
-  <section id="services">
+  <!-- Services Section (Semantic) -->
+  <section id="services" aria-labelledby="services-heading">
     <div class="wrap">
       <div class="sectionTitle">
         <div>
-          <h2>Services</h2>
-          <p>Clear, premium service presentation (no pricing shown). Request a quote and we tailor the job to your needs.</p>
+          <h2 id="services-heading">Our Services</h2>
+          <p>Clear, premium service presentation. Request a quote and we tailor the job to your needs.</p>
         </div>
       </div>
 
       <div class="grid3">
-        <div class="svc">
+        <article class="svc">
           <div class="img">
-            <img src="assets/yacht-cleaning.jpg" alt="Yacht cleaning and detailing" loading="lazy">
+            <img src="assets/yacht-cleaning.jpg" alt="Yacht cleaning and detailing" loading="lazy" width="400" height="300">
           </div>
           <h3>Yacht &amp; Boat Cleaning</h3>
           <p>Exterior wash-downs, salt removal, deck cleaning and detailing. Ideal for regular maintenance or pre-event preparation.</p>
-        </div>
+        </article>
 
-        <div class="svc">
+        <article class="svc">
           <div class="img">
-            <img src="assets/home-windows.jpg" alt="Home cleaning and window cleaning" loading="lazy">
+            <img src="assets/home-windows.jpg" alt="Home cleaning and window cleaning" loading="lazy" width="400" height="300">
           </div>
           <h3>Home Cleaning</h3>
           <p>Reliable home cleaning across Jersey — deep cleans, regular upkeep, end-of-tenancy support and tailored requests.</p>
-        </div>
+        </article>
 
-        <div class="svc">
+        <article class="svc">
           <div class="img">
-            <img src="assets/carpet-cleaning.jpg" alt="Carpet and upholstery cleaning" loading="lazy">
+            <img src="assets/carpet-cleaning.jpg" alt="Carpet and upholstery cleaning" loading="lazy" width="400" height="300">
           </div>
           <h3>Detail &amp; Finish</h3>
           <p>Detail-focused service for a premium finish — perfect for high standards, sensitive environments and returning clients.</p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about">
+  <!-- About Section (Semantic) -->
+  <section id="about" aria-labelledby="about-heading">
     <div class="wrap">
       <div class="sectionTitle">
         <div>
-          <h2>How it works</h2>
+          <h2 id="about-heading">How it works</h2>
           <p>Simple process: send details, confirm availability, then we clean and deliver a premium finish.</p>
         </div>
       </div>
 
       <div class="split">
-        <div class="about">
+        <article class="about">
           <h3>What we focus on</h3>
           <p>
             We take pride in careful, consistent results — whether it’s a yacht deck, an interior cabin, or a home deep clean.
@@ -556,9 +564,9 @@
             <li><span class="check">✓</span> Flexible scheduling for one-off or regular maintenance.</li>
             <li><span class="check">✓</span> Premium finish with careful handling of surfaces and materials.</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="about">
+        <article class="about">
           <h3>Service area</h3>
           <p>
             Based in Jersey (Channel Islands). We cover yacht/boat cleaning and home cleaning across the island.
@@ -569,89 +577,90 @@
             <li><span class="check">✓</span> Home cleaning (deep clean, regular, end-of-tenancy).</li>
             <li><span class="check">✓</span> Request a tailored quote — no fixed pricing on the website.</li>
           </ul>
-        </div>
+        </article>
       </div>
 
       <div style="height:14px"></div>
 
       <div class="contactCard">
         <div class="left">
-          <b>Need a quote?</b>
+          <b>Ready for a spotless finish?</b>
           <span>Tap WhatsApp to message instantly or call directly. We’ll reply as soon as possible.</span>
         </div>
         <div class="right">
-          <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer">WhatsApp Quote</a>
           <a class="btn" href="tel:+447797799997">Call 07797 799997</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery">
+  <!-- Gallery Section (Semantic) -->
+  <section id="gallery" aria-labelledby="gallery-heading">
     <div class="wrap">
       <div class="sectionTitle">
         <div>
-          <h2>Gallery</h2>
+          <h2 id="gallery-heading">Gallery</h2>
           <p>Visual examples for yacht and home cleaning. (You can replace these images later with real client photos.)</p>
         </div>
       </div>
 
       <div class="gallery">
-        <div class="big">
+        <figure class="big" role="group" aria-labelledby="fig1-label">
           <div class="overlay">
-            <b>Yacht &amp; Boat Cleaning</b>
+            <b id="fig1-label">Yacht &amp; Boat Cleaning</b>
             <span>Wash-downs • Salt removal • Deck clean &amp; detail</span>
           </div>
-        </div>
+        </figure>
 
         <div class="small">
-          <div class="tile t1">
+          <figure class="tile t1" role="group" aria-labelledby="fig2-label">
             <div class="overlay">
-              <b>Home Cleaning</b>
+              <b id="fig2-label">Home Cleaning</b>
               <span>Deep cleans • Regular • End-of-tenancy</span>
             </div>
-          </div>
-          <div class="tile t2">
+          </figure>
+          <figure class="tile t2" role="group" aria-labelledby="fig3-label">
             <div class="overlay">
-              <b>Detail &amp; Finish</b>
+              <b id="fig3-label">Detail &amp; Finish</b>
               <span>Premium finishing touches for top standards</span>
             </div>
-          </div>
+          </figure>
         </div>
       </div>
 
     </div>
   </section>
 
-  <div class="footer">
+  <!-- Footer (Semantic) -->
+  <footer class="footer" role="contentinfo">
     <div class="wrap">
       <div class="fgrid">
         <div class="smallprint">© <span id="y"></span> Glynn Yacht &amp; Home Cleaning Services Jersey</div>
-        <div class="smallprint">WhatsApp: 07797 799997</div>
+        <div class="smallprint">WhatsApp: 07797 799997 | Call: 07797 799997 | Serving Jersey, Channel Islands</div>
       </div>
     </div>
-  </div>
+  </footer>
 
   <!-- Floating buttons -->
-  <div class="float" aria-label="Quick contact">
-    <a class="fab primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener" aria-label="WhatsApp">
-      <!-- WhatsApp-like chat icon -->
+  <aside class="float" aria-label="Quick contact buttons">
+    <a class="fab primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20cleaning%20in%20Jersey." target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
       <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 3c-5 0-9 3.7-9 8.3 0 1.7.6 3.3 1.7 4.6L4 21l5.3-1.4c.9.3 1.8.4 2.7.4 5 0 9-3.7 9-8.3S17 3 12 3zm0 15.1c-.8 0-1.7-.1-2.4-.4l-.6-.2-3.1.8.8-3-.4-.5c-1-1.1-1.5-2.5-1.5-3.9C4.8 7 8 4.9 12 4.9s7.2 2.1 7.2 5.9-3.2 7.3-7.2 7.3z"/>
         <path d="M10.4 8.2c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.4.1-.5.3-.2.2-.7.7-.7 1.7s.7 2  .8 2.1c.1.1 1.3 2.1 3.3 2.9 1.6.7 1.9.6 2.3.6.4-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1s-.2-.2-.5-.3l-1.1-.5c-.2-.1-.4-.1-.6.1l-.4.5c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.6-1.1-.6-.6-.9-1.3-1-1.5-.1-.2 0-.3.1-.4l.3-.4c.1-.1.1-.3.2-.4.1-.1 0-.3 0-.4l-.5-1.1z"/>
       </svg>
     </a>
 
-    <a class="fab" href="tel:+447797799997" aria-label="Call">
+    <a class="fab" href="tel:+447797799997" aria-label="Call us">
       <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M6.6 10.8c1.6 3 3.6 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.3 22 2 13.7 2 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.4.2 2.7.6 3.9.1.4 0 .8-.2 1.1L6.6 10.8z"/>
       </svg>
     </a>
-  </div>
+  </aside>
 
   <script>
+    // Set current year in footer
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
-</html>
+  </html>
