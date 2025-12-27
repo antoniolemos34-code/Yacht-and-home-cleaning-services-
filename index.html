@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Harbour & Home | Yacht & Home Cleaning Services (Jersey)</title>
   <meta name="description" content="Premium yacht, boat and home cleaning services across Jersey. Discreet, reliable and detail-focused. Free quote via WhatsApp." />
   <meta name="theme-color" content="#0b1230" />
@@ -13,10 +14,10 @@
 
   <style>
     :root{
-      --nav:#132a78;           /* reference-style blue */
+      --nav:#132a78;
       --nav2:#0b1c57;
-      --accent:#b14cff;        /* reference-style purple */
-      --accent2:#f29bff;       /* soft pink/purple glow */
+      --accent:#b14cff;
+      --accent2:#f29bff;
       --bg:#070b1b;
       --card:rgba(255,255,255,.08);
       --line:rgba(255,255,255,.12);
@@ -43,7 +44,7 @@
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
 
-    /* ===== HEADER ===== */
+    /* HEADER */
     header{
       position:sticky; top:0; z-index:100;
       background: linear-gradient(180deg, rgba(19,42,120,.96), rgba(11,28,87,.88));
@@ -66,7 +67,7 @@
       min-width: 240px;
     }
     .brand img{
-      width:74px; height:74px;
+      width:78px; height:78px;
       border-radius:18px;
       object-fit:cover;
       background:#fff;
@@ -111,7 +112,7 @@
       border:1px solid rgba(242,155,255,.45);
     }
 
-    /* ===== HERO ===== */
+    /* HERO */
     .hero{padding:22px 0 26px}
     .heroCard{
       border-radius:var(--r2);
@@ -177,7 +178,7 @@
       pointer-events:none;
     }
 
-    /* ===== SECTIONS ===== */
+    /* SECTIONS */
     section{padding:26px 0}
     .head{
       display:flex;justify-content:space-between;align-items:flex-end;gap:12px;
@@ -201,7 +202,7 @@
       align-items:stretch;
     }
     .welcomeImg{
-      min-height: 340px;
+      min-height: 260px;
       background:
         linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.58)),
         url("assets/welcome.jpg");
@@ -227,7 +228,7 @@
     .card h3{margin:0 0 8px;font-size:16px}
     .card p{margin:0;color:var(--muted);line-height:1.6}
 
-    /* Services blocks like reference */
+    /* Services blocks */
     .feature{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -247,7 +248,7 @@
     .img1{background-image:linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.58)), url("assets/service1.jpg")}
     .img2{background-image:linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.58)), url("assets/service3.jpg")}
 
-    /* Gallery layout like reference */
+    /* Gallery */
     .gallery{
       display:grid;
       grid-template-columns:repeat(12,1fr);
@@ -331,7 +332,7 @@
       color:#fff;
     }
 
-    /* ===== MOBILE FIRST TUNING ===== */
+    /* MOBILE */
     @media (max-width: 980px){
       nav.links{display:none}
       .heroGrid{grid-template-columns:1fr;min-height:auto}
@@ -342,6 +343,7 @@
       .row2{grid-template-columns:1fr}
       .g1,.g2,.g3,.g4,.g5{grid-column:span 12}
       .brand img{width:58px;height:58px;border-radius:16px;padding:5px}
+      .welcomeImg{min-height:180px}
     }
   </style>
 </head>
@@ -412,7 +414,7 @@
   </div>
 </main>
 
-<section>
+<section style="padding-bottom:0">
   <div class="wrap">
     <div class="welcome">
       <div class="panel">
@@ -464,7 +466,6 @@
       </div>
     </div>
 
-    <!-- Block 1 (text left / image right) -->
     <div class="feature">
       <div class="panel">
         <div class="pad">
@@ -480,7 +481,6 @@
       <div class="featImg img1" aria-label="Marine cleaning image"></div>
     </div>
 
-    <!-- Block 2 (image left / text right) -->
     <div class="feature" style="margin-top:12px">
       <div class="featImg img2" aria-label="Home cleaning image"></div>
       <div class="panel">
@@ -509,11 +509,11 @@
     </div>
 
     <div class="gallery">
-      <div class="g g1"><img src="assets/gallery1.jpg" alt="Gallery image 1"></div>
-      <div class="g g2"><img src="assets/gallery2.jpg" alt="Gallery image 2"></div>
-      <div class="g g3"><img src="assets/gallery3.jpg" alt="Gallery image 3"></div>
-      <div class="g g4"><img src="assets/yacht-1.jpg" alt="Gallery image 4"></div>
-      <div class="g g5"><img src="assets/home-1.jpg" alt="Gallery image 5"></div>
+      <div class="g g1"><img src="assets/gallery1.jpg" alt="Yacht deck detailing"></div>
+      <div class="g g2"><img src="assets/gallery2.jpg" alt="Yacht exterior cleaning"></div>
+      <div class="g g3"><img src="assets/gallery3.jpg" alt="Home cleaning"></div>
+      <div class="g g4"><img src="assets/yacht-1.jpg" alt="Yacht maintenance clean"></div>
+      <div class="g g5"><img src="assets/home-1.jpg" alt="Home interior clean"></div>
     </div>
   </div>
 </section>
@@ -660,4 +660,4 @@ ${v('details')}`;
 </script>
 
 </body>
-              </html>
+</html>
