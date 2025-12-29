@@ -8,12 +8,6 @@
   <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Deep cleans and end of tenancy / move-in cleans available. Call or WhatsApp for a fast quote." />
   <meta name="robots" content="index,follow" />
 
-  <!-- Preload key images (faster first load) -->
-  <link rel="preload" as="image" href="assets/hero.jpg">
-  <link rel="preload" as="image" href="assets/yacht-cleaning.jpg">
-  <link rel="preload" as="image" href="assets/home-windows.jpg">
-  <link rel="preload" as="image" href="assets/carpet-cleaning.jpg">
-
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo-icon-256.png" />
   <link rel="apple-touch-icon" href="assets/logo-icon.png" />
@@ -42,12 +36,6 @@
       --shadow:0 18px 55px rgba(11,15,24,.10);
       --shadow2:0 24px 70px rgba(11,15,24,.14);
       --max:1120px;
-
-      /* Easy photo swap (only change these names if you want) */
-      --hero-img:url("assets/hero.jpg");
-      --boat-img:url("assets/yacht-cleaning.jpg");
-      --home-img:url("assets/home-windows.jpg");
-      --office-img:url("assets/carpet-cleaning.jpg");
     }
 
     *{box-sizing:border-box}
@@ -71,7 +59,7 @@
     .nav{
       position:sticky; top:0; z-index:50;
       border-bottom:1px solid var(--line);
-      background:rgba(251,247,239,.80);
+      background:rgba(251,247,239,.86);
       backdrop-filter:blur(12px);
     }
     .nav-inner{
@@ -85,7 +73,7 @@
     .brand-mini img{
       width:36px;height:36px;object-fit:contain;
       border-radius:12px; padding:6px;
-      background:rgba(255,255,255,.75);
+      background:rgba(255,255,255,.80);
       border:1px solid rgba(11,15,24,.12);
     }
     .links{
@@ -98,7 +86,7 @@
     .links a:hover{
       color:var(--ink);
       border-color:rgba(11,15,24,.12);
-      background:rgba(255,255,255,.75);
+      background:rgba(255,255,255,.80);
     }
 
     .nav-cta{display:flex; gap:10px; align-items:center}
@@ -106,10 +94,11 @@
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:11px 14px; border-radius:14px;
       border:1px solid rgba(11,15,24,.14);
-      background:rgba(255,255,255,.78);
+      background:rgba(255,255,255,.82);
       color:var(--ink); font-weight:900; font-size:13px;
       transition:.18s transform,.18s background,.18s border;
       white-space:nowrap;
+      cursor:pointer;
     }
     .btn:hover{transform:translateY(-1px); background:#fff; border-color:rgba(11,15,24,.22)}
     .btn.primary{
@@ -127,7 +116,7 @@
       width:min(900px, 100%);
       padding:18px 16px;
       border-radius:var(--radius2);
-      background:rgba(255,255,255,.88);
+      background:rgba(255,255,255,.92);
       border:1px solid rgba(11,15,24,.10);
       box-shadow:var(--shadow2);
     }
@@ -142,7 +131,7 @@
       padding:10px 14px;
       border-radius:999px;
       border:1px solid rgba(11,15,24,.12);
-      background:rgba(255,255,255,.70);
+      background:rgba(255,255,255,.72);
       color:var(--muted);
       font-size:13px;
     }
@@ -173,7 +162,7 @@
     .card{
       border-radius:var(--radius);
       border:1px solid rgba(11,15,24,.10);
-      background:rgba(255,255,255,.86);
+      background:rgba(255,255,255,.88);
       box-shadow:var(--shadow);
       padding:18px;
     }
@@ -181,14 +170,14 @@
       position:relative; overflow:hidden; padding:0;
       min-height:380px; border-radius:var(--radius2);
       box-shadow:var(--shadow2);
-      background:rgba(255,255,255,.86);
+      background:rgba(255,255,255,.88);
       border:1px solid rgba(11,15,24,.10);
     }
     .hero-media{
       position:absolute; inset:0;
       background:
         linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.92) 78%),
-        var(--hero-img) center/cover no-repeat;
+        url("assets/hero.jpg") center/cover no-repeat;
       filter:saturate(1.02) contrast(1.02);
     }
     .hero-overlay{
@@ -200,7 +189,7 @@
     .badge{
       display:inline-flex; align-items:center; gap:10px;
       padding:10px 12px; border-radius:999px;
-      background:rgba(255,255,255,.88);
+      background:rgba(255,255,255,.90);
       border:1px solid rgba(11,15,24,.12);
       font-size:13px;
     }
@@ -268,12 +257,13 @@
     }
     .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
+    /* WhatsApp floating button */
     .fab{position:fixed;right:18px;bottom:18px;z-index:60}
     .fab a{
       display:inline-flex;align-items:center;gap:10px;
       padding:12px 14px;border-radius:999px;
       border:1px solid rgba(11,15,24,.14);
-      background:rgba(255,255,255,.94);
+      background:rgba(255,255,255,.96);
       box-shadow:0 18px 44px rgba(11,15,24,.16);
       font-weight:900;font-size:13px
     }
@@ -285,6 +275,7 @@
       .contact{grid-template-columns:1fr}
       .links{display:none}
       .hero-logo img{max-height:230px}
+      .brand-mini{min-width:auto}
     }
   </style>
 </head>
@@ -304,8 +295,8 @@
       </nav>
 
       <div class="nav-cta">
-        <a class="btn" href="tel:07797799997">Call</a>
-        <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%E2%80%99d%20like%20a%20quote%20please." target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="tel:07797799997" aria-label="Call Harbour & Home">Call</a>
+        <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%E2%80%99d%20like%20a%20quote%20please." target="_blank" rel="noopener" aria-label="WhatsApp Harbour & Home">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -314,7 +305,6 @@
     <div class="wrap">
       <div class="hero-top">
         <div class="hero-logo">
-          <!-- IMPORTANT: make sure the file name matches EXACTLY what's in /assets -->
           <img src="assets/logo-no-number-transparent.png" alt="Harbour & Home Cleaning Services logo (no number)">
         </div>
 
@@ -351,8 +341,7 @@
         </div>
 
         <aside class="hero-media-card" aria-label="Hero image">
-          <!-- TIP: Replace assets/hero.jpg with an INTERIOR BOAT cleaning photo -->
-          <div class="hero-media" role="img" aria-label="Interior cleaning services in Jersey"></div>
+          <div class="hero-media" role="img" aria-label="Cleaning services in Jersey"></div>
           <div class="hero-overlay">
             <div class="badge-row">
               <div class="badge"><span class="shield">🛡️</span> Fully Insured</div>
@@ -360,9 +349,10 @@
               <div class="badge"><span class="shield">📍</span> Jersey</div>
             </div>
 
+            <!-- ✅ REMOVED NUMBER HERE to avoid "doubling" -->
             <div class="hero-bottom">
               <strong>Call or WhatsApp for a fast quote</strong>
-              <span>07797 799997</span>
+              <span>Tap the buttons above or below.</span>
             </div>
           </div>
         </aside>
@@ -381,8 +371,8 @@
 
       <div class="grid3">
         <article class="card img-card">
-          <!-- TIP: Replace assets/yacht-cleaning.jpg with an INTERIOR boat cleaning photo -->
-          <div class="img-top" style="background-image:var(--boat-img)"></div>
+          <!-- ✅ UPDATED: uses your new file (interior-focused) -->
+          <div class="img-top" style="background-image:url('assets/yacht-cleaning.jpg')"></div>
           <div class="img-body">
             <div class="icon">⛵</div>
             <h3>Boat Interior Cleaning</h3>
@@ -396,7 +386,7 @@
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:var(--home-img)"></div>
+          <div class="img-top" style="background-image:url('assets/home-windows.jpg')"></div>
           <div class="img-body">
             <div class="icon">🏠</div>
             <h3>Home Cleaning</h3>
@@ -410,8 +400,7 @@
         </article>
 
         <article class="card img-card">
-          <!-- OPTIONAL: Replace assets/carpet-cleaning.jpg with an OFFICE interior photo -->
-          <div class="img-top" style="background-image:var(--office-img)"></div>
+          <div class="img-top" style="background-image:url('assets/carpet-cleaning.jpg')"></div>
           <div class="img-body">
             <div class="icon">🏢</div>
             <h3>Office Cleaning</h3>
@@ -495,10 +484,11 @@
               <a class="btn" href="tel:07797799997">Call now</a>
             </div>
 
-            <p class="tiny">This sends your message directly to WhatsApp.</p>
+            <p class="tiny">This opens WhatsApp with your message ready to send.</p>
           </form>
         </div>
 
+        <!-- ✅ ONLY place where the number is displayed (no doubling) -->
         <div class="card">
           <h3 style="margin:0 0 10px;font-size:16px">Direct Contact</h3>
           <p class="sub" style="margin:0 0 14px">Boats • Homes • Offices — Jersey</p>
@@ -524,7 +514,6 @@
         <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.90);border:1px solid rgba(11,15,24,.12);padding:5px">
         <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey</div>
       </div>
-      <!-- fixed: gap::10px -->
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn" href="#services">Services</a>
         <a class="btn" href="#contact">Quote</a>
@@ -540,6 +529,7 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
     document.getElementById("quoteForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.getElementById("name").value.trim();
@@ -550,4 +540,4 @@
     });
   </script>
 </body>
-  </html>
+</html>
