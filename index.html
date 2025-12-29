@@ -24,7 +24,7 @@
 
   <style>
     :root{
-      --bg:#FBF7EF;              /* warm premium background - makes gold pop */
+      --bg:#FBF7EF;
       --paper:#FFFFFF;
       --ink:#0B0F18;
       --muted:rgba(11,15,24,.72);
@@ -76,7 +76,6 @@
       background:rgba(255,255,255,.75);
       border:1px solid rgba(11,15,24,.12);
     }
-
     .links{
       display:flex; gap:16px; align-items:center; justify-content:center; flex:1;
     }
@@ -113,16 +112,16 @@
       margin-bottom:16px;
     }
     .hero-logo{
-      width:min(860px, 100%);
+      width:min(900px, 100%);
       padding:18px 16px;
       border-radius:var(--radius2);
-      background:rgba(255,255,255,.82);
+      background:rgba(255,255,255,.88);
       border:1px solid rgba(11,15,24,.10);
       box-shadow:var(--shadow2);
     }
     .hero-logo img{
       width:100%;
-      max-height:260px;         /* BIG LOGO */
+      max-height:280px;
       object-fit:contain;
       filter:drop-shadow(0 18px 34px rgba(11,15,24,.10));
     }
@@ -162,7 +161,7 @@
     .card{
       border-radius:var(--radius);
       border:1px solid rgba(11,15,24,.10);
-      background:rgba(255,255,255,.80);
+      background:rgba(255,255,255,.86);
       box-shadow:var(--shadow);
       padding:18px;
     }
@@ -170,7 +169,7 @@
       position:relative; overflow:hidden; padding:0;
       min-height:380px; border-radius:var(--radius2);
       box-shadow:var(--shadow2);
-      background:rgba(255,255,255,.80);
+      background:rgba(255,255,255,.86);
       border:1px solid rgba(11,15,24,.10);
     }
     .hero-media{
@@ -189,7 +188,7 @@
     .badge{
       display:inline-flex; align-items:center; gap:10px;
       padding:10px 12px; border-radius:999px;
-      background:rgba(255,255,255,.82);
+      background:rgba(255,255,255,.88);
       border:1px solid rgba(11,15,24,.12);
       font-size:13px;
     }
@@ -202,7 +201,7 @@
       display:grid; gap:6px;
       padding:14px;
       border-radius:18px;
-      background:rgba(255,255,255,.86);
+      background:rgba(255,255,255,.92);
       border:1px solid rgba(11,15,24,.12);
     }
     .hero-bottom strong{font-size:14px}
@@ -223,7 +222,6 @@
       display:grid;place-items:center;margin-top:1px;color:var(--ink);font-weight:900
     }
 
-    /* SERVICES */
     section{padding:46px 0}
     .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
     h2{margin:0;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em}
@@ -237,14 +235,13 @@
     .img-card h3{margin:10px 0 8px;font-size:16px}
     .img-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
 
-    /* CONTACT */
     .contact{display:grid;grid-template-columns:1fr .95fr;gap:14px;align-items:start}
     label{font-size:12px;color:var(--muted)}
     input, textarea, select{
       width:100%; padding:12px 12px;
       border-radius:14px;
       border:1px solid rgba(11,15,24,.14);
-      background:rgba(255,255,255,.90);
+      background:rgba(255,255,255,.92);
       color:var(--ink);
       outline:none;
     }
@@ -259,13 +256,12 @@
     }
     .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
-    /* WhatsApp floating */
     .fab{position:fixed;right:18px;bottom:18px;z-index:60}
     .fab a{
       display:inline-flex;align-items:center;gap:10px;
       padding:12px 14px;border-radius:999px;
       border:1px solid rgba(11,15,24,.14);
-      background:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.94);
       box-shadow:0 18px 44px rgba(11,15,24,.16);
       font-weight:900;font-size:13px
     }
@@ -276,13 +272,12 @@
       .grid3{grid-template-columns:1fr}
       .contact{grid-template-columns:1fr}
       .links{display:none}
-      .hero-logo img{max-height:220px}
+      .hero-logo img{max-height:230px}
     }
   </style>
 </head>
 
 <body>
-  <!-- NAV -->
   <header class="nav">
     <div class="wrap nav-inner">
       <div class="brand-mini">
@@ -303,18 +298,16 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main id="top" class="hero">
     <div class="wrap">
       <div class="hero-top">
-        <!-- BIG TOP CENTRE LOGO (NO NUMBER) -->
+        <!-- IMPORTANT: this matches your current GitHub file name -->
         <div class="hero-logo">
-          <img src="assets/logo.png" alt="Harbour & Home Cleaning Services logo (no number)">
+          <img src="assets/logo-no-number-transparent.png" alt="Harbour & Home Cleaning Services logo (no number)">
         </div>
 
         <div class="pill"><span class="dot"></span> Boats • Homes • Offices — Interior Cleaning (Jersey)</div>
 
-        <!-- Client exact wording -->
         <h1>Professional Cleaning, clean and pristine!</h1>
 
         <p class="lead">
@@ -332,8 +325,8 @@
           </p>
 
           <ul class="list">
-            <li><span class="tick">✓</span> Boat interior cleaning (cabins, heads, galley, saloon)</li>
-            <li><span class="tick">✓</span> Home cleaning (regular or one-off)</li>
+            <li><span class="tick">✓</span> Boat interior cleaning</li>
+            <li><span class="tick">✓</span> Home cleaning</li>
             <li><span class="tick">✓</span> Deep cleans</li>
             <li><span class="tick">✓</span> End of tenancy / Move-in cleans</li>
             <li><span class="tick">✓</span> Office cleaning (domestic & commercial)</li>
@@ -364,7 +357,6 @@
     </div>
   </main>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="wrap">
       <div class="section-title">
@@ -420,7 +412,6 @@
     </div>
   </section>
 
-  <!-- INSURED -->
   <section id="insured">
     <div class="wrap">
       <div class="section-title">
@@ -434,23 +425,22 @@
         <div class="card">
           <div class="icon">🛡️</div>
           <h3 style="margin:10px 0 8px;font-size:16px">Trust & confidence</h3>
-          <p>Helps customers feel confident booking your service.</p>
+          <p class="sub">Helps customers feel confident booking your service.</p>
         </div>
         <div class="card">
           <div class="icon">✅</div>
           <h3 style="margin:10px 0 8px;font-size:16px">Professional standards</h3>
-          <p>Consistent quality and attention to detail on every clean.</p>
+          <p class="sub">Consistent quality and attention to detail on every clean.</p>
         </div>
         <div class="card">
           <div class="icon">⏱️</div>
           <h3 style="margin:10px 0 8px;font-size:16px">Fast quotes</h3>
-          <p>Call or WhatsApp for quick availability and pricing.</p>
+          <p class="sub">Call or WhatsApp for quick availability and pricing.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
       <div class="section-title">
@@ -516,10 +506,10 @@
   <footer>
     <div class="wrap foot">
       <div style="display:flex;align-items:center;gap:10px">
-        <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.86);border:1px solid rgba(11,15,24,.12);padding:5px">
+        <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.90);border:1px solid rgba(11,15,24,.12);padding:5px">
         <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey</div>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div style="display:flex;gap::10px;flex-wrap:wrap">
         <a class="btn" href="#services">Services</a>
         <a class="btn" href="#contact">Quote</a>
       </div>
@@ -544,4 +534,4 @@
     });
   </script>
 </body>
-</html>
+  </html>
