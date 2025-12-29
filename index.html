@@ -5,31 +5,36 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#070A12" />
   <title>Harbour & Home Cleaning Services — Jersey</title>
-  <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Domestic & commercial cleans. Fast quotes and reliable service." />
+  <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Domestic & commercial cleans. Deep cleans and end of tenancy / move-in cleans available." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-icon-256.png" />
+  <link rel="apple-touch-icon" href="assets/logo-icon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg:#070A12;
       --bg2:#0B1120;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.08);
       --text:#EAF0FF;
       --muted:rgba(234,240,255,.72);
       --line:rgba(255,255,255,.12);
+      --card:rgba(255,255,255,.05);
+      --card2:rgba(255,255,255,.07);
       --gold:#C9A14A;
       --gold2:#E2C77A;
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
-      --radius: 22px;
-      --radius2: 28px;
-      --max: 1120px;
+      --radius:22px;
+      --radius2:28px;
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+      --max:1120px;
     }
 
-    *{ box-sizing:border-box }
-    html{ scroll-behavior:smooth }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -41,323 +46,239 @@
         linear-gradient(180deg, var(--bg), #05060B 70%);
       overflow-x:hidden;
     }
-
-    a{ color:inherit; text-decoration:none }
-    img{ max-width:100%; display:block }
-
-    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max), calc(100% - 40px));margin:0 auto}
     .pill{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.04);
-      backdrop-filter: blur(10px);
-      font-size:13px;
-      color:var(--muted);
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 14px;border:1px solid var(--line);
+      border-radius:999px;background:rgba(255,255,255,.04);
+      backdrop-filter:blur(10px);
+      font-size:13px;color:var(--muted)
     }
-    .dot{ width:8px;height:8px;border-radius:50%; background:linear-gradient(180deg,var(--gold2),var(--gold)); box-shadow:0 0 0 4px rgba(201,161,74,.12); }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background:linear-gradient(180deg,var(--gold2),var(--gold));
+      box-shadow:0 0 0 4px rgba(201,161,74,.12)
+    }
 
-    /* Nav */
+    /* NAV */
     .nav{
-      position:sticky; top:0; z-index:50;
+      position:sticky;top:0;z-index:50;
       border-bottom:1px solid rgba(255,255,255,.08);
-      background:rgba(7,10,18,.60);
-      backdrop-filter: blur(14px);
+      background:rgba(7,10,18,.66);
+      backdrop-filter:blur(14px)
     }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
-    }
-    .brand{ display:flex; align-items:center; gap:12px; min-width:180px; }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;min-width:240px}
     .brand img{
-      width:44px; height:44px; object-fit:contain;
-      border-radius:14px;
+      width:46px;height:46px;object-fit:contain;border-radius:14px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.10);
-      padding:6px;
+      padding:6px
     }
-    .brand strong{ display:block; font-size:14px; letter-spacing:.2px; }
-    .brand span{ display:block; font-size:12px; color:var(--muted); margin-top:2px; }
+    .brand strong{display:block;font-size:14px;letter-spacing:.2px}
+    .brand span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
 
-    .links{ display:flex; gap:18px; align-items:center; justify-content:center; flex:1; }
-    .links a{ font-size:13px; color:var(--muted); padding:8px 10px; border-radius:12px; border:1px solid transparent; }
-    .links a:hover{ color:var(--text); border-color:rgba(255,255,255,.10); background:rgba(255,255,255,.03); }
+    .links{display:flex;gap:18px;align-items:center;justify-content:center;flex:1}
+    .links a{
+      font-size:13px;color:var(--muted);
+      padding:8px 10px;border-radius:12px;border:1px solid transparent
+    }
+    .links a:hover{color:var(--text);border-color:rgba(255,255,255,.10);background:rgba(255,255,255,.03)}
 
-    .nav-cta{ display:flex; gap:10px; align-items:center; }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:11px 14px;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:11px 14px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--text);font-weight:800;font-size:13px;
+      transition:.18s transform,.18s background,.18s border;white-space:nowrap
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
+    .btn.primary{
+      border-color:rgba(201,161,74,.35);
+      background:linear-gradient(180deg, rgba(226,199,122,.20), rgba(201,161,74,.12))
+    }
+    .btn.primary:hover{border-color:rgba(226,199,122,.55)}
+    .nav-cta{display:flex;gap:10px;align-items:center}
+
+    /* HERO */
+    .hero{padding:56px 0 26px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:26px;align-items:stretch}
+    h1{
+      font-size:clamp(34px,4.3vw,56px);
+      line-height:1.04;letter-spacing:-.05em;
+      margin:14px 0 12px
+    }
+    .lead{
+      color:var(--muted);
+      font-size:clamp(14px,1.2vw,16px);
+      line-height:1.65;
+      max-width:62ch;margin:0 0 18px
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+
+    .hero-card{
+      border-radius:var(--radius2);
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+      overflow:hidden;position:relative;min-height:420px
+    }
+    .hero-media{
+      position:absolute;inset:0;
+      background:
+        linear-gradient(180deg, rgba(7,10,18,.10), rgba(7,10,18,.82) 78%),
+        url("assets/hero.jpg") center/cover no-repeat;
+      filter:saturate(1.05) contrast(1.05)
+    }
+    .hero-overlay{position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+
+    .badge-row{display:flex;flex-wrap:wrap;gap:10px}
+    .badge{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 12px;border-radius:999px;
+      background:rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter:blur(10px);
+      font-size:13px
+    }
+    .shield{
+      width:26px;height:26px;display:grid;place-items:center;border-radius:10px;
+      background:linear-gradient(180deg, rgba(226,199,122,.22), rgba(201,161,74,.14));
+      border:1px solid rgba(226,199,122,.35)
+    }
+    .hero-bottom{
+      display:grid;gap:10px;padding:14px;border-radius:18px;
+      background:rgba(0,0,0,.40);
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter:blur(10px)
+    }
+    .hero-bottom strong{font-size:14px}
+    .hero-bottom span{color:var(--muted);font-size:13px}
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+    .mini{
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+    }
+    .mini strong{display:block;font-size:13px}
+    .mini span{display:block;margin-top:6px;color:var(--muted);font-size:13px;line-height:1.5}
+
+    .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+    .list li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:14px;line-height:1.5}
+    .tick{
+      width:18px;height:18px;border-radius:6px;flex:0 0 auto;
+      background:rgba(201,161,74,.16);
+      border:1px solid rgba(226,199,122,.26);
+      display:grid;place-items:center;margin-top:1px;color:var(--text);font-weight:900
+    }
+
+    /* SECTIONS */
+    section{padding:54px 0}
+    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
+    h2{margin:0;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.02em}
+    .sub{margin:0;color:var(--muted);font-size:14px;line-height:1.6;max-width:78ch}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      box-shadow:0 14px 40px rgba(0,0,0,.25);
+      padding:18px
+    }
+    .card h3{margin:8px 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+    .icon{
+      width:42px;height:42px;border-radius:16px;
+      display:grid;place-items:center;
+      background:linear-gradient(180deg, rgba(226,199,122,.18), rgba(201,161,74,.08));
+      border:1px solid rgba(226,199,122,.32)
+    }
+
+    /* Service image cards */
+    .img-card{padding:0;overflow:hidden;background:rgba(255,255,255,.03)}
+    .img-top{height:190px;background:center/cover no-repeat;position:relative}
+    .img-top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.62))}
+    .img-body{padding:18px}
+
+    /* Pricing */
+    .price{
+      display:flex;align-items:baseline;gap:10px;margin-top:10px
+    }
+    .price strong{font-size:26px;letter-spacing:-.03em}
+    .price span{color:var(--muted);font-size:13px}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr .95fr;gap:14px;align-items:start}
+    label{font-size:12px;color:var(--muted)}
+    input, textarea, select{
+      width:100%; padding:12px 12px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
       color:var(--text);
-      font-weight:600;
-      font-size:13px;
-      transition:.18s transform, .18s background, .18s border;
-      white-space:nowrap;
+      outline:none
     }
-    .btn:hover{ transform: translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.18); }
-    .btn.primary{
-      border-color:rgba(201,161,74,.35);
-      background:linear-gradient(180deg, rgba(226,199,122,.20), rgba(201,161,74,.12));
-    }
-    .btn.primary:hover{ border-color:rgba(226,199,122,.55); }
-
-    /* Hero */
-    .hero{
-      padding:56px 0 26px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:26px;
-      align-items:stretch;
-    }
-    .h1{
-      font-size: clamp(32px, 4.2vw, 54px);
-      line-height:1.05;
-      letter-spacing:-.04em;
-      margin:14px 0 12px;
-    }
-    .lead{
-      color:var(--muted);
-      font-size: clamp(14px, 1.2vw, 16px);
-      line-height:1.6;
-      max-width: 56ch;
-      margin: 0 0 18px;
-    }
-    .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
-    .hero-actions .btn{ padding:12px 16px; border-radius:16px; }
-
-    .hero-card{
-      border-radius:var(--radius2);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-      min-height: 360px;
-    }
-    .hero-card::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(550px 260px at 40% 15%, rgba(226,199,122,.18), transparent 60%),
-                  radial-gradient(520px 260px at 80% 35%, rgba(201,161,74,.16), transparent 55%);
-      pointer-events:none;
-    }
-    .hero-media{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(180deg, rgba(7,10,18,.00), rgba(7,10,18,.75) 75%),
-        url("assets/hero.jpg") center/cover no-repeat;
-      filter:saturate(1.05) contrast(1.05);
-    }
-    .hero-overlay{
-      position:absolute; inset:0;
-      padding:18px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap:16px;
-    }
-    .badges{
-      display:flex; flex-wrap:wrap; gap:10px;
-    }
-    .badge{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 12px;
-      border-radius:999px;
-      background:rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.14);
-      backdrop-filter: blur(10px);
-      font-size:13px;
-    }
-    .shield{
-      width:26px; height:26px;
-      display:grid; place-items:center;
-      border-radius:10px;
-      background:linear-gradient(180deg, rgba(226,199,122,.22), rgba(201,161,74,.14));
-      border:1px solid rgba(226,199,122,.35);
-    }
-    .hero-bottom{
-      display:grid;
-      gap:10px;
-      padding:14px;
-      border-radius:18px;
-      background:rgba(0,0,0,.40);
-      border:1px solid rgba(255,255,255,.14);
-      backdrop-filter: blur(10px);
-    }
-    .hero-bottom strong{ font-size:14px; }
-    .hero-bottom span{ color:var(--muted); font-size:13px; }
-
-    /* Sections */
-    section{ padding: 46px 0; }
-    .section-title{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:18px;
-      margin-bottom:18px;
-    }
-    h2{
-      margin:0;
-      font-size: clamp(22px, 2.4vw, 30px);
-      letter-spacing:-.02em;
-    }
-    .sub{ margin:0; color:var(--muted); font-size:14px; line-height:1.6; max-width: 70ch; }
-
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .card{
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      box-shadow: 0 14px 40px rgba(0,0,0,.25);
-      padding: 18px;
-    }
-    .card h3{ margin:8px 0 8px; font-size:16px; }
-    .card p{ margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
-
-    .icon{
-      width:42px; height:42px; border-radius:16px;
-      display:grid; place-items:center;
-      background: linear-gradient(180deg, rgba(226,199,122,.18), rgba(201,161,74,.08));
-      border:1px solid rgba(226,199,122,.32);
-      color: var(--text);
-    }
-    .list{ margin:12px 0 0; padding:0; list-style:none; display:grid; gap:8px; }
-    .list li{
-      display:flex; gap:10px; align-items:flex-start;
-      color: var(--muted);
-      font-size:14px; line-height:1.5;
-    }
-    .tick{
-      width:18px;height:18px;border-radius:6px; flex:0 0 auto;
-      background: rgba(201,161,74,.16);
-      border:1px solid rgba(226,199,122,.26);
-      display:grid; place-items:center;
-      margin-top:1px;
-    }
-
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-
-    .gallery{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .g{
-      border-radius: var(--radius2);
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
-      min-height: 210px;
-      position:relative;
-    }
-    .g img{ width:100%; height:100%; object-fit:cover; }
-    .g::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.00), rgba(0,0,0,.55));
-      pointer-events:none;
-    }
-
-    /* Contact */
-    .contact{
-      display:grid;
-      grid-template-columns: 1fr .95fr;
-      gap:14px;
-      align-items:start;
-    }
-    .form{
-      display:grid; gap:10px;
-    }
-    label{ font-size:12px; color:var(--muted); }
-    input, textarea, select{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      outline:none;
-    }
-    textarea{ min-height: 110px; resize: vertical; }
-    input:focus, textarea:focus, select:focus{ border-color: rgba(226,199,122,.40); }
-
-    .mini{
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.5;
-    }
+    textarea{min-height:110px;resize:vertical}
+    input:focus, textarea:focus, select:focus{border-color:rgba(226,199,122,.40)}
+    .tiny{color:var(--muted);font-size:12px;line-height:1.5}
 
     footer{
-      padding: 26px 0 42px;
+      padding:26px 0 42px;
       border-top:1px solid rgba(255,255,255,.08);
-      color: var(--muted);
-      font-size:13px;
+      color:var(--muted);font-size:13px
     }
-    .foot{
-      display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
-    }
+    .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
     /* Floating WhatsApp */
-    .fab{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      z-index:60;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      align-items:flex-end;
-    }
+    .fab{position:fixed;right:18px;bottom:18px;z-index:60}
     .fab a{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius: 999px;
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 14px;border-radius:999px;
       border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.45);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 16px 40px rgba(0,0,0,.35);
-      font-weight:700;
-      font-size:13px;
+      background:rgba(0,0,0,.45);
+      backdrop-filter:blur(12px);
+      box-shadow:0 16px 40px rgba(0,0,0,.35);
+      font-weight:900;font-size:13px
     }
-    .wa-dot{
-      width:12px;height:12px;border-radius:50%;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34,197,94,.16);
-    }
+    .wa-dot{width:12px;height:12px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.16)}
 
     /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .hero-card{ min-height: 320px; }
-      .grid3{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .gallery{ grid-template-columns: 1fr; }
-      .contact{ grid-template-columns: 1fr; }
-      .links{ display:none; }
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      .hero-card{min-height:330px}
+      .grid3{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .links{display:none}
+      .mini-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 
 <body>
+  <!-- CONFIG -->
+  <script>
+    const PHONE_DISPLAY = "07797 799997";
+    const TEL_LINK = "tel:07797799997";
+    const WA_NUMBER = "447797799997";
+    const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Hi Glynn, I’d like a quote please.")}`;
+  </script>
+
   <!-- NAV -->
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="Harbour & Home Cleaning Services">
-        <img src="assets/logo.png" alt="Harbour & Home logo">
+        <img src="assets/logo-no-number-transparent.png" alt="Harbour & Home logo">
         <div>
           <strong>Harbour &amp; Home</strong>
           <span>Cleaning Services • Jersey</span>
@@ -367,16 +288,13 @@
       <nav class="links" aria-label="Site">
         <a href="#services">Services</a>
         <a href="#insured">Fully Insured</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#reviews">Reviews</a>
+        <a href="#pricing">Website Setup</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div class="nav-cta">
-        <!-- EDIT: put Glynn phone number below -->
-        <a class="btn" href="tel:+44XXXXXXXXXX">Call</a>
-        <!-- EDIT: put WhatsApp number below (no + sign, country code included) -->
-        <a class="btn primary" href="https://wa.me/44XXXXXXXXXX?text=Hi%20Glynn%2C%20I%27d%20like%20a%20quote%20please." target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="tel:07797799997">Call</a>
+        <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%E2%80%99d%20like%20a%20quote%20please." target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -385,11 +303,11 @@
   <main id="top" class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="pill"><span class="dot"></span> Interior cleaning for boats, homes & offices in Jersey</div>
-        <h1 class="h1">Professional cleaning, <br>done properly.</h1>
+        <div class="pill"><span class="dot"></span> Boats • Homes • Offices — Interior Cleaning (Jersey)</div>
+        <h1>Professional cleaning,<br>done properly.</h1>
         <p class="lead">
-          Reliable, high-standard interior cleans for <strong>boats</strong>, <strong>homes</strong> and <strong>offices</strong>.
-          Clear communication, trusted service, and a finish you can see.
+          High-standard interior cleans for <strong>boats</strong>, <strong>homes</strong> and <strong>offices</strong>.
+          Fully insured, reliable and detail-focused — with fast quotes and flexible scheduling.
         </p>
 
         <div class="hero-actions">
@@ -397,25 +315,34 @@
           <a class="btn" href="#services">View Services</a>
         </div>
 
-        <ul class="list" style="margin-top:16px">
-          <li><span class="tick">✓</span> Domestic & commercial cleans</li>
-          <li><span class="tick">✓</span> Detail-focused interior work</li>
-          <li><span class="tick">✓</span> Fast quotes and flexible scheduling</li>
-        </ul>
+        <div class="mini-grid">
+          <div class="mini">
+            <strong>Fully Insured</strong>
+            <span>Clear trust signal for clients (domestic & commercial).</span>
+          </div>
+          <div class="mini">
+            <strong>Deep Cleans</strong>
+            <span>Ideal for refresh cleans and high-detail requests.</span>
+          </div>
+          <div class="mini">
+            <strong>End of Tenancy</strong>
+            <span>Move-in / move-out cleans available.</span>
+          </div>
+        </div>
       </div>
 
-      <aside class="hero-card" aria-label="Preview image">
+      <aside class="hero-card" aria-label="Hero image">
         <div class="hero-media" role="img" aria-label="Cleaning services in Jersey"></div>
         <div class="hero-overlay">
-          <div class="badges">
+          <div class="badge-row">
             <div class="badge"><span class="shield">🛡️</span> Fully Insured</div>
-            <div class="badge"><span class="shield">⭐</span> Professional & Reliable</div>
             <div class="badge"><span class="shield">🧽</span> Interior Cleaning</div>
+            <div class="badge"><span class="shield">📍</span> Jersey</div>
           </div>
 
           <div class="hero-bottom">
-            <strong>Harbour &amp; Home Cleaning Services</strong>
-            <span>Boats • Homes • Offices — Jersey</span>
+            <strong>Call or WhatsApp for a fast quote</strong>
+            <span>07797 799997</span>
           </div>
         </div>
       </aside>
@@ -428,43 +355,52 @@
       <div class="section-title">
         <div>
           <h2>Services</h2>
-          <p class="sub">Clear options for boats, homes and offices — all focused on high quality interior results.</p>
+          <p class="sub">Premium, reliable interior cleaning across Jersey — designed around what clients actually book.</p>
         </div>
       </div>
 
       <div class="grid3">
-        <div class="card">
-          <div class="icon">⛵</div>
-          <h3>Boat Interior Cleaning</h3>
-          <p>Cabins, galley, heads, saloon and interior detailing with care and respect for materials.</p>
-          <ul class="list">
-            <li><span class="tick">✓</span> Deep clean or maintenance clean</li>
-            <li><span class="tick">✓</span> Dusting, wiping, sanitising</li>
-            <li><span class="tick">✓</span> Floors, surfaces, touch-points</li>
-          </ul>
-        </div>
+        <article class="card img-card">
+          <div class="img-top" style="background-image:url('assets/yacht-cleaning.jpg')"></div>
+          <div class="img-body">
+            <div class="icon">⛵</div>
+            <h3>Boat Interior Cleaning</h3>
+            <p>Cabins, galley, heads, saloon and interior detailing with care and respect for materials.</p>
+            <ul class="list">
+              <li><span class="tick">✓</span> Deep clean or maintenance clean</li>
+              <li><span class="tick">✓</span> Touch-point sanitising</li>
+              <li><span class="tick">✓</span> Detail-focused finish</li>
+            </ul>
+          </div>
+        </article>
 
-        <div class="card">
-          <div class="icon">🏠</div>
-          <h3>Home Cleaning</h3>
-          <p>Professional home cleaning with a consistent standard, great for busy schedules.</p>
-          <ul class="list">
-            <li><span class="tick">✓</span> Kitchens & bathrooms</li>
-            <li><span class="tick">✓</span> Bedrooms & living areas</li>
-            <li><span class="tick">✓</span> One-off or regular cleans</li>
-          </ul>
-        </div>
+        <article class="card img-card">
+          <div class="img-top" style="background-image:url('assets/home-windows.jpg')"></div>
+          <div class="img-body">
+            <div class="icon">🏠</div>
+            <h3>Home Cleaning</h3>
+            <p>Consistent, high-standard home cleaning that fits your schedule.</p>
+            <ul class="list">
+              <li><span class="tick">✓</span> Kitchens & bathrooms</li>
+              <li><span class="tick">✓</span> Deep cleans</li>
+              <li><span class="tick">✓</span> End of tenancy / Move-in cleans</li>
+            </ul>
+          </div>
+        </article>
 
-        <div class="card">
-          <div class="icon">🏢</div>
-          <h3>Office Cleaning</h3>
-          <p>Reliable commercial cleaning to keep your workspace clean, safe and presentable.</p>
-          <ul class="list">
-            <li><span class="tick">✓</span> Desks, common areas, kitchens</li>
-            <li><span class="tick">✓</span> Washrooms & hygiene areas</li>
-            <li><span class="tick">✓</span> Flexible hours available</li>
-          </ul>
-        </div>
+        <article class="card img-card">
+          <div class="img-top" style="background-image:url('assets/carpet-cleaning.jpg')"></div>
+          <div class="img-body">
+            <div class="icon">🏢</div>
+            <h3>Office Cleaning</h3>
+            <p>Professional commercial cleaning to keep your workspace clean, safe and presentable.</p>
+            <ul class="list">
+              <li><span class="tick">✓</span> Desks & common areas</li>
+              <li><span class="tick">✓</span> Kitchens & washrooms</li>
+              <li><span class="tick">✓</span> Flexible hours available</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -472,81 +408,59 @@
   <!-- FULLY INSURED -->
   <section id="insured">
     <div class="wrap">
-      <div class="split">
-        <div class="card">
-          <h2 style="margin:0 0 8px;">Fully Insured</h2>
-          <p class="sub" style="margin:0;">
-            Your property is protected. Harbour &amp; Home operates with appropriate insurance in place for
-            <strong>boats</strong>, <strong>homes</strong> and <strong>offices</strong>, covering domestic and commercial cleans.
-          </p>
-          <ul class="list" style="margin-top:14px;">
-            <li><span class="tick">✓</span> Peace of mind for clients</li>
-            <li><span class="tick">✓</span> Professional standards and care</li>
-            <li><span class="tick">✓</span> Ideal for landlords and businesses</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3 style="margin:0 0 8px;">What clients usually ask</h3>
-          <ul class="list">
-            <li><span class="tick">✓</span> “Can you do regular cleans?” — Yes, weekly/fortnightly options.</li>
-            <li><span class="tick">✓</span> “Do you do one-offs?” — Yes, deep cleans and one-time bookings.</li>
-            <li><span class="tick">✓</span> “Commercial cleans?” — Yes, offices included.</li>
-          </ul>
-          <p class="mini" style="margin-top:12px;">
-            If you want, we can add a short note on the site about your insurance level/certificate details (no sensitive info shown).
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="wrap">
       <div class="section-title">
         <div>
-          <h2>Gallery</h2>
-          <p class="sub">Add a few photos to show the standard of your work. (Replace the images in <code>assets/</code>.)</p>
-        </div>
-      </div>
-
-      <div class="gallery">
-        <div class="g"><img src="assets/gallery-1.jpg" alt="Cleaning gallery image 1" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding:18px;color:rgba(234,240,255,.75)&quot;>Add: assets/gallery-1.jpg</div>';"></div>
-        <div class="g"><img src="assets/gallery-2.jpg" alt="Cleaning gallery image 2" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding:18px;color:rgba(234,240,255,.75)&quot;>Add: assets/gallery-2.jpg</div>';"></div>
-        <div class="g"><img src="assets/gallery-3.jpg" alt="Cleaning gallery image 3" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding:18px;color:rgba(234,240,255,.75)&quot;>Add: assets/gallery-3.jpg</div>';"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section id="reviews">
-    <div class="wrap">
-      <div class="section-title">
-        <div>
-          <h2>Reviews</h2>
-          <p class="sub">When Glynn has a few client comments, we can drop them here (or connect Google Reviews later).</p>
+          <h2>Fully Insured</h2>
+          <p class="sub">Insurance in place for boats, homes and offices — covering domestic and commercial cleans.</p>
         </div>
       </div>
 
       <div class="grid3">
         <div class="card">
-          <p style="margin:0; font-size:14px; line-height:1.7; color:var(--muted);">
-            “Excellent standard and very reliable — the interior was spotless.”
-          </p>
-          <p class="mini" style="margin-top:10px;">— Client review (placeholder)</p>
+          <div class="icon">🛡️</div>
+          <h3>Confidence for clients</h3>
+          <p>A clear trust signal that helps customers choose you faster.</p>
         </div>
         <div class="card">
-          <p style="margin:0; font-size:14px; line-height:1.7; color:var(--muted);">
-            “Professional service and great attention to detail.”
-          </p>
-          <p class="mini" style="margin-top:10px;">— Client review (placeholder)</p>
+          <div class="icon">✅</div>
+          <h3>Professional standards</h3>
+          <p>Reliable service, consistent quality, and attention to detail.</p>
         </div>
         <div class="card">
-          <p style="margin:0; font-size:14px; line-height:1.7; color:var(--muted);">
-            “Quick response, fair quote and the job was done properly.”
-          </p>
-          <p class="mini" style="margin-top:10px;">— Client review (placeholder)</p>
+          <div class="icon">📍</div>
+          <h3>Jersey based</h3>
+          <p>Local service with fast response times and flexible scheduling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITE SETUP (for your pricing pitch if you want to show it) -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-title">
+        <div>
+          <h2>Website Setup</h2>
+          <p class="sub">A clean, professional one-page website that helps clients contact you quickly via call or WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h3>Fast + Mobile First</h3>
+          <p>Designed for phones (where most clients will find you).</p>
+        </div>
+        <div class="card">
+          <div class="icon">📈</div>
+          <h3>Conversion Focus</h3>
+          <p>Clear services, trust signals and direct contact buttons.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧾</div>
+          <h3>One-off Setup</h3>
+          <p>Everything built and ready to go live.</p>
+          <div class="price"><strong>£199</strong><span>one-off</span></div>
         </div>
       </div>
     </div>
@@ -558,57 +472,61 @@
       <div class="section-title">
         <div>
           <h2>Request a Quote</h2>
-          <p class="sub">Send a message with the job type, location and preferred date. We’ll reply quickly.</p>
+          <p class="sub">Send details on WhatsApp — fastest way to get a quote.</p>
         </div>
       </div>
 
       <div class="contact">
         <div class="card">
-          <form class="form" id="quoteForm">
+          <form id="quoteForm" style="display:grid;gap:10px">
             <div>
               <label for="name">Name</label>
-              <input id="name" name="name" autocomplete="name" placeholder="Your name" required>
+              <input id="name" required placeholder="Your name" autocomplete="name">
             </div>
+
             <div>
               <label for="service">Service</label>
-              <select id="service" name="service" required>
+              <select id="service" required>
                 <option value="" selected disabled>Select service</option>
                 <option>Boat interior cleaning</option>
                 <option>Home cleaning</option>
+                <option>Home deep clean</option>
+                <option>End of tenancy / Move-in clean</option>
                 <option>Office cleaning</option>
               </select>
             </div>
+
             <div>
               <label for="details">Details</label>
-              <textarea id="details" name="details" placeholder="Tell us what you need (size, frequency, preferred date, any key notes)..." required></textarea>
+              <textarea id="details" required placeholder="Brief details (location, size, preferred date/time, any notes)..."></textarea>
             </div>
 
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
               <button class="btn primary" type="submit">Send via WhatsApp</button>
-              <a class="btn" href="tel:+44XXXXXXXXXX">Call now</a>
+              <a class="btn" href="tel:07797799997">Call now</a>
             </div>
 
-            <p class="mini">
-              Tip: This form sends your message directly to WhatsApp (fastest). You can also add an email form later if you want.
-            </p>
+            <p class="tiny">This sends your message directly to WhatsApp.</p>
           </form>
         </div>
 
         <div class="card">
-          <h3 style="margin:0 0 10px;">Contact</h3>
-          <ul class="list">
-            <li><span class="tick">✓</span> Based in Jersey</li>
-            <li><span class="tick">✓</span> Boats • Homes • Offices</li>
-            <li><span class="tick">✓</span> Fully Insured</li>
-          </ul>
+          <h3 style="margin:0 0 10px">Direct Contact</h3>
+          <p class="sub" style="margin:0 0 14px">Boats • Homes • Offices — Jersey</p>
 
-          <div style="display:grid; gap:10px; margin-top:14px;">
-            <a class="btn" href="tel:+44XXXXXXXXXX">Call: +44 XXXXX XXXXXX</a>
-            <a class="btn primary" href="https://wa.me/44XXXXXXXXXX?text=Hi%20Glynn%2C%20I%27d%20like%20a%20quote%20please." target="_blank" rel="noopener">WhatsApp message</a>
+          <div style="display:grid;gap:10px">
+            <a class="btn" href="tel:07797799997">Call: 07797 799997</a>
+            <a class="btn primary" href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%E2%80%99d%20like%20a%20quote%20please." target="_blank" rel="noopener">WhatsApp: 07797 799997</a>
           </div>
 
-          <p class="mini" style="margin-top:12px;">
-            Want to add: service areas, pricing ranges, or a booking calendar — easy upgrades.
+          <ul class="list" style="margin-top:14px">
+            <li><span class="tick">✓</span> Fully insured</li>
+            <li><span class="tick">✓</span> Interior cleaning only</li>
+            <li><span class="tick">✓</span> Domestic & commercial</li>
+          </ul>
+
+          <p class="tiny" style="margin-top:12px">
+            Tip: Add a few real before/after photos later to increase bookings even more.
           </p>
         </div>
       </div>
@@ -617,42 +535,39 @@
 
   <footer>
     <div class="wrap foot">
-      <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey</div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);padding:5px">
+        <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey</div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn" href="#services">Services</a>
         <a class="btn" href="#contact">Quote</a>
       </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp button -->
+  <!-- Floating WhatsApp -->
   <div class="fab">
-    <a href="https://wa.me/44XXXXXXXXXX?text=Hi%20Glynn%2C%20I%27d%20like%20a%20quote%20please." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <a href="https://wa.me/447797799997?text=Hi%20Glynn%2C%20I%E2%80%99d%20like%20a%20quote%20please." target="_blank" rel="noopener" aria-label="WhatsApp">
       <span class="wa-dot"></span> WhatsApp
     </a>
   </div>
 
   <script>
-    // Set year
+    // year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // WhatsApp quote form
-    const form = document.getElementById("quoteForm");
-    form.addEventListener("submit", (e) => {
+    // WhatsApp form submit
+    document.getElementById("quoteForm").addEventListener("submit", (e) => {
       e.preventDefault();
-
       const name = document.getElementById("name").value.trim();
       const service = document.getElementById("service").value.trim();
       const details = document.getElementById("details").value.trim();
 
-      // EDIT: Put Glynn WhatsApp number here (no + sign)
-      const phone = "44XXXXXXXXXX";
-
-      const msg = `Hi Glynn, my name is ${name}.%0A%0AService: ${service}%0A%0ADetails: ${encodeURIComponent(details)}%0A%0AThanks.`;
-      const url = `https://wa.me/${phone}?text=${msg}`;
-
+      const msg = `Hi Glynn, my name is ${name}.\n\nService: ${service}\n\nDetails: ${details}\n\nThanks.`;
+      const url = `https://wa.me/447797799997?text=${encodeURIComponent(msg)}`;
       window.open(url, "_blank", "noopener,noreferrer");
     });
   </script>
 </body>
-</html>
+  </html>
