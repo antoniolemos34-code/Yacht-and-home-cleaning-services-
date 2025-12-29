@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#F6F2EA" />
+  <meta name="theme-color" content="#FBF7EF" />
   <title>Harbour & Home Cleaning Services — Jersey</title>
   <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Deep cleans and end of tenancy / move-in cleans available. Call or WhatsApp for a fast quote." />
   <meta name="robots" content="index,follow" />
@@ -24,19 +24,20 @@
 
   <style>
     :root{
-      --bg:#F6F2EA;            /* warm off-white to match gold outline */
-      --bg2:#FFFFFF;
+      --bg:#FBF7EF;              /* warm premium background - makes gold pop */
+      --paper:#FFFFFF;
       --ink:#0B0F18;
-      --muted:rgba(11,15,24,.70);
+      --muted:rgba(11,15,24,.72);
       --line:rgba(11,15,24,.12);
-      --card:rgba(255,255,255,.72);
-      --shadow:0 18px 50px rgba(11,15,24,.10);
       --gold:#C9A14A;
       --gold2:#E2C77A;
       --radius:22px;
       --radius2:28px;
+      --shadow:0 18px 55px rgba(11,15,24,.10);
+      --shadow2:0 24px 70px rgba(11,15,24,.14);
       --max:1120px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -44,9 +45,10 @@
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(900px 520px at 18% 5%, rgba(201,161,74,.18), transparent 60%),
-        radial-gradient(700px 520px at 80% 18%, rgba(226,199,122,.12), transparent 55%),
-        linear-gradient(180deg, var(--bg), #FFFFFF 70%);
+        radial-gradient(1000px 600px at 18% 5%, rgba(201,161,74,.22), transparent 60%),
+        radial-gradient(800px 520px at 85% 16%, rgba(226,199,122,.14), transparent 55%),
+        radial-gradient(800px 520px at 30% 95%, rgba(11,15,24,.06), transparent 55%),
+        linear-gradient(180deg, var(--bg), #FFFFFF 68%);
       overflow-x:hidden;
     }
     a{color:inherit;text-decoration:none}
@@ -55,194 +57,238 @@
 
     /* NAV */
     .nav{
-      position:sticky;top:0;z-index:50;
+      position:sticky; top:0; z-index:50;
       border-bottom:1px solid var(--line);
-      background:rgba(246,242,234,.78);
+      background:rgba(251,247,239,.80);
       backdrop-filter:blur(12px);
     }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
-    .links{display:flex;gap:18px;align-items:center;justify-content:center;flex:1}
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:12px 0;
+    }
+    .brand-mini{
+      display:flex; align-items:center; gap:10px; min-width:220px;
+      font-weight:900; letter-spacing:.2px;
+    }
+    .brand-mini img{
+      width:36px;height:36px;object-fit:contain;
+      border-radius:12px; padding:6px;
+      background:rgba(255,255,255,.75);
+      border:1px solid rgba(11,15,24,.12);
+    }
+
+    .links{
+      display:flex; gap:16px; align-items:center; justify-content:center; flex:1;
+    }
     .links a{
-      font-size:13px;color:var(--muted);
-      padding:8px 10px;border-radius:12px;border:1px solid transparent
+      font-size:13px; color:var(--muted);
+      padding:8px 10px; border-radius:12px; border:1px solid transparent;
     }
-    .links a:hover{color:var(--ink);border-color:rgba(11,15,24,.12);background:rgba(255,255,255,.55)}
-    .nav-cta{display:flex;gap:10px;align-items:center}
+    .links a:hover{
+      color:var(--ink);
+      border-color:rgba(11,15,24,.12);
+      background:rgba(255,255,255,.75);
+    }
+
+    .nav-cta{display:flex; gap:10px; align-items:center}
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:11px 14px;border-radius:14px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:11px 14px; border-radius:14px;
       border:1px solid rgba(11,15,24,.14);
-      background:rgba(255,255,255,.65);
-      color:var(--ink);font-weight:900;font-size:13px;
-      transition:.18s transform,.18s background,.18s border;white-space:nowrap
+      background:rgba(255,255,255,.78);
+      color:var(--ink); font-weight:900; font-size:13px;
+      transition:.18s transform,.18s background,.18s border;
+      white-space:nowrap;
     }
-    .btn:hover{transform:translateY(-1px);background:#fff;border-color:rgba(11,15,24,.22)}
+    .btn:hover{transform:translateY(-1px); background:#fff; border-color:rgba(11,15,24,.22)}
     .btn.primary{
-      border-color:rgba(201,161,74,.45);
-      background:linear-gradient(180deg, rgba(226,199,122,.35), rgba(201,161,74,.18));
+      border-color:rgba(201,161,74,.55);
+      background:linear-gradient(180deg, rgba(226,199,122,.42), rgba(201,161,74,.18));
     }
 
     /* HERO */
-    .hero{padding:34px 0 24px}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
+    .hero{padding:28px 0 26px}
+    .hero-top{
+      display:grid; gap:14px; justify-items:center; text-align:center;
+      margin-bottom:16px;
+    }
     .hero-logo{
-      display:flex;justify-content:center;align-items:center;
-      padding:18px 16px;border-radius:var(--radius2);
-      background:rgba(255,255,255,.78);
+      width:min(860px, 100%);
+      padding:18px 16px;
+      border-radius:var(--radius2);
+      background:rgba(255,255,255,.82);
       border:1px solid rgba(11,15,24,.10);
-      box-shadow:var(--shadow);
-      margin-bottom:14px;
+      box-shadow:var(--shadow2);
     }
     .hero-logo img{
-      width:min(520px, 95%);
-      height:auto;
+      width:100%;
+      max-height:260px;         /* BIG LOGO */
       object-fit:contain;
-      filter:drop-shadow(0 14px 26px rgba(11,15,24,.08));
+      filter:drop-shadow(0 18px 34px rgba(11,15,24,.10));
     }
-
     .pill{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:10px 14px;border:1px solid rgba(11,15,24,.12);
-      border-radius:999px;background:rgba(255,255,255,.60);
-      font-size:13px;color:var(--muted)
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(11,15,24,.12);
+      background:rgba(255,255,255,.70);
+      color:var(--muted);
+      font-size:13px;
     }
     .dot{
       width:8px;height:8px;border-radius:50%;
       background:linear-gradient(180deg,var(--gold2),var(--gold));
-      box-shadow:0 0 0 4px rgba(201,161,74,.15)
+      box-shadow:0 0 0 4px rgba(201,161,74,.15);
     }
     h1{
-      font-size:clamp(32px,4.0vw,52px);
-      line-height:1.06;letter-spacing:-.05em;
-      margin:14px 0 10px
+      margin:6px 0 8px;
+      font-size:clamp(32px,3.7vw,54px);
+      line-height:1.05;
+      letter-spacing:-.05em;
     }
     .lead{
+      margin:0;
       color:var(--muted);
       font-size:clamp(14px,1.15vw,16px);
       line-height:1.65;
-      max-width:62ch;margin:0 0 16px
+      max-width:78ch;
     }
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
 
-    .hero-card{
-      border-radius:var(--radius2);
-      background:rgba(255,255,255,.70);
-      border:1px solid rgba(11,15,24,.10);
-      box-shadow:var(--shadow);
-      overflow:hidden;position:relative;min-height:420px
+    .hero-grid{
+      margin-top:18px;
+      display:grid; grid-template-columns:1.05fr .95fr;
+      gap:14px; align-items:stretch;
     }
-    .hero-media{
-      position:absolute;inset:0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.92) 78%),
-        url("assets/hero.jpg") center/cover no-repeat;
-      filter:saturate(1.03) contrast(1.03)
-    }
-    .hero-overlay{position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
-    .badge-row{display:flex;flex-wrap:wrap;gap:10px}
-    .badge{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:10px 12px;border-radius:999px;
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(11,15,24,.12);
-      font-size:13px
-    }
-    .shield{
-      width:26px;height:26px;display:grid;place-items:center;border-radius:10px;
-      background:linear-gradient(180deg, rgba(226,199,122,.35), rgba(201,161,74,.18));
-      border:1px solid rgba(226,199,122,.45)
-    }
-    .hero-bottom{
-      display:grid;gap:8px;padding:14px;border-radius:18px;
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(11,15,24,.12);
-    }
-    .hero-bottom strong{font-size:14px}
-    .hero-bottom span{color:var(--muted);font-size:13px}
-
-    /* SECTIONS */
-    section{padding:48px 0}
-    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
-    h2{margin:0;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em}
-    .sub{margin:0;color:var(--muted);font-size:14px;line-height:1.6;max-width:78ch}
-
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     .card{
       border-radius:var(--radius);
       border:1px solid rgba(11,15,24,.10);
-      background:rgba(255,255,255,.72);
-      box-shadow:0 12px 30px rgba(11,15,24,.08);
-      padding:18px
+      background:rgba(255,255,255,.80);
+      box-shadow:var(--shadow);
+      padding:18px;
     }
-    .card h3{margin:8px 0 8px;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+    .hero-media-card{
+      position:relative; overflow:hidden; padding:0;
+      min-height:380px; border-radius:var(--radius2);
+      box-shadow:var(--shadow2);
+      background:rgba(255,255,255,.80);
+      border:1px solid rgba(11,15,24,.10);
+    }
+    .hero-media{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.92) 78%),
+        url("assets/hero.jpg") center/cover no-repeat;
+      filter:saturate(1.02) contrast(1.02);
+    }
+    .hero-overlay{
+      position:absolute; inset:0;
+      display:flex; flex-direction:column; justify-content:space-between;
+      padding:18px;
+    }
+    .badge-row{display:flex;flex-wrap:wrap;gap:10px}
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px; border-radius:999px;
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(11,15,24,.12);
+      font-size:13px;
+    }
+    .shield{
+      width:26px;height:26px;display:grid;place-items:center;border-radius:10px;
+      background:linear-gradient(180deg, rgba(226,199,122,.42), rgba(201,161,74,.18));
+      border:1px solid rgba(226,199,122,.55);
+    }
+    .hero-bottom{
+      display:grid; gap:6px;
+      padding:14px;
+      border-radius:18px;
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(11,15,24,.12);
+    }
+    .hero-bottom strong{font-size:14px}
+    .hero-bottom span{font-size:13px;color:var(--muted)}
+
     .icon{
       width:42px;height:42px;border-radius:16px;
       display:grid;place-items:center;
-      background:linear-gradient(180deg, rgba(226,199,122,.30), rgba(201,161,74,.14));
-      border:1px solid rgba(226,199,122,.40)
+      background:linear-gradient(180deg, rgba(226,199,122,.34), rgba(201,161,74,.14));
+      border:1px solid rgba(226,199,122,.50);
     }
-    .img-card{padding:0;overflow:hidden;background:rgba(255,255,255,.72)}
-    .img-top{height:190px;background:center/cover no-repeat;position:relative}
-    .img-top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.82))}
-    .img-body{padding:18px}
-
     .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:8px}
     .list li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:14px;line-height:1.5}
     .tick{
       width:18px;height:18px;border-radius:6px;flex:0 0 auto;
       background:rgba(201,161,74,.18);
-      border:1px solid rgba(201,161,74,.30);
+      border:1px solid rgba(201,161,74,.32);
       display:grid;place-items:center;margin-top:1px;color:var(--ink);font-weight:900
     }
 
-    /* Contact */
+    /* SERVICES */
+    section{padding:46px 0}
+    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
+    h2{margin:0;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em}
+    .sub{margin:0;color:var(--muted);font-size:14px;line-height:1.6;max-width:78ch}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .img-card{padding:0;overflow:hidden}
+    .img-top{height:190px;background:center/cover no-repeat;position:relative}
+    .img-top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.86))}
+    .img-body{padding:18px}
+    .img-card h3{margin:10px 0 8px;font-size:16px}
+    .img-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+
+    /* CONTACT */
     .contact{display:grid;grid-template-columns:1fr .95fr;gap:14px;align-items:start}
     label{font-size:12px;color:var(--muted)}
     input, textarea, select{
       width:100%; padding:12px 12px;
       border-radius:14px;
       border:1px solid rgba(11,15,24,.14);
-      background:rgba(255,255,255,.82);
+      background:rgba(255,255,255,.90);
       color:var(--ink);
-      outline:none
+      outline:none;
     }
     textarea{min-height:110px;resize:vertical}
-    input:focus, textarea:focus, select:focus{border-color:rgba(201,161,74,.55)}
+    input:focus, textarea:focus, select:focus{border-color:rgba(201,161,74,.60)}
     .tiny{color:var(--muted);font-size:12px;line-height:1.5}
 
     footer{
       padding:22px 0 40px;
       border-top:1px solid rgba(11,15,24,.10);
-      color:var(--muted);font-size:13px
+      color:var(--muted);font-size:13px;
     }
     .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
+    /* WhatsApp floating */
     .fab{position:fixed;right:18px;bottom:18px;z-index:60}
     .fab a{
       display:inline-flex;align-items:center;gap:10px;
       padding:12px 14px;border-radius:999px;
       border:1px solid rgba(11,15,24,.14);
-      background:rgba(255,255,255,.85);
-      box-shadow:0 14px 36px rgba(11,15,24,.14);
+      background:rgba(255,255,255,.92);
+      box-shadow:0 18px 44px rgba(11,15,24,.16);
       font-weight:900;font-size:13px
     }
     .wa-dot{width:12px;height:12px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.16)}
 
     @media (max-width:980px){
       .hero-grid{grid-template-columns:1fr}
-      .hero-card{min-height:330px}
       .grid3{grid-template-columns:1fr}
       .contact{grid-template-columns:1fr}
       .links{display:none}
+      .hero-logo img{max-height:220px}
     }
   </style>
 </head>
 
 <body>
+  <!-- NAV -->
   <header class="nav">
     <div class="wrap nav-inner">
-      <div style="min-width:240px;font-weight:900;">Harbour &amp; Home</div>
+      <div class="brand-mini">
+        <img src="assets/logo-icon-256.png" alt="Harbour & Home icon">
+        <span>Harbour &amp; Home</span>
+      </div>
 
       <nav class="links" aria-label="Site">
         <a href="#services">Services</a>
@@ -257,60 +303,74 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <main id="top" class="hero">
-    <div class="wrap hero-grid">
-
-      <div>
-        <!-- BIG TOP CENTER LOGO -->
+    <div class="wrap">
+      <div class="hero-top">
+        <!-- BIG TOP CENTRE LOGO (NO NUMBER) -->
         <div class="hero-logo">
           <img src="assets/logo.png" alt="Harbour & Home Cleaning Services logo (no number)">
         </div>
 
         <div class="pill"><span class="dot"></span> Boats • Homes • Offices — Interior Cleaning (Jersey)</div>
 
+        <!-- Client exact wording -->
         <h1>Professional Cleaning, clean and pristine!</h1>
 
         <p class="lead">
           High-standard interior cleans for <strong>boats</strong>, <strong>homes</strong> and <strong>offices</strong>.
           Fully insured, reliable and detail-focused — fast quotes via call or WhatsApp.
         </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#contact">Request a Quote</a>
-          <a class="btn" href="#services">View Services</a>
-        </div>
-
-        <ul class="list" style="margin-top:16px">
-          <li><span class="tick">✓</span> Deep cleans available</li>
-          <li><span class="tick">✓</span> End of tenancy / Move-in cleans</li>
-          <li><span class="tick">✓</span> Domestic & commercial</li>
-        </ul>
       </div>
 
-      <aside class="hero-card" aria-label="Hero image">
-        <div class="hero-media" role="img" aria-label="Cleaning services in Jersey"></div>
-        <div class="hero-overlay">
-          <div class="badge-row">
-            <div class="badge"><span class="shield">🛡️</span> Fully Insured</div>
-            <div class="badge"><span class="shield">🧽</span> Interior Cleaning</div>
-            <div class="badge"><span class="shield">📍</span> Jersey</div>
-          </div>
+      <div class="hero-grid">
+        <div class="card">
+          <div class="icon">⭐</div>
+          <h2 style="margin:10px 0 10px">What we do</h2>
+          <p class="sub" style="margin:0">
+            Premium interior cleaning with a focus on results, reliability and a spotless finish.
+          </p>
 
-          <div class="hero-bottom">
-            <strong>Call or WhatsApp for a fast quote</strong>
-            <span>07797 799997</span>
+          <ul class="list">
+            <li><span class="tick">✓</span> Boat interior cleaning (cabins, heads, galley, saloon)</li>
+            <li><span class="tick">✓</span> Home cleaning (regular or one-off)</li>
+            <li><span class="tick">✓</span> Deep cleans</li>
+            <li><span class="tick">✓</span> End of tenancy / Move-in cleans</li>
+            <li><span class="tick">✓</span> Office cleaning (domestic & commercial)</li>
+          </ul>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+            <a class="btn primary" href="#contact">Request a Quote</a>
+            <a class="btn" href="#services">View Services</a>
           </div>
         </div>
-      </aside>
+
+        <aside class="hero-media-card" aria-label="Hero image">
+          <div class="hero-media" role="img" aria-label="Cleaning services in Jersey"></div>
+          <div class="hero-overlay">
+            <div class="badge-row">
+              <div class="badge"><span class="shield">🛡️</span> Fully Insured</div>
+              <div class="badge"><span class="shield">🧽</span> Interior Cleaning</div>
+              <div class="badge"><span class="shield">📍</span> Jersey</div>
+            </div>
+
+            <div class="hero-bottom">
+              <strong>Call or WhatsApp for a fast quote</strong>
+              <span>07797 799997</span>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
   </main>
 
+  <!-- SERVICES -->
   <section id="services">
     <div class="wrap">
       <div class="section-title">
         <div>
           <h2>Services</h2>
-          <p class="sub">Premium, reliable interior cleaning across Jersey — designed around what clients book most.</p>
+          <p class="sub">Clear, simple and professional — exactly what customers want to see.</p>
         </div>
       </div>
 
@@ -320,7 +380,7 @@
           <div class="img-body">
             <div class="icon">⛵</div>
             <h3>Boat Interior Cleaning</h3>
-            <p>Cabins, galley, heads, saloon and interior detailing with care and respect for materials.</p>
+            <p>Careful interior detailing for boats — clean, fresh and well presented.</p>
             <ul class="list">
               <li><span class="tick">✓</span> Deep clean or maintenance clean</li>
               <li><span class="tick">✓</span> Touch-point sanitising</li>
@@ -334,7 +394,7 @@
           <div class="img-body">
             <div class="icon">🏠</div>
             <h3>Home Cleaning</h3>
-            <p>Consistent, high-standard home cleaning that fits your schedule.</p>
+            <p>Regular cleans, one-off cleans, deep cleans, and end of tenancy / move-in.</p>
             <ul class="list">
               <li><span class="tick">✓</span> Kitchens & bathrooms</li>
               <li><span class="tick">✓</span> Deep cleans</li>
@@ -348,7 +408,7 @@
           <div class="img-body">
             <div class="icon">🏢</div>
             <h3>Office Cleaning</h3>
-            <p>Professional commercial cleaning to keep your workspace clean, safe and presentable.</p>
+            <p>Reliable commercial cleaning to keep your workspace clean, safe and professional.</p>
             <ul class="list">
               <li><span class="tick">✓</span> Desks & common areas</li>
               <li><span class="tick">✓</span> Kitchens & washrooms</li>
@@ -360,41 +420,43 @@
     </div>
   </section>
 
+  <!-- INSURED -->
   <section id="insured">
     <div class="wrap">
       <div class="section-title">
         <div>
           <h2>Fully Insured</h2>
-          <p class="sub">Insurance in place for boats, homes and offices — covering domestic and commercial cleans.</p>
+          <p class="sub">Insurance in place for boats, homes and offices — domestic and commercial cleans.</p>
         </div>
       </div>
 
       <div class="grid3">
         <div class="card">
           <div class="icon">🛡️</div>
-          <h3>Confidence for clients</h3>
-          <p>A clear trust signal that helps customers choose you faster.</p>
+          <h3 style="margin:10px 0 8px;font-size:16px">Trust & confidence</h3>
+          <p>Helps customers feel confident booking your service.</p>
         </div>
         <div class="card">
           <div class="icon">✅</div>
-          <h3>Professional standards</h3>
-          <p>Reliable service, consistent quality, and attention to detail.</p>
+          <h3 style="margin:10px 0 8px;font-size:16px">Professional standards</h3>
+          <p>Consistent quality and attention to detail on every clean.</p>
         </div>
         <div class="card">
           <div class="icon">⏱️</div>
-          <h3>Fast response</h3>
-          <p>Quick quotes via call or WhatsApp — flexible scheduling.</p>
+          <h3 style="margin:10px 0 8px;font-size:16px">Fast quotes</h3>
+          <p>Call or WhatsApp for quick availability and pricing.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
       <div class="section-title">
         <div>
           <h2>Request a Quote</h2>
-          <p class="sub">Send details on WhatsApp — fastest way to get a quote.</p>
+          <p class="sub">Fastest way: fill this in and it sends straight to WhatsApp.</p>
         </div>
       </div>
 
@@ -420,7 +482,7 @@
 
             <div>
               <label for="details">Details</label>
-              <textarea id="details" required placeholder="Brief details (location, size, preferred date/time, any notes)..."></textarea>
+              <textarea id="details" required placeholder="Location, size, preferred date/time, and any notes..."></textarea>
             </div>
 
             <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -433,7 +495,7 @@
         </div>
 
         <div class="card">
-          <h3 style="margin:0 0 10px">Direct Contact</h3>
+          <h3 style="margin:0 0 10px;font-size:16px">Direct Contact</h3>
           <p class="sub" style="margin:0 0 14px">Boats • Homes • Offices — Jersey</p>
 
           <div style="display:grid;gap:10px">
@@ -454,7 +516,7 @@
   <footer>
     <div class="wrap foot">
       <div style="display:flex;align-items:center;gap:10px">
-        <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.75);border:1px solid rgba(11,15,24,.12);padding:5px">
+        <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.86);border:1px solid rgba(11,15,24,.12);padding:5px">
         <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey</div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
