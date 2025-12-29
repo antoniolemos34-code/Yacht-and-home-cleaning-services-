@@ -25,8 +25,9 @@
       --muted:#6b7280;
       --gold:#c9a14a;
       --radius:22px;
-      --max:1100px;
+      --max:1120px;
       --shadow:0 20px 50px rgba(0,0,0,.08);
+      --line:rgba(11,15,24,.12);
     }
 
     *{box-sizing:border-box}
@@ -43,65 +44,101 @@
     /* NAV */
     header{
       position:sticky;top:0;z-index:50;
-      background:rgba(251,247,239,.9);
+      background:rgba(251,247,239,.90);
       backdrop-filter:blur(10px);
-      border-bottom:1px solid #e5e7eb;
+      border-bottom:1px solid var(--line);
     }
     .nav{
       display:flex;
       align-items:center;
       justify-content:space-between;
       padding:14px 0;
+      gap:12px;
     }
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
-      font-weight:800;
+      font-weight:900;
+      letter-spacing:-.02em;
     }
-    .brand img{width:38px}
-
+    .brand img{
+      width:38px;height:38px;object-fit:contain;
+      background:#fff;border:1px solid var(--line);
+      border-radius:14px;padding:6px;
+    }
     .actions a{
       margin-left:8px;
       padding:10px 14px;
       border-radius:14px;
-      font-weight:700;
+      font-weight:800;
       border:1px solid #d1d5db;
       background:white;
+      white-space:nowrap;
     }
     .actions .primary{
       background:linear-gradient(180deg,#f3e7c6,#e6d18b);
       border-color:#e6d18b;
     }
 
-    /* HERO */
-    .hero{text-align:center;padding:36px 0}
-    .hero-logo{
-      background:white;
-      padding:22px;
+    /* HERO (com a foto do barco que o cliente gosta: hero.jpg) */
+    .hero{
+      position:relative;
+      padding:44px 0 36px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(251,247,239,.20), rgba(251,247,239,.95) 65%, rgba(251,247,239,1)),
+        url("assets/hero.jpg") center/cover no-repeat;
+      filter:saturate(1.05) contrast(1.02);
+      transform:scale(1.02);
+    }
+    .hero .wrap{position:relative; z-index:1}
+    .hero-card{
+      background:rgba(255,255,255,.90);
+      border:1px solid var(--line);
       border-radius:28px;
       box-shadow:var(--shadow);
+      padding:22px;
+      text-align:center;
+    }
+
+    /* LOGO GRANDE E SEM CORTAR */
+    .hero-logo{
+      padding:18px;
+      border-radius:24px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:0 16px 34px rgba(0,0,0,.08);
       margin-bottom:18px;
     }
-    .hero-logo img{max-height:260px;margin:auto}
+    .hero-logo img{
+      width:100%;
+      height:auto;
+      max-height:340px;         /* maior */
+      object-fit:contain;       /* nunca corta */
+    }
 
     h1{
-      font-size:clamp(32px,4vw,52px);
-      margin:14px 0 10px;
+      font-size:clamp(30px,4vw,52px);
+      margin:10px 0 10px;
       letter-spacing:-.04em;
     }
     .lead{
       color:var(--muted);
-      max-width:720px;
-      margin:auto;
+      max-width:760px;
+      margin:0 auto;
       font-size:16px;
-      line-height:1.6;
+      line-height:1.65;
     }
 
     /* SERVICES */
-    section{padding:48px 0}
-    h2{font-size:28px;margin-bottom:8px}
-    .sub{color:var(--muted);margin-bottom:28px}
+    section{padding:46px 0}
+    h2{font-size:28px;margin:0 0 8px}
+    .sub{color:var(--muted);margin:0 0 26px;line-height:1.6}
 
     .grid{
       display:grid;
@@ -114,6 +151,7 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       overflow:hidden;
+      border:1px solid rgba(0,0,0,.04);
     }
     .card-img{
       height:190px;
@@ -122,7 +160,7 @@
     }
     .card-body{padding:20px}
     .card-body h3{margin:0 0 8px}
-    .card-body p{margin:0 0 12px;color:var(--muted)}
+    .card-body p{margin:0 0 12px;color:var(--muted);line-height:1.6}
     ul{padding:0;margin:0;list-style:none}
     li{margin-bottom:6px}
 
@@ -133,16 +171,18 @@
       border-radius:28px;
       box-shadow:var(--shadow);
       text-align:center;
+      border:1px solid rgba(0,0,0,.04);
     }
     .contact-box a{
       display:inline-block;
       margin:8px;
       padding:14px 20px;
       border-radius:999px;
-      font-weight:800;
+      font-weight:900;
       border:1px solid #d1d5db;
+      background:#fff;
     }
-    .contact-box .primary{
+    .contact-box .wa{
       background:#25d366;
       color:white;
       border-color:#25d366;
@@ -153,9 +193,11 @@
       text-align:center;
       color:var(--muted);
       font-size:14px;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,.35);
     }
 
-    /* FLOATING WHATSAPP */
+    /* FLOATING WHATSAPP (só 1, limpo) */
     .whatsapp{
       position:fixed;
       right:18px;
@@ -164,8 +206,13 @@
       color:white;
       padding:14px 18px;
       border-radius:999px;
-      font-weight:800;
+      font-weight:900;
       box-shadow:0 20px 40px rgba(0,0,0,.2);
+    }
+
+    @media (max-width:520px){
+      .actions a{padding:10px 12px}
+      .hero-logo img{max-height:280px}
     }
   </style>
 </head>
@@ -180,22 +227,27 @@
     </div>
     <div class="actions">
       <a href="tel:07797799997">Call</a>
-      <a class="primary" href="https://wa.me/447797799997" target="_blank">WhatsApp</a>
+      <a class="primary" href="https://wa.me/447797799997" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </header>
 
 <main class="hero">
   <div class="wrap">
-    <div class="hero-logo">
-      <img src="assets/logo-no-number-transparent.png" alt="Harbour & Home Cleaning Services">
-    </div>
+    <div class="hero-card">
 
-    <h1>Professional Cleaning, clean and pristine!</h1>
-    <p class="lead">
-      High-standard interior cleaning for boats, homes and offices in Jersey.
-      Fully insured. Reliable. Detail-focused.
-    </p>
+      <!-- ⚠️ CONFIRMA ESTE NOME (no teu GitHub aparece "logo-no-number-transp...") -->
+      <div class="hero-logo">
+        <img src="assets/logo-no-number-transp.png" alt="Harbour & Home Cleaning Services logo">
+      </div>
+
+      <h1>Professional Cleaning, clean and pristine!</h1>
+      <p class="lead">
+        High-standard <strong>interior cleaning</strong> for boats, homes and offices in Jersey.
+        Fully insured. Reliable. Detail-focused — call or WhatsApp for a fast quote.
+      </p>
+
+    </div>
   </div>
 </main>
 
@@ -209,7 +261,7 @@
         <div class="card-img" style="background-image:url('assets/yacht-cleaning.jpg')"></div>
         <div class="card-body">
           <h3>Boat Interior Cleaning</h3>
-          <p>Careful interior detailing for boats.</p>
+          <p>Careful interior detailing for boats — clean, fresh and well presented.</p>
           <ul>
             <li>✓ Deep or maintenance cleans</li>
             <li>✓ Touch-point sanitising</li>
@@ -222,11 +274,11 @@
         <div class="card-img" style="background-image:url('assets/home-windows.jpg')"></div>
         <div class="card-body">
           <h3>Home Cleaning</h3>
-          <p>Regular, deep and end of tenancy cleans.</p>
+          <p>Regular cleans, one-off cleans, deep cleans, and end of tenancy / move-in.</p>
           <ul>
             <li>✓ Kitchens & bathrooms</li>
             <li>✓ Deep cleans</li>
-            <li>✓ Move-in / move-out</li>
+            <li>✓ End of tenancy / Move-in cleans</li>
           </ul>
         </div>
       </div>
@@ -235,7 +287,7 @@
         <div class="card-img" style="background-image:url('assets/office-cleaning.jpg')"></div>
         <div class="card-body">
           <h3>Office Cleaning</h3>
-          <p>Reliable commercial cleaning services.</p>
+          <p>Reliable commercial cleaning to keep your workspace clean, safe and professional.</p>
           <ul>
             <li>✓ Desks & common areas</li>
             <li>✓ Kitchens & washrooms</li>
@@ -252,7 +304,7 @@
     <div class="contact-box">
       <h2>Call or WhatsApp for a fast quote</h2>
       <a href="tel:07797799997">Call: 07797 799997</a>
-      <a class="primary" href="https://wa.me/447797799997" target="_blank">WhatsApp</a>
+      <a class="wa" href="https://wa.me/447797799997" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -261,7 +313,7 @@
   © <span id="year"></span> Harbour & Home Cleaning Services — Jersey
 </footer>
 
-<a class="whatsapp" href="https://wa.me/447797799997" target="_blank">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/447797799997" target="_blank" rel="noopener">WhatsApp</a>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
