@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#070A12" />
+  <meta name="theme-color" content="#F6F2EA" />
   <title>Harbour & Home Cleaning Services — Jersey</title>
   <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Deep cleans and end of tenancy / move-in cleans available. Call or WhatsApp for a fast quote." />
   <meta name="robots" content="index,follow" />
@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" href="assets/logo-icon-256.png" />
   <link rel="apple-touch-icon" href="assets/logo-icon.png" />
 
-  <!-- Open Graph (WhatsApp preview) -->
+  <!-- Social preview -->
   <meta property="og:title" content="Harbour & Home Cleaning Services — Jersey" />
   <meta property="og:description" content="Boats • Homes • Offices. Fully insured. Fast quotes via Call or WhatsApp." />
   <meta property="og:type" content="website" />
@@ -24,15 +24,17 @@
 
   <style>
     :root{
-      --bg:#070A12;
-      --text:#EAF0FF;
-      --muted:rgba(234,240,255,.72);
-      --line:rgba(255,255,255,.12);
+      --bg:#F6F2EA;            /* warm off-white to match gold outline */
+      --bg2:#FFFFFF;
+      --ink:#0B0F18;
+      --muted:rgba(11,15,24,.70);
+      --line:rgba(11,15,24,.12);
+      --card:rgba(255,255,255,.72);
+      --shadow:0 18px 50px rgba(11,15,24,.10);
       --gold:#C9A14A;
       --gold2:#E2C77A;
       --radius:22px;
       --radius2:28px;
-      --shadow:0 20px 60px rgba(0,0,0,.45);
       --max:1120px;
     }
     *{box-sizing:border-box}
@@ -40,158 +42,158 @@
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
+      color:var(--ink);
       background:
-        radial-gradient(1200px 700px at 15% 10%, rgba(201,161,74,.22), transparent 60%),
-        radial-gradient(900px 650px at 85% 25%, rgba(226,199,122,.14), transparent 55%),
-        radial-gradient(900px 650px at 30% 90%, rgba(64,120,255,.10), transparent 55%),
-        linear-gradient(180deg, var(--bg), #05060B 70%);
+        radial-gradient(900px 520px at 18% 5%, rgba(201,161,74,.18), transparent 60%),
+        radial-gradient(700px 520px at 80% 18%, rgba(226,199,122,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg), #FFFFFF 70%);
       overflow-x:hidden;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .wrap{width:min(var(--max), calc(100% - 40px));margin:0 auto}
 
-    /* Nav */
+    /* NAV */
     .nav{
       position:sticky;top:0;z-index:50;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      background:rgba(7,10,18,.66);
-      backdrop-filter:blur(14px)
+      border-bottom:1px solid var(--line);
+      background:rgba(246,242,234,.78);
+      backdrop-filter:blur(12px);
     }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px;min-width:240px}
-    .brand img{
-      width:46px;height:46px;object-fit:contain;border-radius:14px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      padding:6px
-    }
-    .brand strong{display:block;font-size:14px;letter-spacing:.2px}
-    .brand span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
-
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
     .links{display:flex;gap:18px;align-items:center;justify-content:center;flex:1}
     .links a{
       font-size:13px;color:var(--muted);
       padding:8px 10px;border-radius:12px;border:1px solid transparent
     }
-    .links a:hover{color:var(--text);border-color:rgba(255,255,255,.10);background:rgba(255,255,255,.03)}
+    .links a:hover{color:var(--ink);border-color:rgba(11,15,24,.12);background:rgba(255,255,255,.55)}
     .nav-cta{display:flex;gap:10px;align-items:center}
-
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:11px 14px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      color:var(--text);font-weight:800;font-size:13px;
+      border:1px solid rgba(11,15,24,.14);
+      background:rgba(255,255,255,.65);
+      color:var(--ink);font-weight:900;font-size:13px;
       transition:.18s transform,.18s background,.18s border;white-space:nowrap
     }
-    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
+    .btn:hover{transform:translateY(-1px);background:#fff;border-color:rgba(11,15,24,.22)}
     .btn.primary{
-      border-color:rgba(201,161,74,.35);
-      background:linear-gradient(180deg, rgba(226,199,122,.20), rgba(201,161,74,.12))
+      border-color:rgba(201,161,74,.45);
+      background:linear-gradient(180deg, rgba(226,199,122,.35), rgba(201,161,74,.18));
     }
 
-    /* Hero */
-    .hero{padding:56px 0 26px}
-    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:26px;align-items:stretch}
+    /* HERO */
+    .hero{padding:34px 0 24px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
+    .hero-logo{
+      display:flex;justify-content:center;align-items:center;
+      padding:18px 16px;border-radius:var(--radius2);
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(11,15,24,.10);
+      box-shadow:var(--shadow);
+      margin-bottom:14px;
+    }
+    .hero-logo img{
+      width:min(520px, 95%);
+      height:auto;
+      object-fit:contain;
+      filter:drop-shadow(0 14px 26px rgba(11,15,24,.08));
+    }
+
     .pill{
       display:inline-flex;align-items:center;gap:10px;
-      padding:10px 14px;border:1px solid var(--line);
-      border-radius:999px;background:rgba(255,255,255,.04);
-      backdrop-filter:blur(10px);
+      padding:10px 14px;border:1px solid rgba(11,15,24,.12);
+      border-radius:999px;background:rgba(255,255,255,.60);
       font-size:13px;color:var(--muted)
     }
     .dot{
       width:8px;height:8px;border-radius:50%;
       background:linear-gradient(180deg,var(--gold2),var(--gold));
-      box-shadow:0 0 0 4px rgba(201,161,74,.12)
+      box-shadow:0 0 0 4px rgba(201,161,74,.15)
     }
     h1{
-      font-size:clamp(34px,4.3vw,56px);
-      line-height:1.04;letter-spacing:-.05em;
-      margin:14px 0 12px
+      font-size:clamp(32px,4.0vw,52px);
+      line-height:1.06;letter-spacing:-.05em;
+      margin:14px 0 10px
     }
     .lead{
       color:var(--muted);
-      font-size:clamp(14px,1.2vw,16px);
+      font-size:clamp(14px,1.15vw,16px);
       line-height:1.65;
-      max-width:62ch;margin:0 0 18px
+      max-width:62ch;margin:0 0 16px
     }
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
 
     .hero-card{
       border-radius:var(--radius2);
-      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.70);
+      border:1px solid rgba(11,15,24,.10);
       box-shadow:var(--shadow);
       overflow:hidden;position:relative;min-height:420px
     }
     .hero-media{
       position:absolute;inset:0;
       background:
-        linear-gradient(180deg, rgba(7,10,18,.10), rgba(7,10,18,.82) 78%),
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.92) 78%),
         url("assets/hero.jpg") center/cover no-repeat;
-      filter:saturate(1.05) contrast(1.05)
+      filter:saturate(1.03) contrast(1.03)
     }
     .hero-overlay{position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
     .badge-row{display:flex;flex-wrap:wrap;gap:10px}
     .badge{
       display:inline-flex;align-items:center;gap:10px;
       padding:10px 12px;border-radius:999px;
-      background:rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.14);
-      backdrop-filter:blur(10px);
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(11,15,24,.12);
       font-size:13px
     }
     .shield{
       width:26px;height:26px;display:grid;place-items:center;border-radius:10px;
-      background:linear-gradient(180deg, rgba(226,199,122,.22), rgba(201,161,74,.14));
-      border:1px solid rgba(226,199,122,.35)
+      background:linear-gradient(180deg, rgba(226,199,122,.35), rgba(201,161,74,.18));
+      border:1px solid rgba(226,199,122,.45)
     }
     .hero-bottom{
-      display:grid;gap:10px;padding:14px;border-radius:18px;
-      background:rgba(0,0,0,.40);
-      border:1px solid rgba(255,255,255,.14);
-      backdrop-filter:blur(10px)
+      display:grid;gap:8px;padding:14px;border-radius:18px;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(11,15,24,.12);
     }
     .hero-bottom strong{font-size:14px}
     .hero-bottom span{color:var(--muted);font-size:13px}
 
-    /* Sections */
-    section{padding:54px 0}
+    /* SECTIONS */
+    section{padding:48px 0}
     .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
-    h2{margin:0;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.02em}
+    h2{margin:0;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em}
     .sub{margin:0;color:var(--muted);font-size:14px;line-height:1.6;max-width:78ch}
 
     .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     .card{
       border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      box-shadow:0 14px 40px rgba(0,0,0,.25);
+      border:1px solid rgba(11,15,24,.10);
+      background:rgba(255,255,255,.72);
+      box-shadow:0 12px 30px rgba(11,15,24,.08);
       padding:18px
-    }
-    .icon{
-      width:42px;height:42px;border-radius:16px;
-      display:grid;place-items:center;
-      background:linear-gradient(180deg, rgba(226,199,122,.18), rgba(201,161,74,.08));
-      border:1px solid rgba(226,199,122,.32)
     }
     .card h3{margin:8px 0 8px;font-size:16px}
     .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
-
-    .img-card{padding:0;overflow:hidden;background:rgba(255,255,255,.03)}
+    .icon{
+      width:42px;height:42px;border-radius:16px;
+      display:grid;place-items:center;
+      background:linear-gradient(180deg, rgba(226,199,122,.30), rgba(201,161,74,.14));
+      border:1px solid rgba(226,199,122,.40)
+    }
+    .img-card{padding:0;overflow:hidden;background:rgba(255,255,255,.72)}
     .img-top{height:190px;background:center/cover no-repeat;position:relative}
-    .img-top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.62))}
+    .img-top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.82))}
     .img-body{padding:18px}
 
     .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:8px}
     .list li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:14px;line-height:1.5}
     .tick{
       width:18px;height:18px;border-radius:6px;flex:0 0 auto;
-      background:rgba(201,161,74,.16);
-      border:1px solid rgba(226,199,122,.26);
-      display:grid;place-items:center;margin-top:1px;color:var(--text);font-weight:900
+      background:rgba(201,161,74,.18);
+      border:1px solid rgba(201,161,74,.30);
+      display:grid;place-items:center;margin-top:1px;color:var(--ink);font-weight:900
     }
 
     /* Contact */
@@ -200,26 +202,29 @@
     input, textarea, select{
       width:100%; padding:12px 12px;
       border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
+      border:1px solid rgba(11,15,24,.14);
+      background:rgba(255,255,255,.82);
+      color:var(--ink);
       outline:none
     }
     textarea{min-height:110px;resize:vertical}
-    input:focus, textarea:focus, select:focus{border-color:rgba(226,199,122,.40)}
+    input:focus, textarea:focus, select:focus{border-color:rgba(201,161,74,.55)}
     .tiny{color:var(--muted);font-size:12px;line-height:1.5}
 
-    /* Footer + WhatsApp */
-    footer{padding:26px 0 42px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:13px}
+    footer{
+      padding:22px 0 40px;
+      border-top:1px solid rgba(11,15,24,.10);
+      color:var(--muted);font-size:13px
+    }
     .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
     .fab{position:fixed;right:18px;bottom:18px;z-index:60}
     .fab a{
       display:inline-flex;align-items:center;gap:10px;
       padding:12px 14px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(0,0,0,.45);
-      backdrop-filter:blur(12px);
-      box-shadow:0 16px 40px rgba(0,0,0,.35);
+      border:1px solid rgba(11,15,24,.14);
+      background:rgba(255,255,255,.85);
+      box-shadow:0 14px 36px rgba(11,15,24,.14);
       font-weight:900;font-size:13px
     }
     .wa-dot{width:12px;height:12px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.16)}
@@ -235,29 +240,13 @@
 </head>
 
 <body>
-  <!-- CONFIG -->
-  <script>
-    const PHONE_DISPLAY = "07797 799997";
-    const TEL_LINK = "tel:07797799997";
-    const WA_NUMBER = "447797799997";
-    const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Hi Glynn, I’d like a quote please.")}`;
-  </script>
-
-  <!-- NAV -->
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="Harbour & Home Cleaning Services">
-        <img src="assets/logo.png" alt="Harbour & Home logo">
-        <div>
-          <strong>Harbour &amp; Home</strong>
-          <span>Cleaning Services • Jersey</span>
-        </div>
-      </a>
+      <div style="min-width:240px;font-weight:900;">Harbour &amp; Home</div>
 
       <nav class="links" aria-label="Site">
         <a href="#services">Services</a>
         <a href="#insured">Fully Insured</a>
-        <a href="#areas">Areas</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -268,15 +257,22 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main id="top" class="hero">
     <div class="wrap hero-grid">
+
       <div>
+        <!-- BIG TOP CENTER LOGO -->
+        <div class="hero-logo">
+          <img src="assets/logo.png" alt="Harbour & Home Cleaning Services logo (no number)">
+        </div>
+
         <div class="pill"><span class="dot"></span> Boats • Homes • Offices — Interior Cleaning (Jersey)</div>
-        <h1>Professional cleaning,<br>done properly.</h1>
+
+        <h1>Professional Cleaning, clean and pristine!</h1>
+
         <p class="lead">
           High-standard interior cleans for <strong>boats</strong>, <strong>homes</strong> and <strong>offices</strong>.
-          Fully insured, reliable and detail-focused — with fast quotes and flexible scheduling.
+          Fully insured, reliable and detail-focused — fast quotes via call or WhatsApp.
         </p>
 
         <div class="hero-actions">
@@ -309,7 +305,6 @@
     </div>
   </main>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="wrap">
       <div class="section-title">
@@ -365,7 +360,6 @@
     </div>
   </section>
 
-  <!-- INSURED -->
   <section id="insured">
     <div class="wrap">
       <div class="section-title">
@@ -395,37 +389,6 @@
     </div>
   </section>
 
-  <!-- AREAS -->
-  <section id="areas">
-    <div class="wrap">
-      <div class="section-title">
-        <div>
-          <h2>Areas covered</h2>
-          <p class="sub">Jersey island-wide service. Message your location and preferred time for a quick quote.</p>
-        </div>
-      </div>
-
-      <div class="grid3">
-        <div class="card">
-          <div class="icon">📍</div>
-          <h3>Island-wide</h3>
-          <p>Available across Jersey (subject to schedule).</p>
-        </div>
-        <div class="card">
-          <div class="icon">🗓️</div>
-          <h3>Flexible bookings</h3>
-          <p>One-off, deep cleans, end of tenancy / move-in and regular cleans.</p>
-        </div>
-        <div class="card">
-          <div class="icon">💬</div>
-          <h3>WhatsApp quotes</h3>
-          <p>Send photos/details and we’ll reply with next steps.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
       <div class="section-title">
@@ -491,7 +454,7 @@
   <footer>
     <div class="wrap foot">
       <div style="display:flex;align-items:center;gap:10px">
-        <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);padding:5px">
+        <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.75);border:1px solid rgba(11,15,24,.12);padding:5px">
         <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey</div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -509,16 +472,13 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
     document.getElementById("quoteForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.getElementById("name").value.trim();
       const service = document.getElementById("service").value.trim();
       const details = document.getElementById("details").value.trim();
-
       const msg = `Hi Glynn, my name is ${name}.\n\nService: ${service}\n\nDetails: ${details}\n\nThanks.`;
-      const url = `https://wa.me/447797799997?text=${encodeURIComponent(msg)}`;
-      window.open(url, "_blank", "noopener,noreferrer");
+      window.open(`https://wa.me/447797799997?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
     });
   </script>
 </body>
