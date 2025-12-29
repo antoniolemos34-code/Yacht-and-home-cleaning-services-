@@ -59,7 +59,7 @@
     .nav{
       position:sticky; top:0; z-index:50;
       border-bottom:1px solid var(--line);
-      background:rgba(251,247,239,.86);
+      background:rgba(251,247,239,.88);
       backdrop-filter:blur(12px);
     }
     .nav-inner{
@@ -73,7 +73,7 @@
     .brand-mini img{
       width:38px;height:38px;object-fit:contain;
       border-radius:12px; padding:6px;
-      background:rgba(255,255,255,.78);
+      background:rgba(255,255,255,.80);
       border:1px solid rgba(11,15,24,.12);
     }
     .links{
@@ -86,7 +86,7 @@
     .links a:hover{
       color:var(--ink);
       border-color:rgba(11,15,24,.12);
-      background:rgba(255,255,255,.78);
+      background:rgba(255,255,255,.80);
     }
 
     .nav-cta{display:flex; gap:10px; align-items:center}
@@ -94,16 +94,21 @@
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:11px 14px; border-radius:14px;
       border:1px solid rgba(11,15,24,.14);
-      background:rgba(255,255,255,.78);
+      background:rgba(255,255,255,.80);
       color:var(--ink); font-weight:900; font-size:13px;
-      transition:.18s transform,.18s background,.18s border;
+      transition:.18s transform,.18s background,.18s border,.18s box-shadow;
       white-space:nowrap;
       cursor:pointer;
     }
-    .btn:hover{transform:translateY(-1px); background:#fff; border-color:rgba(11,15,24,.22)}
+    .btn:hover{
+      transform:translateY(-1px);
+      background:#fff;
+      border-color:rgba(11,15,24,.22);
+      box-shadow:0 12px 26px rgba(11,15,24,.10);
+    }
     .btn.primary{
-      border-color:rgba(201,161,74,.55);
-      background:linear-gradient(180deg, rgba(226,199,122,.42), rgba(201,161,74,.18));
+      border-color:rgba(201,161,74,.60);
+      background:linear-gradient(180deg, rgba(226,199,122,.48), rgba(201,161,74,.16));
     }
 
     /* HERO */
@@ -113,18 +118,18 @@
       margin-bottom:18px;
     }
 
-    /* Big logo FIRST (client request) */
+    /* Big logo FIRST */
     .hero-logo{
       width:min(980px, 100%);
       padding:18px 16px;
       border-radius:var(--radius2);
-      background:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.94);
       border:1px solid rgba(11,15,24,.10);
       box-shadow:var(--shadow2);
     }
     .hero-logo img{
       width:100%;
-      max-height:230px;
+      max-height:240px;
       object-fit:contain;
       filter:drop-shadow(0 18px 34px rgba(11,15,24,.10));
     }
@@ -135,7 +140,7 @@
       color:var(--muted);
     }
 
-    /* Boat image directly under logo (client request) */
+    /* Boat image directly under logo */
     .boat-shot{
       width:min(980px, 100%);
       border-radius:var(--radius2);
@@ -153,7 +158,7 @@
     .boat-shot::after{
       content:"";
       position:absolute; inset:0;
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.65));
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.64));
       pointer-events:none;
     }
 
@@ -162,7 +167,7 @@
       padding:10px 14px;
       border-radius:999px;
       border:1px solid rgba(11,15,24,.12);
-      background:rgba(255,255,255,.74);
+      background:rgba(255,255,255,.76);
       color:var(--muted);
       font-size:13px;
     }
@@ -193,7 +198,7 @@
     .card{
       border-radius:var(--radius);
       border:1px solid rgba(11,15,24,.10);
-      background:rgba(255,255,255,.88);
+      background:rgba(255,255,255,.90);
       box-shadow:var(--shadow);
       padding:18px;
     }
@@ -221,7 +226,7 @@
     .badge{
       display:inline-flex; align-items:center; gap:10px;
       padding:10px 12px; border-radius:999px;
-      background:rgba(255,255,255,.90);
+      background:rgba(255,255,255,.92);
       border:1px solid rgba(11,15,24,.12);
       font-size:13px;
     }
@@ -231,12 +236,12 @@
       border:1px solid rgba(226,199,122,.55);
     }
 
-    /* Phone shown ONCE only (no duplication) */
+    /* Phone shown once only */
     .hero-bottom{
       display:grid; gap:6px;
       padding:14px;
       border-radius:18px;
-      background:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.94);
       border:1px solid rgba(11,15,24,.12);
     }
     .hero-bottom strong{font-size:14px}
@@ -292,7 +297,7 @@
     }
     .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
-    /* WhatsApp floating button: NO NUMBER shown (clean) */
+    /* WhatsApp floating button (clean) */
     .fab{position:fixed;right:18px;bottom:18px;z-index:60}
     .fab a{
       display:inline-flex;align-items:center;gap:10px;
@@ -341,14 +346,13 @@
 
         <!-- BIG LOGO TOP CENTRE -->
         <div class="hero-logo" aria-label="Business logo">
-          <!-- NOTE: we auto-detect your real logo filename (because GitHub shows it truncated). -->
           <img id="bigLogo" src="assets/logo-no-number.png" alt="Harbour & Home Cleaning Services logo (no number)" loading="eager">
           <div id="logoFallback" class="logo-fallback">
             If the logo still doesn’t show: rename your logo file in <strong>/assets</strong> to <strong>logo-no-number.png</strong>
           </div>
         </div>
 
-        <!-- BOAT IMAGE BELOW LOGO (client liked this) -->
+        <!-- BOAT IMAGE BELOW LOGO -->
         <div class="boat-shot" aria-label="Boat image">
           <img src="assets/hero.jpg" alt="Boat speeding over water in Jersey" loading="eager">
         </div>
@@ -366,7 +370,7 @@
       <div class="hero-grid">
         <div class="card">
           <div class="icon">⭐</div>
-          <h2 style="margin:10px 0 10px">What we do</h2>
+          <h2 style="margin:10px 0 10px">What we offer</h2>
           <p class="sub" style="margin:0">
             Premium interior cleaning with a focus on results, reliability and a spotless finish.
           </p>
@@ -394,7 +398,6 @@
               <div class="badge"><span class="shield">📍</span> Jersey</div>
             </div>
 
-            <!-- PHONE/APPS shown cleanly (no duplication anywhere else in hero) -->
             <div class="hero-bottom">
               <strong>Call or WhatsApp for a fast quote</strong>
               <span>Phone: <span id="phonePretty">07797 799997</span></span>
@@ -448,7 +451,6 @@
         </article>
 
         <article class="card img-card">
-          <!-- UPDATED: your new office image -->
           <div class="img-top" style="background-image:url('assets/office-cleaning.jpg')"></div>
           <div class="img-body">
             <div class="icon">🏢</div>
@@ -541,7 +543,6 @@
           <h3 style="margin:0 0 10px;font-size:16px">Direct Contact</h3>
           <p class="sub" style="margin:0 0 14px">Boats • Homes • Offices — Jersey</p>
 
-          <!-- phone shown ONCE here (not duplicated inside WhatsApp button) -->
           <div style="display:grid;gap:10px">
             <a class="btn" href="tel:07797799997">Call: <strong>07797 799997</strong></a>
             <a class="btn primary" id="contactWa" href="#" target="_blank" rel="noopener">Message on WhatsApp</a>
@@ -570,7 +571,6 @@
     </div>
   </footer>
 
-  <!-- WhatsApp floating action (clean) -->
   <div class="fab">
     <a id="fabWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
       <span class="wa-dot"></span> WhatsApp
@@ -579,28 +579,22 @@
 
   <script>
     // ===== SETTINGS =====
-    const PHONE_E164 = "447797799997";     // WhatsApp format
-    const PHONE_TEL  = "07797799997";      // Call format
+    const PHONE_E164 = "447797799997"; // WhatsApp format
     const WA_BASE_MSG = "Hi Glynn, I’d like a quote please.";
 
-    // ===== Year =====
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // ===== Build WhatsApp links (no number duplication on buttons) =====
     function waLink(text){
       return `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(text)}`;
     }
-    const navWa = document.getElementById("navWa");
-    const heroWa = document.getElementById("heroWa");
-    const contactWa = document.getElementById("contactWa");
-    const fabWa = document.getElementById("fabWa");
 
-    navWa.href = waLink(WA_BASE_MSG);
-    heroWa.href = waLink(WA_BASE_MSG);
-    contactWa.href = waLink(WA_BASE_MSG);
-    fabWa.href = waLink(WA_BASE_MSG);
+    // Set WhatsApp links
+    document.getElementById("navWa").href = waLink(WA_BASE_MSG);
+    document.getElementById("heroWa").href = waLink(WA_BASE_MSG);
+    document.getElementById("contactWa").href = waLink(WA_BASE_MSG);
+    document.getElementById("fabWa").href = waLink(WA_BASE_MSG);
 
-    // ===== Quote form -> WhatsApp =====
+    // Quote form -> WhatsApp
     document.getElementById("quoteForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.getElementById("name").value.trim();
@@ -617,17 +611,13 @@ Thanks.`;
       window.open(waLink(msg), "_blank", "noopener,noreferrer");
     });
 
-    // ===== Robust logo loader (fixes your GitHub "truncated name" issue) =====
-    // GitHub list shows your logo as "logo-no-number-transp..." so the exact filename might not match your HTML.
-    // This tries multiple likely filenames and sets the first one that loads.
+    // Robust logo loader
     const candidates = [
       "assets/logo-no-number.png",
       "assets/logo-no-number-transparent.png",
       "assets/logo-no-number-transp.png",
       "assets/logo-no-number-trans.png",
-      "assets/logo-no-number-transparant.png", // common typo
-      "assets/logo-no-number-trans.png",
-      // If your file is actually a longer name, add it here after you rename it cleanly.
+      "assets/logo-no-number-transparant.png"
     ];
 
     const bigLogo = document.getElementById("bigLogo");
@@ -636,24 +626,24 @@ Thanks.`;
     function testImage(src){
       return new Promise((resolve) => {
         const im = new Image();
-        im.onload = () => resolve({src, ok:true});
-        im.onerror = () => resolve({src, ok:false});
-        im.src = src + "?v=" + Date.now(); // cache-bust
+        im.onload = () => resolve(true);
+        im.onerror = () => resolve(false);
+        im.src = src + "?v=" + Date.now();
       });
     }
 
     (async () => {
       for (const src of candidates){
-        const r = await testImage(src);
-        if (r.ok){
+        const ok = await testImage(src);
+        if (ok){
           bigLogo.src = src;
           logoFallback.style.display = "none";
           return;
         }
       }
-      // If none works, show a clear hint.
       logoFallback.style.display = "block";
     })();
   </script>
 </body>
-  </html>
+</html>
+0
