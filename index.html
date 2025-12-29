@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#FBF7EF" />
   <title>Harbour & Home Cleaning Services — Jersey</title>
-  <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Deep cleans and end of tenancy / move-in cleans available. Call or WhatsApp for a fast quote." />
+  <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Deep cleans and end of tenancy / move-in cleans available. Call, WhatsApp or email for a fast quote." />
   <meta name="robots" content="index,follow" />
+
+  <!-- Canonical + Social URL -->
+  <link rel="canonical" href="https://harbourandhome.co/" />
+  <meta property="og:url" content="https://harbourandhome.co/" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo-icon-256.png" />
@@ -14,13 +18,35 @@
 
   <!-- Social preview -->
   <meta property="og:title" content="Harbour & Home Cleaning Services — Jersey" />
-  <meta property="og:description" content="Boats • Homes • Offices. Fully insured. Fast quotes via Call or WhatsApp." />
+  <meta property="og:description" content="Boats • Homes • Offices. Fully insured. Fast quotes via Call, WhatsApp or Email." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/logo-icon-256.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Basic local business structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Harbour & Home Cleaning Services",
+    "url": "https://harbourandhome.co/",
+    "email": "info@harbourandhome.co",
+    "telephone": "+44 7797 799997",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jersey",
+      "addressCountry": "JE"
+    },
+    "areaServed": "Jersey",
+    "description": "Professional interior cleaning for boats, homes and offices in Jersey. Fully insured."
+  }
+  </script>
 
   <style>
     :root{
@@ -335,6 +361,7 @@
 
       <div class="nav-cta">
         <a class="btn" href="tel:07797799997" aria-label="Call Harbour and Home">Call</a>
+        <a class="btn" id="navEmail" href="mailto:info@harbourandhome.co" aria-label="Email Harbour and Home">Email</a>
         <a class="btn primary" id="navWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp Harbour and Home">WhatsApp</a>
       </div>
     </div>
@@ -363,7 +390,7 @@
 
         <p class="lead">
           High-standard interior cleans for <strong>boats</strong>, <strong>homes</strong> and <strong>offices</strong>.
-          Fully insured, reliable and detail-focused — fast quotes via call or WhatsApp.
+          Fully insured, reliable and detail-focused — fast quotes via call, WhatsApp or email.
         </p>
       </div>
 
@@ -399,10 +426,12 @@
             </div>
 
             <div class="hero-bottom">
-              <strong>Call or WhatsApp for a fast quote</strong>
+              <strong>Call, WhatsApp or email for a fast quote</strong>
               <span>Phone: <span id="phonePretty">07797 799997</span></span>
+              <span>Email: <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a></span>
               <div class="actions">
                 <a class="btn" href="tel:07797799997">Call</a>
+                <a class="btn" href="mailto:info@harbourandhome.co">Email</a>
                 <a class="btn primary" id="heroWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
               </div>
             </div>
@@ -490,7 +519,7 @@
         <div class="card">
           <div class="icon">⏱️</div>
           <h3 style="margin:10px 0 8px;font-size:16px">Fast quotes</h3>
-          <p class="sub">Call or WhatsApp for quick availability and pricing.</p>
+          <p class="sub">Call, WhatsApp or email for quick availability and pricing.</p>
         </div>
       </div>
     </div>
@@ -501,7 +530,7 @@
       <div class="section-title">
         <div>
           <h2>Request a Quote</h2>
-          <p class="sub">Fastest way: fill this in and it sends straight to WhatsApp.</p>
+          <p class="sub">Fastest way: fill this in and it sends straight to WhatsApp. Or email us.</p>
         </div>
       </div>
 
@@ -532,10 +561,11 @@
 
             <div style="display:flex;gap:10px;flex-wrap:wrap">
               <button class="btn primary" type="submit">Send via WhatsApp</button>
+              <a class="btn" href="mailto:info@harbourandhome.co?subject=Quote%20Request%20-%20Harbour%20%26%20Home">Email</a>
               <a class="btn" href="tel:07797799997">Call</a>
             </div>
 
-            <p class="tiny">This opens WhatsApp with your message ready to send.</p>
+            <p class="tiny">This opens WhatsApp with your message ready to send. Or email us at <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a>.</p>
           </form>
         </div>
 
@@ -545,6 +575,7 @@
 
           <div style="display:grid;gap:10px">
             <a class="btn" href="tel:07797799997">Call: <strong>07797 799997</strong></a>
+            <a class="btn" href="mailto:info@harbourandhome.co">Email: <strong>info@harbourandhome.co</strong></a>
             <a class="btn primary" id="contactWa" href="#" target="_blank" rel="noopener">Message on WhatsApp</a>
           </div>
 
@@ -562,7 +593,7 @@
     <div class="wrap foot">
       <div style="display:flex;align-items:center;gap:10px">
         <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.92);border:1px solid rgba(11,15,24,.12);padding:5px">
-        <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey</div>
+        <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey · <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a></div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn" href="#services">Services</a>
@@ -580,7 +611,8 @@
   <script>
     // ===== SETTINGS =====
     const PHONE_E164 = "447797799997"; // WhatsApp format
-    const WA_BASE_MSG = "Hi Glynn, I’d like a quote please.";
+    const EMAIL = "info@harbourandhome.co";
+    const WA_BASE_MSG = "Hi, I’d like a quote please.";
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -601,11 +633,13 @@
       const service = document.getElementById("service").value.trim();
       const details = document.getElementById("details").value.trim();
       const msg =
-`Hi Glynn, my name is ${name}.
+`Hi, my name is ${name}.
 
 Service: ${service}
 
 Details: ${details}
+
+Please reply by WhatsApp or email: ${EMAIL}
 
 Thanks.`;
       window.open(waLink(msg), "_blank", "noopener,noreferrer");
@@ -645,5 +679,4 @@ Thanks.`;
     })();
   </script>
 </body>
-</html>
-0
+                                                                    </html>
