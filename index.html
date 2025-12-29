@@ -8,6 +8,12 @@
   <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Deep cleans and end of tenancy / move-in cleans available. Call or WhatsApp for a fast quote." />
   <meta name="robots" content="index,follow" />
 
+  <!-- Preload key images (faster first load) -->
+  <link rel="preload" as="image" href="assets/hero.jpg">
+  <link rel="preload" as="image" href="assets/yacht-cleaning.jpg">
+  <link rel="preload" as="image" href="assets/home-windows.jpg">
+  <link rel="preload" as="image" href="assets/carpet-cleaning.jpg">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo-icon-256.png" />
   <link rel="apple-touch-icon" href="assets/logo-icon.png" />
@@ -36,6 +42,12 @@
       --shadow:0 18px 55px rgba(11,15,24,.10);
       --shadow2:0 24px 70px rgba(11,15,24,.14);
       --max:1120px;
+
+      /* Easy photo swap (only change these names if you want) */
+      --hero-img:url("assets/hero.jpg");
+      --boat-img:url("assets/yacht-cleaning.jpg");
+      --home-img:url("assets/home-windows.jpg");
+      --office-img:url("assets/carpet-cleaning.jpg");
     }
 
     *{box-sizing:border-box}
@@ -176,7 +188,7 @@
       position:absolute; inset:0;
       background:
         linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.92) 78%),
-        url("assets/hero.jpg") center/cover no-repeat;
+        var(--hero-img) center/cover no-repeat;
       filter:saturate(1.02) contrast(1.02);
     }
     .hero-overlay{
@@ -301,8 +313,8 @@
   <main id="top" class="hero">
     <div class="wrap">
       <div class="hero-top">
-        <!-- IMPORTANT: this matches your current GitHub file name -->
         <div class="hero-logo">
+          <!-- IMPORTANT: make sure the file name matches EXACTLY what's in /assets -->
           <img src="assets/logo-no-number-transparent.png" alt="Harbour & Home Cleaning Services logo (no number)">
         </div>
 
@@ -339,7 +351,8 @@
         </div>
 
         <aside class="hero-media-card" aria-label="Hero image">
-          <div class="hero-media" role="img" aria-label="Cleaning services in Jersey"></div>
+          <!-- TIP: Replace assets/hero.jpg with an INTERIOR BOAT cleaning photo -->
+          <div class="hero-media" role="img" aria-label="Interior cleaning services in Jersey"></div>
           <div class="hero-overlay">
             <div class="badge-row">
               <div class="badge"><span class="shield">🛡️</span> Fully Insured</div>
@@ -368,7 +381,8 @@
 
       <div class="grid3">
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('assets/yacht-cleaning.jpg')"></div>
+          <!-- TIP: Replace assets/yacht-cleaning.jpg with an INTERIOR boat cleaning photo -->
+          <div class="img-top" style="background-image:var(--boat-img)"></div>
           <div class="img-body">
             <div class="icon">⛵</div>
             <h3>Boat Interior Cleaning</h3>
@@ -382,7 +396,7 @@
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('assets/home-windows.jpg')"></div>
+          <div class="img-top" style="background-image:var(--home-img)"></div>
           <div class="img-body">
             <div class="icon">🏠</div>
             <h3>Home Cleaning</h3>
@@ -396,7 +410,8 @@
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('assets/carpet-cleaning.jpg')"></div>
+          <!-- OPTIONAL: Replace assets/carpet-cleaning.jpg with an OFFICE interior photo -->
+          <div class="img-top" style="background-image:var(--office-img)"></div>
           <div class="img-body">
             <div class="icon">🏢</div>
             <h3>Office Cleaning</h3>
@@ -509,7 +524,8 @@
         <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.90);border:1px solid rgba(11,15,24,.12);padding:5px">
         <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey</div>
       </div>
-      <div style="display:flex;gap::10px;flex-wrap:wrap">
+      <!-- fixed: gap::10px -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn" href="#services">Services</a>
         <a class="btn" href="#contact">Quote</a>
       </div>
