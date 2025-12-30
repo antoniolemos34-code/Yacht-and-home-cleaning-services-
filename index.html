@@ -11,13 +11,15 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://harbourandhome.co/" />
 
-  <!-- Favicons (YOU uploaded them inside /assets so we reference /assets/...) -->
+  <!-- Favicons (you uploaded inside /assets so we point there) -->
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <!-- If you create site.webmanifest, keep it in /assets as well -->
+  <!-- <link rel="manifest" href="assets/site.webmanifest"> -->
 
-  <!-- Social preview (ABSOLUTE URLs) -->
+  <!-- Social preview (absolute URLs) -->
   <meta property="og:title" content="Harbour & Home Cleaning Services — Jersey" />
   <meta property="og:description" content="Boats • Homes • Offices. Fully insured. Fast quotes via Call, WhatsApp or Email." />
   <meta property="og:type" content="website" />
@@ -36,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Structured data: Organization + LocalBusiness -->
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -109,7 +111,6 @@
     img{max-width:100%;display:block}
     .wrap{width:min(var(--max), calc(100% - 40px));margin:0 auto}
 
-    /* NAV */
     .nav{
       position:sticky; top:0; z-index:50;
       border-bottom:1px solid var(--line);
@@ -165,12 +166,12 @@
       background:linear-gradient(180deg, rgba(226,199,122,.48), rgba(201,161,74,.16));
     }
 
-    /* HERO */
     .hero{padding:26px 0 30px}
     .hero-top{
       display:grid; gap:14px; justify-items:center; text-align:center;
       margin-bottom:18px;
     }
+
     .hero-logo{
       width:min(980px, 100%);
       padding:18px 16px;
@@ -201,7 +202,7 @@
       background:#fff;
       position:relative;
     }
-    .boat-shot img{width:100%;height:auto;display:block;}
+    .boat-shot img{width:100%;height:auto;display:block}
     .boat-shot::after{
       content:"";
       position:absolute; inset:0;
@@ -390,9 +391,9 @@
     <div class="wrap">
       <div class="hero-top">
         <div class="hero-logo" aria-label="Business logo">
-          <img id="bigLogo" src="assets/logo-no-number.png" alt="Harbour & Home Cleaning Services logo" loading="eager">
+          <img id="bigLogo" src="assets/logo-no-number.png" alt="Harbour & Home Cleaning Services logo (no number)" loading="eager">
           <div id="logoFallback" class="logo-fallback">
-            Logo not found. Fix: rename your logo inside <strong>/assets</strong> to <strong>logo-no-number.png</strong>.
+            Logo not found. Go to <strong>/assets</strong> and rename your logo to <strong>logo-no-number.png</strong>
           </div>
         </div>
 
@@ -626,7 +627,7 @@
 
   <script>
     // ===== SETTINGS =====
-    const PHONE_E164 = "447797799997"; // WhatsApp format
+    const PHONE_E164 = "447797799997";
     const EMAIL = "info@harbourandhome.co";
     const WA_BASE_MSG = "Hi, I’d like a quote please.";
 
@@ -636,7 +637,7 @@
       return `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(text)}`;
     }
 
-    // Set WhatsApp links
+    // WhatsApp links
     document.getElementById("navWa").href = waLink(WA_BASE_MSG);
     document.getElementById("heroWa").href = waLink(WA_BASE_MSG);
     document.getElementById("contactWa").href = waLink(WA_BASE_MSG);
@@ -663,14 +664,12 @@ Thanks.`;
       window.open(waLink(msg), "_blank", "noopener,noreferrer");
     });
 
-    // Robust logo loader (tries multiple possible filenames)
+    // Logo fallback (tries multiple possible names)
     const candidates = [
       "assets/logo-no-number.png",
-      "assets/logo-no-number-transparent.png",
       "assets/logo-no-number-transp.png",
-      "assets/logo-no-number-trans.png",
-      "assets/logo-no-number-transp.webp",
-      "assets/logo-no-number.png?v=1"
+      "assets/logo-no-number-transparent.png",
+      "assets/logo-no-number-trans.png"
     ];
 
     const bigLogo = document.getElementById("bigLogo");
@@ -681,7 +680,7 @@ Thanks.`;
         const im = new Image();
         im.onload = () => resolve(true);
         im.onerror = () => resolve(false);
-        im.src = src + (src.includes("?") ? "&" : "?") + "v=" + Date.now();
+        im.src = src + "?v=" + Date.now();
       });
     }
 
@@ -689,7 +688,7 @@ Thanks.`;
       for (const src of candidates){
         const ok = await testImage(src);
         if (ok){
-          bigLogo.src = src.replace(/\?.*$/, "");
+          bigLogo.src = src;
           logoFallback.style.display = "none";
           return;
         }
@@ -698,4 +697,4 @@ Thanks.`;
     })();
   </script>
 </body>
-  </html>
+            </html>
