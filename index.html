@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#FBF7EF" />
   <title>Harbour &amp; Home Cleaning Services — Jersey</title>
+
   <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Deep cleans and end of tenancy / move-in cleans available. Call, WhatsApp or email for a fast quote." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
@@ -35,10 +36,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- Preload hero image (performance) -->
+  <!-- Performance -->
   <link rel="preload" as="image" href="/assets/hero.jpg" />
+  <link rel="preload" as="image" href="/logo.png" />
 
-  <!-- Structured data (Google-friendly) -->
+  <!-- Structured data (GOOGLE LOGO MUST BE STABLE) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -383,6 +385,16 @@
     }
     .wa-dot{width:12px;height:12px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.16)}
 
+    /* IMAGE SAFETY (in case something breaks) */
+    .img-fallback{
+      background:linear-gradient(180deg, rgba(226,199,122,.18), rgba(11,15,24,.04));
+      border:1px solid rgba(11,15,24,.10);
+      border-radius:18px;
+      padding:18px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
     @media (max-width:980px){
       .hero-grid{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
@@ -470,7 +482,7 @@
 
             <div class="hero-cta">
               <strong>Call, WhatsApp or email for a fast quote</strong>
-              <span>Phone: <span id="phonePretty">07797 799997</span></span>
+              <span>Phone: <span>07797 799997</span></span>
               <span>Email: <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a></span>
 
               <div class="hero-cta-actions">
@@ -628,7 +640,7 @@
 
           <ul class="list" style="margin-top:14px">
             <li><span class="tick">✓</span> Fully insured</li>
-            <li><span class="tick">✓</span> Interior cleaning only</li>
+            <li><span class="tick">✓</span> Interior cleaning</li>
             <li><span class="tick">✓</span> Domestic &amp; commercial</li>
           </ul>
         </div>
@@ -667,7 +679,7 @@
 
   <script>
     // ===== SETTINGS =====
-    const PHONE_E164 = "447797799997";
+    const PHONE_E164 = "447797799997"; // WhatsApp
     const EMAIL = "info@harbourandhome.co";
     const WA_BASE_MSG = "Hi, I’d like a quote please.";
 
@@ -677,11 +689,13 @@
       return `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(text)}`;
     }
 
+    // WhatsApp buttons
     document.getElementById("navWa").href = waLink(WA_BASE_MSG);
     document.getElementById("heroWa").href = waLink(WA_BASE_MSG);
     document.getElementById("contactWa").href = waLink(WA_BASE_MSG);
     document.getElementById("fabWa").href = waLink(WA_BASE_MSG);
 
+    // Quote form -> WhatsApp
     document.getElementById("quoteForm").addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -701,6 +715,12 @@ Please reply by WhatsApp or email: ${EMAIL}
 Thanks.`;
 
       window.open(waLink(msg), "_blank", "noopener,noreferrer");
+    });
+
+    // Safety: if the logo icon fails, fall back to main logo
+    const icon = document.querySelectorAll('img[src="/logo-icon.png"]');
+    icon.forEach(img => {
+      img.onerror = () => { img.src = "/logo.png"; };
     });
   </script>
 </body>
