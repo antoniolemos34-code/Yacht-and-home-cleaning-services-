@@ -12,14 +12,11 @@
   <link rel="canonical" href="https://harbourandhome.co/" />
 
   <!-- Favicons (ROOT) -->
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-  <!-- Optional (helps) -->
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <!-- Social preview -->
   <meta property="og:title" content="Harbour & Home Cleaning Services — Jersey" />
@@ -40,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Structured data (Google-friendly logo setup ✅) -->
+  <!-- Structured data (Google logo = /logo.png ✅ stable URL) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,15 +49,12 @@
         "url": "https://harbourandhome.co/",
         "logo": {
           "@type": "ImageObject",
-          "@id": "https://harbourandhome.co/#logo",
-          "url": "https://harbourandhome.co/logo-google.png",
-          "contentUrl": "https://harbourandhome.co/logo-google.png",
+          "url": "https://harbourandhome.co/logo.png",
+          "contentUrl": "https://harbourandhome.co/logo.png",
           "caption": "Harbour & Home Cleaning Services logo",
           "inLanguage": "en-GB"
         },
-        "image": {
-          "@id": "https://harbourandhome.co/#logo"
-        }
+        "image": "https://harbourandhome.co/logo.png"
       },
       {
         "@type": "LocalBusiness",
@@ -151,14 +145,11 @@
     }
     .brand-mini img{
       width:38px;height:38px;object-fit:contain;
-      border-radius:12px;
+      border-radius:12px; padding:6px;
       background:rgba(255,255,255,.80);
       border:1px solid rgba(11,15,24,.12);
-      padding:6px;
     }
-    .links{
-      display:flex; gap:16px; align-items:center; justify-content:center; flex:1;
-    }
+    .links{display:flex; gap:16px; align-items:center; justify-content:center; flex:1;}
     .links a{
       font-size:13px; color:var(--muted);
       padding:8px 10px; border-radius:12px; border:1px solid transparent;
@@ -277,7 +268,7 @@
       position:absolute; inset:0;
       background:
         linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.94) 78%),
-        url("hero.jpg") center/cover no-repeat;
+        url("/hero.jpg") center/cover no-repeat;
       filter:saturate(1.02) contrast(1.02);
     }
     .hero-overlay{
@@ -337,20 +328,6 @@
     .img-card h3{margin:10px 0 8px;font-size:16px}
     .img-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
 
-    .contact{display:grid;grid-template-columns:1fr .95fr;gap:14px;align-items:start}
-    label{font-size:12px;color:var(--muted)}
-    input, textarea, select{
-      width:100%; padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(11,15,24,.14);
-      background:rgba(255,255,255,.94);
-      color:var(--ink);
-      outline:none;
-    }
-    textarea{min-height:110px;resize:vertical}
-    input:focus, textarea:focus, select:focus{border-color:rgba(201,161,74,.60)}
-    .tiny{color:var(--muted);font-size:12px;line-height:1.5}
-
     footer{
       padding:22px 0 40px;
       border-top:1px solid rgba(11,15,24,.10);
@@ -372,7 +349,6 @@
     @media (max-width:980px){
       .hero-grid{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
-      .contact{grid-template-columns:1fr}
       .links{display:none}
       .hero-logo img{max-height:190px}
     }
@@ -383,7 +359,7 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <div class="brand-mini">
-        <img src="logo-icon-256.png" alt="Harbour & Home icon">
+        <img src="/logo-icon-256.png" alt="Harbour & Home icon">
         <span>Harbour &amp; Home</span>
       </div>
 
@@ -405,11 +381,12 @@
     <div class="wrap">
       <div class="hero-top">
         <div class="hero-logo" aria-label="Business logo">
-          <img src="harbour-home-logo-no-number.png" alt="Harbour & Home Cleaning Services logo" loading="eager">
+          <!-- Website hero logo (nice looking) -->
+          <img src="/harbour-home-logo-no-number.png" alt="Harbour & Home Cleaning Services logo" loading="eager">
         </div>
 
         <div class="boat-shot" aria-label="Boat image">
-          <img src="hero.jpg" alt="Boat speeding over water in Jersey" loading="eager">
+          <img src="/hero.jpg" alt="Boat speeding over water in Jersey" loading="eager">
         </div>
 
         <div class="pill"><span class="dot"></span> Boats • Homes • Offices — Interior Cleaning (Jersey)</div>
@@ -480,7 +457,7 @@
 
       <div class="grid3">
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('yacht-cleaning.jpg')"></div>
+          <div class="img-top" style="background-image:url('/yacht-cleaning.jpg')"></div>
           <div class="img-body">
             <div class="icon">⛵</div>
             <h3>Boat Interior Cleaning</h3>
@@ -494,7 +471,7 @@
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('home-windows.jpg')"></div>
+          <div class="img-top" style="background-image:url('/home-windows.jpg')"></div>
           <div class="img-body">
             <div class="icon">🏠</div>
             <h3>Home Cleaning</h3>
@@ -508,7 +485,7 @@
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('office-cleaning.jpg')"></div>
+          <div class="img-top" style="background-image:url('/office-cleaning.jpg')"></div>
           <div class="img-body">
             <div class="icon">🏢</div>
             <h3>Office Cleaning</h3>
@@ -562,7 +539,7 @@
         </div>
       </div>
 
-      <div class="contact">
+      <div class="contact" style="display:grid;grid-template-columns:1fr .95fr;gap:14px;align-items:start">
         <div class="card">
           <form id="quoteForm" style="display:grid;gap:10px">
             <div>
@@ -620,7 +597,7 @@
   <footer>
     <div class="wrap foot">
       <div style="display:flex;align-items:center;gap:10px">
-        <img src="logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.92);border:1px solid rgba(11,15,24,.12);padding:5px">
+        <img src="/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.92);border:1px solid rgba(11,15,24,.12);padding:5px">
         <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey · <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a></div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -674,4 +651,4 @@ Thanks.`;
     });
   </script>
 </body>
-                                        </html>
+    </html>
