@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#FBF7EF" />
   <title>Harbour & Home Cleaning Services — Jersey</title>
   <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Deep cleans and end of tenancy / move-in cleans available. Call, WhatsApp or email for a fast quote." />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://harbourandhome.co/" />
@@ -17,6 +17,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Optional (helps) -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <!-- Social preview -->
   <meta property="og:title" content="Harbour & Home Cleaning Services — Jersey" />
@@ -37,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Structured data (Google logo FIXED ✅) -->
+  <!-- Structured data (Google-friendly logo setup ✅) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,7 +50,17 @@
         "@id": "https://harbourandhome.co/#org",
         "name": "Harbour & Home Cleaning Services",
         "url": "https://harbourandhome.co/",
-        "logo": "https://harbourandhome.co/assets/harbour-home-logo-no-number.png"
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://harbourandhome.co/#logo",
+          "url": "https://harbourandhome.co/logo-google.png",
+          "contentUrl": "https://harbourandhome.co/logo-google.png",
+          "caption": "Harbour & Home Cleaning Services logo",
+          "inLanguage": "en-GB"
+        },
+        "image": {
+          "@id": "https://harbourandhome.co/#logo"
+        }
       },
       {
         "@type": "LocalBusiness",
@@ -71,7 +84,20 @@
         "@id": "https://harbourandhome.co/#website",
         "url": "https://harbourandhome.co/",
         "name": "Harbour & Home Cleaning Services",
-        "publisher": { "@id": "https://harbourandhome.co/#org" }
+        "publisher": { "@id": "https://harbourandhome.co/#org" },
+        "inLanguage": "en-GB"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://harbourandhome.co/#webpage",
+        "url": "https://harbourandhome.co/",
+        "name": "Harbour & Home Cleaning Services — Jersey",
+        "isPartOf": { "@id": "https://harbourandhome.co/#website" },
+        "about": { "@id": "https://harbourandhome.co/#business" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://harbourandhome.co/og-image.png"
+        }
       }
     ]
   }
@@ -124,10 +150,11 @@
       font-weight:900; letter-spacing:.2px;
     }
     .brand-mini img{
-      width:38px;height:38px;object-fit:cover;
-      border-radius:12px; padding:0;
+      width:38px;height:38px;object-fit:contain;
+      border-radius:12px;
       background:rgba(255,255,255,.80);
       border:1px solid rgba(11,15,24,.12);
+      padding:6px;
     }
     .links{
       display:flex; gap:16px; align-items:center; justify-content:center; flex:1;
@@ -356,8 +383,7 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <div class="brand-mini">
-        <!-- Small brand image (uses your main logo in /assets) -->
-        <img src="assets/harbour-home-logo-no-number.png" alt="Harbour & Home logo">
+        <img src="logo-icon-256.png" alt="Harbour & Home icon">
         <span>Harbour &amp; Home</span>
       </div>
 
@@ -379,8 +405,7 @@
     <div class="wrap">
       <div class="hero-top">
         <div class="hero-logo" aria-label="Business logo">
-          <!-- MAIN LOGO (fixed path ✅) -->
-          <img src="assets/harbour-home-logo-no-number.png" alt="Harbour & Home Cleaning Services logo" loading="eager">
+          <img src="harbour-home-logo-no-number.png" alt="Harbour & Home Cleaning Services logo" loading="eager">
         </div>
 
         <div class="boat-shot" aria-label="Boat image">
@@ -595,7 +620,7 @@
   <footer>
     <div class="wrap foot">
       <div style="display:flex;align-items:center;gap:10px">
-        <img src="assets/harbour-home-logo-no-number.png" alt="Harbour & Home logo" style="width:34px;height:34px;object-fit:cover;border-radius:12px;background:rgba(255,255,255,.92);border:1px solid rgba(11,15,24,.12);padding:0">
+        <img src="logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.92);border:1px solid rgba(11,15,24,.12);padding:5px">
         <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey · <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a></div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -623,13 +648,11 @@
       return `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(text)}`;
     }
 
-    // WhatsApp links
     document.getElementById("navWa").href = waLink(WA_BASE_MSG);
     document.getElementById("heroWa").href = waLink(WA_BASE_MSG);
     document.getElementById("contactWa").href = waLink(WA_BASE_MSG);
     document.getElementById("fabWa").href = waLink(WA_BASE_MSG);
 
-    // Quote form -> WhatsApp
     document.getElementById("quoteForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.getElementById("name").value.trim();
@@ -651,4 +674,4 @@ Thanks.`;
     });
   </script>
 </body>
-</html>
+                                        </html>
