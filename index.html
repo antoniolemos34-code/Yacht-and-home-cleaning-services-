@@ -12,18 +12,21 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://harbourandhome.co/" />
 
-  <!-- FAVICONS (ROOT) -->
+  <!-- Manifest -->
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Favicons (ROOT) -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Social preview -->
+  <!-- Social preview (WhatsApp/Facebook/iMessage) -->
   <meta property="og:title" content="Harbour &amp; Home Cleaning Services — Jersey" />
   <meta property="og:description" content="Boats • Homes • Offices. Fully insured. Fast quotes via Call, WhatsApp or Email." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://harbourandhome.co/" />
-  <meta property="og:image" content="https://harbourandhome.co/assets/og-image.png?v=2" />
+  <meta property="og:image" content="https://harbourandhome.co/assets/og-image.png" />
+  <meta property="og:image:secure_url" content="https://harbourandhome.co/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -31,7 +34,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Harbour &amp; Home Cleaning Services — Jersey" />
   <meta name="twitter:description" content="Boats • Homes • Offices. Fully insured. Fast quotes via Call, WhatsApp or Email." />
-  <meta name="twitter:image" content="https://harbourandhome.co/assets/og-image.png?v=2" />
+  <meta name="twitter:image" content="https://harbourandhome.co/assets/og-image.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,9 +43,9 @@
 
   <!-- Performance -->
   <link rel="preload" as="image" href="/assets/hero.jpg" />
-  <link rel="preload" as="image" href="/logo.png?v=2" />
+  <link rel="preload" as="image" href="/logo.png" />
 
-  <!-- Structured data -->
+  <!-- Structured data (Google) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,15 +55,15 @@
         "@id": "https://harbourandhome.co/#org",
         "name": "Harbour & Home Cleaning Services",
         "url": "https://harbourandhome.co/",
-        "logo": "https://harbourandhome.co/logo.png?v=2",
-        "image": "https://harbourandhome.co/logo.png?v=2"
+        "logo": "https://harbourandhome.co/logo.png",
+        "image": "https://harbourandhome.co/logo.png"
       },
       {
         "@type": "LocalBusiness",
         "@id": "https://harbourandhome.co/#business",
         "name": "Harbour & Home Cleaning Services",
         "url": "https://harbourandhome.co/",
-        "image": "https://harbourandhome.co/assets/og-image.png?v=2",
+        "image": "https://harbourandhome.co/assets/og-image.png",
         "telephone": "+44 7797 799997",
         "email": "info@harbourandhome.co",
         "address": {
@@ -89,7 +92,7 @@
         "about": { "@id": "https://harbourandhome.co/#business" },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": "https://harbourandhome.co/assets/og-image.png?v=2"
+          "url": "https://harbourandhome.co/assets/og-image.png"
         }
       }
     ]
@@ -113,6 +116,7 @@
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -120,67 +124,272 @@
       background:
         radial-gradient(1000px 600px at 18% 5%, rgba(201,161,74,.22), transparent 60%),
         radial-gradient(800px 520px at 85% 16%, rgba(226,199,122,.14), transparent 55%),
+        radial-gradient(800px 520px at 30% 95%, rgba(11,15,24,.06), transparent 55%),
         linear-gradient(180deg, var(--bg), #FFFFFF 68%);
+      overflow-x:hidden;
     }
+
     a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
     .wrap{width:min(var(--max), calc(100% - 40px));margin:0 auto}
 
+    /* NAV */
     .nav{
       position:sticky; top:0; z-index:50;
       border-bottom:1px solid var(--line);
-      background:rgba(251,247,239,.90);
+      background:rgba(251,247,239,.88);
       backdrop-filter:blur(12px);
     }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;}
-    .brand{display:flex;align-items:center;gap:10px;min-width:220px;font-weight:900;}
-    .brand img{width:38px;height:38px;object-fit:contain;border-radius:12px;padding:6px;background:#fff;border:1px solid rgba(11,15,24,.12);}
-    .links{display:flex;gap:16px;align-items:center;flex:1;justify-content:center;}
-    .links a{font-size:13px;color:var(--muted);padding:8px 10px;border-radius:12px;}
-    .links a:hover{color:var(--ink);background:rgba(255,255,255,.80);border:1px solid rgba(11,15,24,.12);}
-
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:11px 14px;border-radius:14px;
-      border:1px solid rgba(11,15,24,.14);
-      background:rgba(255,255,255,.92);
-      font-weight:900;font-size:13px;
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:12px 0;
     }
-    .btn.primary{border-color:rgba(201,161,74,.60);background:linear-gradient(180deg, rgba(226,199,122,.48), rgba(201,161,74,.16));}
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:220px;
+      font-weight:900; letter-spacing:.2px;
+    }
+    .brand img{
+      width:38px;height:38px;object-fit:contain;
+      border-radius:12px; padding:6px;
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(11,15,24,.12);
+    }
+    .links{display:flex; gap:16px; align-items:center; justify-content:center; flex:1;}
+    .links a{
+      font-size:13px; color:var(--muted);
+      padding:8px 10px; border-radius:12px; border:1px solid transparent;
+    }
+    .links a:hover{
+      color:var(--ink);
+      border-color:rgba(11,15,24,.12);
+      background:rgba(255,255,255,.80);
+    }
+    .nav-cta{display:flex; gap:10px; align-items:center}
 
+    /* BUTTONS */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:11px 14px; border-radius:14px;
+      border:1px solid rgba(11,15,24,.14);
+      background:rgba(255,255,255,.80);
+      color:var(--ink); font-weight:900; font-size:13px;
+      transition:.18s transform,.18s background,.18s border,.18s box-shadow;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      background:#fff;
+      border-color:rgba(11,15,24,.22);
+      box-shadow:0 12px 26px rgba(11,15,24,.10);
+    }
+    .btn.primary{
+      border-color:rgba(201,161,74,.60);
+      background:linear-gradient(180deg, rgba(226,199,122,.48), rgba(201,161,74,.16));
+    }
+
+    /* HERO */
     .hero{padding:26px 0 30px}
-    .hero-top{display:grid;gap:14px;justify-items:center;text-align:center;}
+    .hero-top{display:grid; gap:14px; justify-items:center; text-align:center; margin-bottom:18px;}
+
     .hero-logo{
-      width:min(980px,100%);
+      width:min(980px, 100%);
       padding:18px 16px;
       border-radius:var(--radius2);
-      background:#fff;
+      background:rgba(255,255,255,.94);
       border:1px solid rgba(11,15,24,.10);
       box-shadow:var(--shadow2);
     }
-    /* IMPORTANT: make logo always visible */
     .hero-logo img{
       width:100%;
-      max-height:220px;
+      max-height:240px;
       object-fit:contain;
-      filter:contrast(1.05) drop-shadow(0 18px 34px rgba(11,15,24,.10));
+      filter:drop-shadow(0 18px 34px rgba(11,15,24,.10));
     }
 
-    .hero-heroimg{width:min(980px,100%);border-radius:var(--radius2);overflow:hidden;border:1px solid rgba(11,15,24,.10);box-shadow:var(--shadow2);background:#fff;}
-    .hero-heroimg img{width:100%;display:block}
+    .hero-heroimg{
+      width:min(980px, 100%);
+      border-radius:var(--radius2);
+      overflow:hidden;
+      border:1px solid rgba(11,15,24,.10);
+      box-shadow:var(--shadow2);
+      background:#fff;
+      position:relative;
+    }
+    .hero-heroimg img{width:100%;height:auto;display:block}
+    .hero-heroimg::after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.64));
+      pointer-events:none;
+    }
 
-    .pill{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;border:1px solid rgba(11,15,24,.12);background:rgba(255,255,255,.80);color:var(--muted);font-size:13px;}
-    .dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(180deg,var(--gold2),var(--gold));box-shadow:0 0 0 4px rgba(201,161,74,.15);}
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(11,15,24,.12);
+      background:rgba(255,255,255,.76);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background:linear-gradient(180deg,var(--gold2),var(--gold));
+      box-shadow:0 0 0 4px rgba(201,161,74,.15);
+    }
 
-    h1{margin:2px 0 6px;font-size:clamp(30px,3.4vw,50px);line-height:1.06;letter-spacing:-.05em;}
-    .lead{margin:0;color:var(--muted);font-size:clamp(14px,1.15vw,16px);line-height:1.65;max-width:78ch;}
+    h1{
+      margin:2px 0 6px;
+      font-size:clamp(30px,3.4vw,50px);
+      line-height:1.06;
+      letter-spacing:-.05em;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size:clamp(14px,1.15vw,16px);
+      line-height:1.65;
+      max-width:78ch;
+    }
 
+    .hero-grid{
+      margin-top:18px;
+      display:grid; grid-template-columns:1.05fr .95fr;
+      gap:14px; align-items:stretch;
+    }
+
+    /* CARDS */
+    .card{
+      border-radius:var(--radius);
+      border:1px solid rgba(11,15,24,.10);
+      background:rgba(255,255,255,.90);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+
+    .icon{
+      width:42px;height:42px;border-radius:16px;
+      display:grid;place-items:center;
+      background:linear-gradient(180deg, rgba(226,199,122,.34), rgba(201,161,74,.14));
+      border:1px solid rgba(226,199,122,.50);
+    }
+
+    .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+    .list li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:14px;line-height:1.5}
+    .tick{
+      width:18px;height:18px;border-radius:6px;flex:0 0 auto;
+      background:rgba(201,161,74,.18);
+      border:1px solid rgba(201,161,74,.32);
+      display:grid;place-items:center;margin-top:1px;color:var(--ink);font-weight:900
+    }
+
+    .hero-panel{
+      position:relative; overflow:hidden; padding:0;
+      min-height:380px; border-radius:var(--radius2);
+      box-shadow:var(--shadow2);
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(11,15,24,.10);
+    }
+    .hero-panel-bg{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.94) 78%),
+        url("/assets/hero.jpg") center/cover no-repeat;
+      filter:saturate(1.02) contrast(1.02);
+    }
+    .hero-panel-content{
+      position:absolute; inset:0;
+      display:flex; flex-direction:column; justify-content:space-between;
+      padding:18px;
+    }
+    .badges{display:flex;flex-wrap:wrap;gap:10px}
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px; border-radius:999px;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(11,15,24,.12);
+      font-size:13px;
+    }
+    .shield{
+      width:26px;height:26px;display:grid;place-items:center;border-radius:10px;
+      background:linear-gradient(180deg, rgba(226,199,122,.42), rgba(201,161,74,.18));
+      border:1px solid rgba(226,199,122,.55);
+    }
+    .hero-cta{
+      display:grid; gap:6px;
+      padding:14px;
+      border-radius:18px;
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(11,15,24,.12);
+    }
+    .hero-cta strong{font-size:14px}
+    .hero-cta span{font-size:13px;color:var(--muted)}
+    .hero-cta-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+
+    /* SECTIONS */
+    section{padding:46px 0}
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
+    h2{margin:0;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em}
+    .sub{margin:0;color:var(--muted);font-size:14px;line-height:1.6;max-width:78ch}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .img-card{padding:0;overflow:hidden}
+    .img-top{height:190px;background:center/cover no-repeat;position:relative}
+    .img-top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.86))}
+    .img-body{padding:18px}
+    .img-card h3{margin:10px 0 8px;font-size:16px}
+    .img-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+
+    /* FORM */
+    .contact-grid{display:grid;grid-template-columns:1fr .95fr;gap:14px;align-items:start}
+    label{font-size:12px;color:var(--muted)}
+    input, textarea, select{
+      width:100%; padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(11,15,24,.14);
+      background:rgba(255,255,255,.94);
+      color:var(--ink);
+      outline:none;
+    }
+    textarea{min-height:110px;resize:vertical}
+    input:focus, textarea:focus, select:focus{border-color:rgba(201,161,74,.60)}
+    .tiny{color:var(--muted);font-size:12px;line-height:1.5}
+    .form-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* FOOTER */
+    footer{
+      padding:22px 0 40px;
+      border-top:1px solid rgba(11,15,24,.10);
+      color:var(--muted);font-size:13px;
+    }
+    .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .foot-brand{display:flex;align-items:center;gap:10px}
+    .foot-brand img{
+      width:34px;height:34px;object-fit:contain;border-radius:12px;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(11,15,24,.12);
+      padding:5px
+    }
+
+    /* FLOATING WHATSAPP */
     .fab{position:fixed;right:18px;bottom:18px;z-index:60}
-    .fab a{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:999px;border:1px solid rgba(11,15,24,.14);background:#fff;box-shadow:0 18px 44px rgba(11,15,24,.16);font-weight:900;font-size:13px}
+    .fab a{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 14px;border-radius:999px;
+      border:1px solid rgba(11,15,24,.14);
+      background:rgba(255,255,255,.96);
+      box-shadow:0 18px 44px rgba(11,15,24,.16);
+      font-weight:900;font-size:13px
+    }
     .wa-dot{width:12px;height:12px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.16)}
 
     @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
       .links{display:none}
-      .hero-logo img{max-height:180px}
+      .hero-logo img{max-height:200px}
     }
   </style>
 </head>
@@ -189,7 +398,7 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="Go to top">
-        <img src="/logo-icon.png?v=2" alt="Harbour & Home icon" />
+        <img src="/logo-icon.png" alt="Harbour & Home icon" />
         <span>Harbour &amp; Home</span>
       </a>
 
@@ -199,10 +408,10 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <div class="nav-cta" style="display:flex;gap:10px;align-items:center">
-        <a class="btn" href="tel:07797799997">Call</a>
-        <a class="btn" href="mailto:info@harbourandhome.co">Email</a>
-        <a class="btn primary" id="navWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <div class="nav-cta">
+        <a class="btn" href="tel:07797799997" aria-label="Call Harbour and Home">Call</a>
+        <a class="btn" href="mailto:info@harbourandhome.co" aria-label="Email Harbour and Home">Email</a>
+        <a class="btn primary" id="navWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp Harbour and Home">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -210,12 +419,12 @@
   <main id="top" class="hero">
     <div class="wrap">
       <div class="hero-top">
-        <div class="hero-logo">
-          <img src="/logo.png?v=2" alt="Harbour & Home Cleaning Services logo" loading="eager" />
+        <div class="hero-logo" aria-label="Business logo">
+          <img src="/logo.png" alt="Harbour & Home Cleaning Services logo" loading="eager" />
         </div>
 
-        <div class="hero-heroimg">
-          <img src="/assets/hero.jpg?v=2" alt="Boat speeding over water in Jersey" loading="eager" />
+        <div class="hero-heroimg" aria-label="Boat image">
+          <img src="/assets/hero.jpg" alt="Boat speeding over water in Jersey" loading="eager" />
         </div>
 
         <div class="pill"><span class="dot"></span> Boats • Homes • Offices — Interior Cleaning (Jersey)</div>
@@ -228,35 +437,279 @@
         </p>
       </div>
 
-      <!-- Keep the rest of your sections if you want; this minimal version guarantees logo/favicons first -->
+      <div class="hero-grid">
+        <section class="card" aria-label="What we offer">
+          <div class="icon">⭐</div>
+          <h2 style="margin:10px 0 10px">What we offer</h2>
+          <p class="sub" style="margin:0">
+            Premium interior cleaning with a focus on results, reliability and a spotless finish.
+          </p>
+
+          <ul class="list">
+            <li><span class="tick">✓</span> Boat interior cleaning</li>
+            <li><span class="tick">✓</span> Home cleaning</li>
+            <li><span class="tick">✓</span> Deep cleans</li>
+            <li><span class="tick">✓</span> End of tenancy / Move-in cleans</li>
+            <li><span class="tick">✓</span> Office cleaning (domestic &amp; commercial)</li>
+          </ul>
+
+          <div class="form-actions" style="margin-top:14px">
+            <a class="btn primary" href="#contact">Request a Quote</a>
+            <a class="btn" href="#services">View Services</a>
+          </div>
+        </section>
+
+        <aside class="hero-panel" aria-label="Hero panel">
+          <div class="hero-panel-bg" role="img" aria-label="Cleaning services in Jersey"></div>
+
+          <div class="hero-panel-content">
+            <div class="badges">
+              <div class="badge"><span class="shield">🛡️</span> Fully Insured</div>
+              <div class="badge"><span class="shield">🧽</span> Interior Cleaning</div>
+              <div class="badge"><span class="shield">📍</span> Jersey</div>
+            </div>
+
+            <div class="hero-cta">
+              <strong>Call, WhatsApp or email for a fast quote</strong>
+              <span>Phone: <span>07797 799997</span></span>
+              <span>Email: <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a></span>
+
+              <div class="hero-cta-actions">
+                <a class="btn" href="tel:07797799997">Call</a>
+                <a class="btn" href="mailto:info@harbourandhome.co">Email</a>
+                <a class="btn primary" id="heroWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
   </main>
 
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Services</h2>
+          <p class="sub">Clear, simple and professional — exactly what customers want to see.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <article class="card img-card">
+          <div class="img-top" style="background-image:url('/assets/yacht-cleaning.jpg')"></div>
+          <div class="img-body">
+            <div class="icon">⛵</div>
+            <h3>Boat Interior Cleaning</h3>
+            <p>Careful interior detailing for boats — clean, fresh and well presented.</p>
+            <ul class="list">
+              <li><span class="tick">✓</span> Deep clean or maintenance clean</li>
+              <li><span class="tick">✓</span> Touch-point sanitising</li>
+              <li><span class="tick">✓</span> Detail-focused finish</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card img-card">
+          <div class="img-top" style="background-image:url('/assets/home-windows.jpg')"></div>
+          <div class="img-body">
+            <div class="icon">🏠</div>
+            <h3>Home Cleaning</h3>
+            <p>Regular cleans, one-off cleans, deep cleans, and end of tenancy / move-in.</p>
+            <ul class="list">
+              <li><span class="tick">✓</span> Kitchens &amp; bathrooms</li>
+              <li><span class="tick">✓</span> Deep cleans</li>
+              <li><span class="tick">✓</span> End of tenancy / Move-in cleans</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card img-card">
+          <div class="img-top" style="background-image:url('/assets/office-cleaning.jpg')"></div>
+          <div class="img-body">
+            <div class="icon">🏢</div>
+            <h3>Office Cleaning</h3>
+            <p>Reliable commercial cleaning to keep your workspace clean, safe and professional.</p>
+            <ul class="list">
+              <li><span class="tick">✓</span> Desks &amp; common areas</li>
+              <li><span class="tick">✓</span> Kitchens &amp; washrooms</li>
+              <li><span class="tick">✓</span> Flexible hours available</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="insured">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Fully Insured</h2>
+          <p class="sub">Insurance in place for boats, homes and offices — domestic and commercial cleans.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="icon">🛡️</div>
+          <h3 style="margin:10px 0 8px;font-size:16px">Trust &amp; confidence</h3>
+          <p class="sub">Helps customers feel confident booking your service.</p>
+        </div>
+        <div class="card">
+          <div class="icon">✅</div>
+          <h3 style="margin:10px 0 8px;font-size:16px">Professional standards</h3>
+          <p class="sub">Consistent quality and attention to detail on every clean.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⏱️</div>
+          <h3 style="margin:10px 0 8px;font-size:16px">Fast quotes</h3>
+          <p class="sub">Call, WhatsApp or email for quick availability and pricing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Request a Quote</h2>
+          <p class="sub">Fastest way: fill this in and it sends straight to WhatsApp. Or email us.</p>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card">
+          <form id="quoteForm" style="display:grid;gap:10px">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" required placeholder="Your name" autocomplete="name" />
+            </div>
+
+            <div>
+              <label for="service">Service</label>
+              <select id="service" required>
+                <option value="" selected disabled>Select service</option>
+                <option>Boat interior cleaning</option>
+                <option>Home cleaning</option>
+                <option>Deep clean</option>
+                <option>End of tenancy / Move-in clean</option>
+                <option>Office cleaning</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="details">Details</label>
+              <textarea id="details" required placeholder="Location, size, preferred date/time, and any notes..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Send via WhatsApp</button>
+              <a class="btn" href="mailto:info@harbourandhome.co?subject=Quote%20Request%20-%20Harbour%20%26%20Home">Email</a>
+              <a class="btn" href="tel:07797799997">Call</a>
+            </div>
+
+            <p class="tiny">
+              This opens WhatsApp with your message ready to send. Or email us at
+              <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a>.
+            </p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 10px;font-size:16px">Direct Contact</h3>
+          <p class="sub" style="margin:0 0 14px">Boats • Homes • Offices — Jersey</p>
+
+          <div style="display:grid;gap:10px">
+            <a class="btn" href="tel:07797799997">Call: <strong>07797 799997</strong></a>
+            <a class="btn" href="mailto:info@harbourandhome.co">Email: <strong>info@harbourandhome.co</strong></a>
+            <a class="btn primary" id="contactWa" href="#" target="_blank" rel="noopener">Message on WhatsApp</a>
+          </div>
+
+          <ul class="list" style="margin-top:14px">
+            <li><span class="tick">✓</span> Fully insured</li>
+            <li><span class="tick">✓</span> Interior cleaning</li>
+            <li><span class="tick">✓</span> Domestic &amp; commercial</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div class="foot-brand">
+        <img src="/logo-icon.png" alt="Harbour & Home icon" />
+        <div>
+          © <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey ·
+          <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="#services">Services</a>
+        <a class="btn" href="#contact">Quote</a>
+      </div>
+    </div>
+  </footer>
+
   <div class="fab">
-    <a id="fabWa" href="#" target="_blank" rel="noopener">
+    <a id="fabWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
       <span class="wa-dot"></span> WhatsApp
     </a>
   </div>
 
+  <noscript>
+    <div style="padding:12px;margin:12px;border:1px solid rgba(11,15,24,.12);border-radius:14px;background:rgba(255,255,255,.85)">
+      This website works best with JavaScript enabled.
+    </div>
+  </noscript>
+
   <script>
-    const PHONE_E164 = "447797799997";
+    // ===== SETTINGS =====
+    const PHONE_E164 = "447797799997"; // WhatsApp
+    const EMAIL = "info@harbourandhome.co";
     const WA_BASE_MSG = "Hi, I’d like a quote please.";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
 
     function waLink(text){
       return `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(text)}`;
     }
 
+    // WhatsApp buttons
     document.getElementById("navWa").href = waLink(WA_BASE_MSG);
+    document.getElementById("heroWa").href = waLink(WA_BASE_MSG);
+    document.getElementById("contactWa").href = waLink(WA_BASE_MSG);
     document.getElementById("fabWa").href = waLink(WA_BASE_MSG);
 
-    // Force refresh if any cached logo fails
-    const imgs = document.querySelectorAll('img');
-    imgs.forEach(img => {
-      img.onerror = () => {
-        const src = img.getAttribute('src') || '';
-        if(!src.includes('?v=')) img.src = src + (src.includes('?') ? '&' : '?') + 'v=2';
-      };
+    // Quote form -> WhatsApp
+    document.getElementById("quoteForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const service = document.getElementById("service").value.trim();
+      const details = document.getElementById("details").value.trim();
+
+      const msg =
+`Hi, my name is ${name}.
+
+Service: ${service}
+
+Details: ${details}
+
+Please reply by WhatsApp or email: ${EMAIL}
+
+Thanks.`;
+
+      window.open(waLink(msg), "_blank", "noopener,noreferrer");
+    });
+
+    // Safety: if logo icon fails, fall back to main logo
+    document.querySelectorAll('img[src="/logo-icon.png"]').forEach(img => {
+      img.onerror = () => { img.src = "/logo.png"; };
     });
   </script>
 </body>
-</html>
+                                                                                                            </html>
