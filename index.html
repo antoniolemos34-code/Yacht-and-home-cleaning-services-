@@ -12,13 +12,13 @@
   <link rel="canonical" href="https://harbourandhome.co/" />
 
   <!-- Favicons (ROOT) -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
-  <!-- Social preview (absolute URLs) -->
+  <!-- Social preview -->
   <meta property="og:title" content="Harbour & Home Cleaning Services — Jersey" />
   <meta property="og:description" content="Boats • Homes • Offices. Fully insured. Fast quotes via Call, WhatsApp or Email." />
   <meta property="og:type" content="website" />
@@ -47,7 +47,7 @@
         "@id": "https://harbourandhome.co/#org",
         "name": "Harbour & Home Cleaning Services",
         "url": "https://harbourandhome.co/",
-        "logo": "https://harbourandhome.co/android-chrome-512x512.png"
+        "logo": "https://harbourandhome.co/logo-icon-256.png"
       },
       {
         "@type": "LocalBusiness",
@@ -92,7 +92,6 @@
       --shadow2:0 24px 70px rgba(11,15,24,.14);
       --max:1120px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -142,7 +141,6 @@
       border-color:rgba(11,15,24,.12);
       background:rgba(255,255,255,.80);
     }
-
     .nav-cta{display:flex; gap:10px; align-items:center}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
@@ -166,10 +164,7 @@
     }
 
     .hero{padding:26px 0 30px}
-    .hero-top{
-      display:grid; gap:14px; justify-items:center; text-align:center;
-      margin-bottom:18px;
-    }
+    .hero-top{display:grid; gap:14px; justify-items:center; text-align:center; margin-bottom:18px;}
 
     .hero-logo{
       width:min(980px, 100%);
@@ -261,7 +256,7 @@
       position:absolute; inset:0;
       background:
         linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.94) 78%),
-        url("/hero.jpg") center/cover no-repeat;
+        url("hero.jpg") center/cover no-repeat;
       filter:saturate(1.02) contrast(1.02);
     }
     .hero-overlay{
@@ -282,7 +277,6 @@
       background:linear-gradient(180deg, rgba(226,199,122,.42), rgba(201,161,74,.18));
       border:1px solid rgba(226,199,122,.55);
     }
-
     .hero-bottom{
       display:grid; gap:6px;
       padding:14px;
@@ -368,7 +362,7 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <div class="brand-mini">
-        <img src="/logo-icon-256.png" alt="Harbour & Home icon">
+        <img src="logo-icon-256.png" alt="Harbour & Home icon">
         <span>Harbour &amp; Home</span>
       </div>
 
@@ -390,19 +384,19 @@
     <div class="wrap">
       <div class="hero-top">
         <div class="hero-logo" aria-label="Business logo">
-          <img id="bigLogo" src="/logo-no-number.png" alt="Harbour & Home Cleaning Services logo (no number)" loading="eager">
+          <img id="bigLogo" src="logo-no-number.png" alt="Harbour & Home Cleaning Services logo" loading="eager">
           <div id="logoFallback" class="logo-fallback">
-            Logo not found. Please keep your logo in the root and name it <strong>logo-no-number.png</strong>
+            Logo not found. Rename your file to <strong>logo-no-number.png</strong> (recommended) or keep as is — this page will try to auto-detect it.
           </div>
         </div>
 
         <div class="boat-shot" aria-label="Boat image">
-          <img src="/hero.jpg" alt="Boat speeding over water in Jersey" loading="eager">
+          <img src="hero.jpg" alt="Boat speeding over water in Jersey" loading="eager">
         </div>
 
         <div class="pill"><span class="dot"></span> Boats • Homes • Offices — Interior Cleaning (Jersey)</div>
 
-        <h1>Professional Cleaning, clean and pristine!</h1>
+        <h1>Professional Cleaning, spotless results.</h1>
 
         <p class="lead">
           High-standard interior cleans for <strong>boats</strong>, <strong>homes</strong> and <strong>offices</strong>.
@@ -468,7 +462,7 @@
 
       <div class="grid3">
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('/yacht-cleaning.jpg')"></div>
+          <div class="img-top" style="background-image:url('yacht-cleaning.jpg')"></div>
           <div class="img-body">
             <div class="icon">⛵</div>
             <h3>Boat Interior Cleaning</h3>
@@ -482,7 +476,7 @@
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('/home-windows.jpg')"></div>
+          <div class="img-top" style="background-image:url('home-windows.jpg')"></div>
           <div class="img-body">
             <div class="icon">🏠</div>
             <h3>Home Cleaning</h3>
@@ -496,7 +490,7 @@
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('/office-cleaning.jpg')"></div>
+          <div class="img-top" style="background-image:url('office-cleaning.jpg')"></div>
           <div class="img-body">
             <div class="icon">🏢</div>
             <h3>Office Cleaning</h3>
@@ -608,7 +602,7 @@
   <footer>
     <div class="wrap foot">
       <div style="display:flex;align-items:center;gap:10px">
-        <img src="/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.92);border:1px solid rgba(11,15,24,.12);padding:5px">
+        <img src="logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.92);border:1px solid rgba(11,15,24,.12);padding:5px">
         <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey · <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a></div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -663,14 +657,14 @@ Thanks.`;
       window.open(waLink(msg), "_blank", "noopener,noreferrer");
     });
 
-    // Logo fallback (ROOT). Tries multiple possible names you might have.
+    // ---- LOGO AUTO-DETECT (ROOT) ----
+    // Tries common names. If your real file is like "logo-no-number-transp....png"
+    // rename it to "logo-no-number.png" (best). If not, this still tries alternatives.
     const candidates = [
-      "/logo-no-number.png",
-      "/logo-no-number-transp.png",
-      "/logo-no-number-transparent.png",
-      "/logo-no-number-trans.png",
-      "/logo-no-number-transp.webp",
-      "/logo-no-number-transp.jpg"
+      "logo-no-number.png",
+      "logo-no-number-transp.png",
+      "logo-no-number-transparent.png",
+      "logo-no-number-trans.png"
     ];
 
     const bigLogo = document.getElementById("bigLogo");
@@ -694,8 +688,9 @@ Thanks.`;
           return;
         }
       }
+      // If none of the expected names exist, show help text.
       logoFallback.style.display = "block";
     })();
   </script>
 </body>
-  </html>
+            </html>
