@@ -11,20 +11,19 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://harbourandhome.co/" />
 
-  <!-- Favicons (you uploaded inside /assets so we point there) -->
-  <link rel="icon" href="assets/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <!-- If you create site.webmanifest, keep it in /assets as well -->
-  <!-- <link rel="manifest" href="assets/site.webmanifest"> -->
+  <!-- Favicons (ROOT) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <!-- Social preview (absolute URLs) -->
   <meta property="og:title" content="Harbour & Home Cleaning Services — Jersey" />
   <meta property="og:description" content="Boats • Homes • Offices. Fully insured. Fast quotes via Call, WhatsApp or Email." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://harbourandhome.co/" />
-  <meta property="og:image" content="https://harbourandhome.co/assets/og-image.png" />
+  <meta property="og:image" content="https://harbourandhome.co/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -32,7 +31,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Harbour & Home Cleaning Services — Jersey" />
   <meta name="twitter:description" content="Boats • Homes • Offices. Fully insured. Fast quotes via Call, WhatsApp or Email." />
-  <meta name="twitter:image" content="https://harbourandhome.co/assets/og-image.png" />
+  <meta name="twitter:image" content="https://harbourandhome.co/og-image.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,14 +47,14 @@
         "@id": "https://harbourandhome.co/#org",
         "name": "Harbour & Home Cleaning Services",
         "url": "https://harbourandhome.co/",
-        "logo": "https://harbourandhome.co/assets/android-chrome-512x512.png"
+        "logo": "https://harbourandhome.co/android-chrome-512x512.png"
       },
       {
         "@type": "LocalBusiness",
         "@id": "https://harbourandhome.co/#business",
         "name": "Harbour & Home Cleaning Services",
         "url": "https://harbourandhome.co/",
-        "image": "https://harbourandhome.co/assets/og-image.png",
+        "image": "https://harbourandhome.co/og-image.png",
         "telephone": "+44 7797 799997",
         "email": "info@harbourandhome.co",
         "address": {
@@ -262,7 +261,7 @@
       position:absolute; inset:0;
       background:
         linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.94) 78%),
-        url("assets/hero.jpg") center/cover no-repeat;
+        url("/hero.jpg") center/cover no-repeat;
       filter:saturate(1.02) contrast(1.02);
     }
     .hero-overlay{
@@ -369,7 +368,7 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <div class="brand-mini">
-        <img src="assets/logo-icon-256.png" alt="Harbour & Home icon">
+        <img src="/logo-icon-256.png" alt="Harbour & Home icon">
         <span>Harbour &amp; Home</span>
       </div>
 
@@ -391,14 +390,14 @@
     <div class="wrap">
       <div class="hero-top">
         <div class="hero-logo" aria-label="Business logo">
-          <img id="bigLogo" src="assets/logo-no-number.png" alt="Harbour & Home Cleaning Services logo (no number)" loading="eager">
+          <img id="bigLogo" src="/logo-no-number.png" alt="Harbour & Home Cleaning Services logo (no number)" loading="eager">
           <div id="logoFallback" class="logo-fallback">
-            Logo not found. Go to <strong>/assets</strong> and rename your logo to <strong>logo-no-number.png</strong>
+            Logo not found. Please keep your logo in the root and name it <strong>logo-no-number.png</strong>
           </div>
         </div>
 
         <div class="boat-shot" aria-label="Boat image">
-          <img src="assets/hero.jpg" alt="Boat speeding over water in Jersey" loading="eager">
+          <img src="/hero.jpg" alt="Boat speeding over water in Jersey" loading="eager">
         </div>
 
         <div class="pill"><span class="dot"></span> Boats • Homes • Offices — Interior Cleaning (Jersey)</div>
@@ -469,7 +468,7 @@
 
       <div class="grid3">
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('assets/yacht-cleaning.jpg')"></div>
+          <div class="img-top" style="background-image:url('/yacht-cleaning.jpg')"></div>
           <div class="img-body">
             <div class="icon">⛵</div>
             <h3>Boat Interior Cleaning</h3>
@@ -483,7 +482,7 @@
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('assets/home-windows.jpg')"></div>
+          <div class="img-top" style="background-image:url('/home-windows.jpg')"></div>
           <div class="img-body">
             <div class="icon">🏠</div>
             <h3>Home Cleaning</h3>
@@ -497,7 +496,7 @@
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('assets/office-cleaning.jpg')"></div>
+          <div class="img-top" style="background-image:url('/office-cleaning.jpg')"></div>
           <div class="img-body">
             <div class="icon">🏢</div>
             <h3>Office Cleaning</h3>
@@ -609,7 +608,7 @@
   <footer>
     <div class="wrap foot">
       <div style="display:flex;align-items:center;gap:10px">
-        <img src="assets/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.92);border:1px solid rgba(11,15,24,.12);padding:5px">
+        <img src="/logo-icon-256.png" alt="Harbour & Home icon" style="width:34px;height:34px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,.92);border:1px solid rgba(11,15,24,.12);padding:5px">
         <div>© <span id="year"></span> Harbour &amp; Home Cleaning Services — Jersey · <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a></div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -664,12 +663,14 @@ Thanks.`;
       window.open(waLink(msg), "_blank", "noopener,noreferrer");
     });
 
-    // Logo fallback (tries multiple possible names)
+    // Logo fallback (ROOT). Tries multiple possible names you might have.
     const candidates = [
-      "assets/logo-no-number.png",
-      "assets/logo-no-number-transp.png",
-      "assets/logo-no-number-transparent.png",
-      "assets/logo-no-number-trans.png"
+      "/logo-no-number.png",
+      "/logo-no-number-transp.png",
+      "/logo-no-number-transparent.png",
+      "/logo-no-number-trans.png",
+      "/logo-no-number-transp.webp",
+      "/logo-no-number-transp.jpg"
     ];
 
     const bigLogo = document.getElementById("bigLogo");
@@ -697,4 +698,4 @@ Thanks.`;
     })();
   </script>
 </body>
-            </html>
+  </html>
