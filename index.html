@@ -4,10 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#FBF7EF" />
-  <title>Harbour &amp; Home Cleaning Services — Jersey</title>
 
+  <title>Harbour &amp; Home Cleaning Services — Jersey</title>
   <meta name="description" content="Professional interior cleaning for boats, homes and offices in Jersey. Fully insured. Deep cleans and end of tenancy / move-in cleans available. Call, WhatsApp or email for a fast quote." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://harbourandhome.co/" />
@@ -18,6 +19,7 @@
   <!-- Favicons (ROOT) -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <!-- Social preview (WhatsApp/Facebook/iMessage) -->
@@ -29,6 +31,7 @@
   <meta property="og:image:secure_url" content="https://harbourandhome.co/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_GB" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -42,8 +45,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Performance -->
-  <link rel="preload" as="image" href="/assets/hero.jpg" />
-  <link rel="preload" as="image" href="/logo.png" />
+  <link rel="preload" as="image" href="/assets/hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/logo.png" fetchpriority="high" />
 
   <!-- Structured data (Google) -->
   <script type="application/ld+json">
@@ -59,19 +62,23 @@
         "image": "https://harbourandhome.co/logo.png"
       },
       {
-        "@type": "LocalBusiness",
+        "@type": "CleaningService",
         "@id": "https://harbourandhome.co/#business",
         "name": "Harbour & Home Cleaning Services",
         "url": "https://harbourandhome.co/",
         "image": "https://harbourandhome.co/assets/og-image.png",
         "telephone": "+44 7797 799997",
         "email": "info@harbourandhome.co",
+        "priceRange": "££",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Jersey",
           "addressCountry": "JE"
         },
-        "areaServed": "Jersey",
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Jersey"
+        },
         "description": "Professional interior cleaning for boats, homes and offices in Jersey. Fully insured.",
         "parentOrganization": { "@id": "https://harbourandhome.co/#org" }
       },
@@ -420,11 +427,11 @@
     <div class="wrap">
       <div class="hero-top">
         <div class="hero-logo" aria-label="Business logo">
-          <img src="/logo.png" alt="Harbour & Home Cleaning Services logo" loading="eager" />
+          <img src="/logo.png" alt="Harbour & Home Cleaning Services logo" loading="eager" fetchpriority="high" />
         </div>
 
         <div class="hero-heroimg" aria-label="Boat image">
-          <img src="/assets/hero.jpg" alt="Boat speeding over water in Jersey" loading="eager" />
+          <img src="/assets/hero.jpg" alt="Boat speeding over water in Jersey" loading="eager" fetchpriority="high" />
         </div>
 
         <div class="pill"><span class="dot"></span> Boats • Homes • Offices — Interior Cleaning (Jersey)</div>
@@ -439,18 +446,18 @@
 
       <div class="hero-grid">
         <section class="card" aria-label="What we offer">
-          <div class="icon">⭐</div>
+          <div class="icon" aria-hidden="true">⭐</div>
           <h2 style="margin:10px 0 10px">What we offer</h2>
           <p class="sub" style="margin:0">
             Premium interior cleaning with a focus on results, reliability and a spotless finish.
           </p>
 
           <ul class="list">
-            <li><span class="tick">✓</span> Boat interior cleaning</li>
-            <li><span class="tick">✓</span> Home cleaning</li>
-            <li><span class="tick">✓</span> Deep cleans</li>
-            <li><span class="tick">✓</span> End of tenancy / Move-in cleans</li>
-            <li><span class="tick">✓</span> Office cleaning (domestic &amp; commercial)</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Boat interior cleaning</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Home cleaning</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Deep cleans</li>
+            <li><span class="tick" aria-hidden="true">✓</span> End of tenancy / Move-in cleans</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Office cleaning (domestic &amp; commercial)</li>
           </ul>
 
           <div class="form-actions" style="margin-top:14px">
@@ -464,9 +471,9 @@
 
           <div class="hero-panel-content">
             <div class="badges">
-              <div class="badge"><span class="shield">🛡️</span> Fully Insured</div>
-              <div class="badge"><span class="shield">🧽</span> Interior Cleaning</div>
-              <div class="badge"><span class="shield">📍</span> Jersey</div>
+              <div class="badge"><span class="shield" aria-hidden="true">🛡️</span> Fully Insured</div>
+              <div class="badge"><span class="shield" aria-hidden="true">🧽</span> Interior Cleaning</div>
+              <div class="badge"><span class="shield" aria-hidden="true">📍</span> Jersey</div>
             </div>
 
             <div class="hero-cta">
@@ -475,9 +482,9 @@
               <span>Email: <a href="mailto:info@harbourandhome.co" style="text-decoration:underline">info@harbourandhome.co</a></span>
 
               <div class="hero-cta-actions">
-                <a class="btn" href="tel:07797799997">Call</a>
-                <a class="btn" href="mailto:info@harbourandhome.co">Email</a>
-                <a class="btn primary" id="heroWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+                <a class="btn" href="tel:07797799997" aria-label="Call Harbour and Home">Call</a>
+                <a class="btn" href="mailto:info@harbourandhome.co" aria-label="Email Harbour and Home">Email</a>
+                <a class="btn primary" id="heroWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp Harbour and Home">WhatsApp</a>
               </div>
             </div>
           </div>
@@ -497,43 +504,43 @@
 
       <div class="grid3">
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('/assets/yacht-cleaning.jpg')"></div>
+          <div class="img-top" style="background-image:url('/assets/yacht-cleaning.jpg')" role="img" aria-label="Yacht cleaning"></div>
           <div class="img-body">
-            <div class="icon">⛵</div>
+            <div class="icon" aria-hidden="true">⛵</div>
             <h3>Boat Interior Cleaning</h3>
             <p>Careful interior detailing for boats — clean, fresh and well presented.</p>
             <ul class="list">
-              <li><span class="tick">✓</span> Deep clean or maintenance clean</li>
-              <li><span class="tick">✓</span> Touch-point sanitising</li>
-              <li><span class="tick">✓</span> Detail-focused finish</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Deep clean or maintenance clean</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Touch-point sanitising</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Detail-focused finish</li>
             </ul>
           </div>
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('/assets/home-windows.jpg')"></div>
+          <div class="img-top" style="background-image:url('/assets/home-windows.jpg')" role="img" aria-label="Home cleaning"></div>
           <div class="img-body">
-            <div class="icon">🏠</div>
+            <div class="icon" aria-hidden="true">🏠</div>
             <h3>Home Cleaning</h3>
             <p>Regular cleans, one-off cleans, deep cleans, and end of tenancy / move-in.</p>
             <ul class="list">
-              <li><span class="tick">✓</span> Kitchens &amp; bathrooms</li>
-              <li><span class="tick">✓</span> Deep cleans</li>
-              <li><span class="tick">✓</span> End of tenancy / Move-in cleans</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Kitchens &amp; bathrooms</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Deep cleans</li>
+              <li><span class="tick" aria-hidden="true">✓</span> End of tenancy / Move-in cleans</li>
             </ul>
           </div>
         </article>
 
         <article class="card img-card">
-          <div class="img-top" style="background-image:url('/assets/office-cleaning.jpg')"></div>
+          <div class="img-top" style="background-image:url('/assets/office-cleaning.jpg')" role="img" aria-label="Office cleaning"></div>
           <div class="img-body">
-            <div class="icon">🏢</div>
+            <div class="icon" aria-hidden="true">🏢</div>
             <h3>Office Cleaning</h3>
             <p>Reliable commercial cleaning to keep your workspace clean, safe and professional.</p>
             <ul class="list">
-              <li><span class="tick">✓</span> Desks &amp; common areas</li>
-              <li><span class="tick">✓</span> Kitchens &amp; washrooms</li>
-              <li><span class="tick">✓</span> Flexible hours available</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Desks &amp; common areas</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Kitchens &amp; washrooms</li>
+              <li><span class="tick" aria-hidden="true">✓</span> Flexible hours available</li>
             </ul>
           </div>
         </article>
@@ -552,17 +559,17 @@
 
       <div class="grid3">
         <div class="card">
-          <div class="icon">🛡️</div>
+          <div class="icon" aria-hidden="true">🛡️</div>
           <h3 style="margin:10px 0 8px;font-size:16px">Trust &amp; confidence</h3>
           <p class="sub">Helps customers feel confident booking your service.</p>
         </div>
         <div class="card">
-          <div class="icon">✅</div>
+          <div class="icon" aria-hidden="true">✅</div>
           <h3 style="margin:10px 0 8px;font-size:16px">Professional standards</h3>
           <p class="sub">Consistent quality and attention to detail on every clean.</p>
         </div>
         <div class="card">
-          <div class="icon">⏱️</div>
+          <div class="icon" aria-hidden="true">⏱️</div>
           <h3 style="margin:10px 0 8px;font-size:16px">Fast quotes</h3>
           <p class="sub">Call, WhatsApp or email for quick availability and pricing.</p>
         </div>
@@ -581,15 +588,15 @@
 
       <div class="contact-grid">
         <div class="card">
-          <form id="quoteForm" style="display:grid;gap:10px">
+          <form id="quoteForm" style="display:grid;gap:10px" aria-label="Quote request form">
             <div>
               <label for="name">Name</label>
-              <input id="name" required placeholder="Your name" autocomplete="name" />
+              <input id="name" name="name" required placeholder="Your name" autocomplete="name" />
             </div>
 
             <div>
               <label for="service">Service</label>
-              <select id="service" required>
+              <select id="service" name="service" required>
                 <option value="" selected disabled>Select service</option>
                 <option>Boat interior cleaning</option>
                 <option>Home cleaning</option>
@@ -601,13 +608,13 @@
 
             <div>
               <label for="details">Details</label>
-              <textarea id="details" required placeholder="Location, size, preferred date/time, and any notes..."></textarea>
+              <textarea id="details" name="details" required placeholder="Location, size, preferred date/time, and any notes..."></textarea>
             </div>
 
             <div class="form-actions">
-              <button class="btn primary" type="submit">Send via WhatsApp</button>
-              <a class="btn" href="mailto:info@harbourandhome.co?subject=Quote%20Request%20-%20Harbour%20%26%20Home">Email</a>
-              <a class="btn" href="tel:07797799997">Call</a>
+              <button class="btn primary" type="submit" aria-label="Send quote request via WhatsApp">Send via WhatsApp</button>
+              <a class="btn" href="mailto:info@harbourandhome.co?subject=Quote%20Request%20-%20Harbour%20%26%20Home" aria-label="Send quote request by email">Email</a>
+              <a class="btn" href="tel:07797799997" aria-label="Call Harbour and Home">Call</a>
             </div>
 
             <p class="tiny">
@@ -622,15 +629,15 @@
           <p class="sub" style="margin:0 0 14px">Boats • Homes • Offices — Jersey</p>
 
           <div style="display:grid;gap:10px">
-            <a class="btn" href="tel:07797799997">Call: <strong>07797 799997</strong></a>
-            <a class="btn" href="mailto:info@harbourandhome.co">Email: <strong>info@harbourandhome.co</strong></a>
-            <a class="btn primary" id="contactWa" href="#" target="_blank" rel="noopener">Message on WhatsApp</a>
+            <a class="btn" href="tel:07797799997" aria-label="Call Harbour and Home">Call: <strong>07797 799997</strong></a>
+            <a class="btn" href="mailto:info@harbourandhome.co" aria-label="Email Harbour and Home">Email: <strong>info@harbourandhome.co</strong></a>
+            <a class="btn primary" id="contactWa" href="#" target="_blank" rel="noopener" aria-label="Message Harbour and Home on WhatsApp">Message on WhatsApp</a>
           </div>
 
           <ul class="list" style="margin-top:14px">
-            <li><span class="tick">✓</span> Fully insured</li>
-            <li><span class="tick">✓</span> Interior cleaning</li>
-            <li><span class="tick">✓</span> Domestic &amp; commercial</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Fully insured</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Interior cleaning</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Domestic &amp; commercial</li>
           </ul>
         </div>
       </div>
@@ -655,8 +662,8 @@
   </footer>
 
   <div class="fab">
-    <a id="fabWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
-      <span class="wa-dot"></span> WhatsApp
+    <a id="fabWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp Harbour and Home">
+      <span class="wa-dot" aria-hidden="true"></span> WhatsApp
     </a>
   </div>
 
@@ -670,7 +677,7 @@
     // ===== SETTINGS =====
     const PHONE_E164 = "447797799997"; // WhatsApp
     const EMAIL = "info@harbourandhome.co";
-    const WA_BASE_MSG = "Hi, I’d like a quote please.";
+    const WA_BASE_MSG = "Hi, I'd like a quote please.";
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -712,4 +719,4 @@ Thanks.`;
     });
   </script>
 </body>
-                                                                                                            </html>
+</html>
